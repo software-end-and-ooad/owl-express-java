@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package owlexpress_attemp1;
+package owlexpress;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -18,7 +18,7 @@ import javafx.stage.StageStyle;
  *
  * @author Utt
  */
-public class OwlExpress_attemp1 extends Application {
+public class OwlExpress extends Application {
 
     double xOffset;
     double yOffset;

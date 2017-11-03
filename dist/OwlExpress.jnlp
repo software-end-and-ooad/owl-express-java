@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="OwlExpress_attemp1.jnlp">
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="OwlExpress.jnlp">
   <information>
-    <title>OwlExpress_attemp1</title>
+    <title>OwlExpress</title>
     <vendor>Utt</vendor>
     <description>null</description>
     <offline-allowed/>
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="OwlExpress_attemp1.jar" size="49674" download="eager" />
+    <jar href="OwlExpress.jar" size="51026" download="eager" />
     <jar href="lib\jfoenix-0.0.0-SNAPSHOT-retrolambda.jar" size="2431118" download="eager" />
     <jar href="lib\jfoenix.jar" size="2386535" download="eager" />
+    <jar href="lib\objectdb.jar" size="1495343" download="eager" />
   </resources>
-  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="OwlExpress_attemp1" >
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="OwlExpress" >
     <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
-  <jfx:javafx-desc  width="800" height="600" main-class="owlexpress_attemp1.OwlExpress_attemp1"  name="OwlExpress_attemp1" />
+  <jfx:javafx-desc  width="800" height="600" main-class="owlexpress.OwlExpress"  name="OwlExpress" />
   <update check="always"/>
 </jnlp>
