@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="OwlExpress_attemp1.jar" size="49675" download="eager" />
+    <jar href="OwlExpress_attemp1.jar" size="49674" download="eager" />
     <jar href="lib\jfoenix-0.0.0-SNAPSHOT-retrolambda.jar" size="2431118" download="eager" />
     <jar href="lib\jfoenix.jar" size="2386535" download="eager" />
   </resources>

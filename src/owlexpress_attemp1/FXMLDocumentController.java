@@ -90,7 +90,6 @@ public class FXMLDocumentController implements Initializable {
     }
     @FXML
     private void loginButton(MouseEvent event){
-        //Show updated status
         if(username_field.getText().compareTo("root") == 0 && password_field.getText().compareTo("root") == 0)
             login.setVisible(false);
     }
