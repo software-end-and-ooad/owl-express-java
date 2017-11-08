@@ -41,11 +41,11 @@ public class LoginController implements Initializable {
     }   
     
     public void submitLogin() throws IOException {
-         if(username_field.getText().compareTo("root") == 0 && password_field.getText().compareTo("root") == 0)
+         if(this.username_field.getText().compareTo("root") == 0 && this.password_field.getText().compareTo("root") == 0)
          {
              Stage stage;
              Parent root;
-             stage=(Stage) username_field.getScene().getWindow();
+             stage=(Stage) this.username_field.getScene().getWindow();
              //load up OTHER FXML document
              root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
              //create a new scene with root and set the stage
