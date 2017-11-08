@@ -27,35 +27,33 @@ import javafx.stage.StageStyle;
  * @author babyjazz
  */
 public class LoginController implements Initializable {
+
     @FXML
     private TextField username_field;
     @FXML
     private PasswordField password_field;
-    
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }   
-    
-    public void submitLogin() throws IOException {
-         if(this.username_field.getText().compareTo("root") == 0 && this.password_field.getText().compareTo("root") == 0)
-         {
-             Stage stage;
-             Parent root;
-             stage=(Stage) this.username_field.getScene().getWindow();
-             //load up OTHER FXML document
-             root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-             //create a new scene with root and set the stage
-             Scene scene = new Scene(root);
-             stage.setScene(scene);
-             stage.show();
-         }    
-         else
-             System.out.println("Authentication Invalid!");
     }
-    
-    
+
+    public void submitLogin() throws IOException {
+        if (this.username_field.getText().compareTo("root") == 0 && this.password_field.getText().compareTo("root") == 0) {
+            Stage stage;
+            Parent root;
+            stage = (Stage) this.username_field.getScene().getWindow();
+            //load up OTHER FXML document
+            root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+            //create a new scene with root and set the stage
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } else {
+            System.out.println("Authentication Invalid!");
+        }
+    }
 }
