@@ -1,10 +1,12 @@
 package Controller;
 
-import API.User;
+import Model.User;
 import Model.Database;
 import java.util.ArrayList;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -21,22 +23,20 @@ public class LoginController {
         this.password = password;
     }
     
-    public void checkLogin() {
+    public boolean checkLogin() {
+        System.out.println(this.username);
         Database db = new Database("user");
         
-        db.getEM().getTransaction().begin();
-        db.getEM().getTransaction().begin();
-        for (int i = 0; i < 1000; i++) {
-            User p = new User();
-            db.getEM().persist(p);
+        Query user = db.getEM().createQuery("SELECT username, password FROM User where username='" + this.username + "' and password='" + this.password + "'");
+        try { // try, if can print method in user
+            System.out.println(user.getSingleResult());
+            return true;
         }
-        db.getEM().getTransaction().commit();
- 
-//        // Find the number of Point objects in the database:
-//        Query q1 = em.createQuery("SELECT COUNT(p) FROM Point p");
-//        System.out.println("Total Points: " + q1.getSingleResult());
-      
-
+        catch(Exception e) {
+            System.out.println("false");
+            return false;
+        }
+        
     }
     
 }

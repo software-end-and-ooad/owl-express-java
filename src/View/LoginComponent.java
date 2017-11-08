@@ -16,6 +16,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -33,6 +34,8 @@ public class LoginComponent implements Initializable {
     private TextField username_field;
     @FXML
     private PasswordField password_field;
+    @FXML
+    private CheckBox roleAdmin;
 
     /**
      * Initializes the controller class.
@@ -43,10 +46,9 @@ public class LoginComponent implements Initializable {
     }
 
     public void submitLogin() throws IOException {
-        if (this.username_field.getText().compareTo("root") == 0 && this.password_field.getText().compareTo("root") == 0) {
-            LoginController loginController = new LoginController(this.username_field.toString(), this.password_field.toString());
-            loginController.checkLogin();
-            
+        LoginController loginController = new LoginController(this.username_field.getText(), this.password_field.getText());
+        
+        if ( loginController.checkLogin() == true ) {
             // Navigate to dashboard
             Stage stage;
             Parent root;
