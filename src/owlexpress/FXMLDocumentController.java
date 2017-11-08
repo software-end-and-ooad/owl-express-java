@@ -37,10 +37,6 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private JFXTextField name_field;
     @FXML
-    private TextField username_field;
-    @FXML
-    private PasswordField password_field;
-    @FXML
     private Text forgotPass;
     @FXML
     private JFXButton order_button, refresh_button, login_button, signup_button;
@@ -90,8 +86,7 @@ public class FXMLDocumentController implements Initializable {
     }
     @FXML
     private void loginButton(MouseEvent event){
-        if(username_field.getText().compareTo("root") == 0 && password_field.getText().compareTo("root") == 0)
-            login.setVisible(false);
+       
     }
 
     @Override
