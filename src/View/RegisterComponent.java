@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package owlexpress;
+package View;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author Utt
  */
-public class SignUpController implements Initializable {
+public class RegisterComponent implements Initializable {
 
     /**
      * Initializes the controller class.

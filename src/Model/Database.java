@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Database;
+package Model;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -14,14 +14,17 @@ import javax.persistence.Persistence;
  * @author Utt
  */
 public class Database {
-    EntityManagerFactory emf;
-    EntityManager em;
-    String id;
-    String passDb;
-    String userDb;
+    public EntityManager em;
+    String ip = "localhost";
+    String passDb = "admin";
+    String userDb =  "admin";
     public Database( String table){
         EntityManagerFactory emf =
-            Persistence.createEntityManagerFactory("objectdb://localhost/db/"+table+".odb;user=admin;password=admin");
-        EntityManager em = emf.createEntityManager();
+            Persistence.createEntityManagerFactory("objectdb://"+ this.ip +"/db/"+ table +".odb;user="+ this.userDb +";password="+ this.passDb);
+        this.em = emf.createEntityManager();
+    }
+    
+    public EntityManager getEM() {
+        return this.em;
     }
 }

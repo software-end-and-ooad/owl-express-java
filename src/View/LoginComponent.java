@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package owlexpress;
+package View;
 
+import Controller.LoginController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,7 +27,7 @@ import javafx.stage.StageStyle;
  *
  * @author babyjazz
  */
-public class LoginController implements Initializable {
+public class LoginComponent implements Initializable {
 
     @FXML
     private TextField username_field;
@@ -43,6 +44,10 @@ public class LoginController implements Initializable {
 
     public void submitLogin() throws IOException {
         if (this.username_field.getText().compareTo("root") == 0 && this.password_field.getText().compareTo("root") == 0) {
+            LoginController loginController = new LoginController(this.username_field.toString(), this.password_field.toString());
+            loginController.checkLogin();
+            
+            // Navigate to dashboard
             Stage stage;
             Parent root;
             stage = (Stage) this.username_field.getScene().getWindow();

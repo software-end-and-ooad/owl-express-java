@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Database;
+package Model;
 
 /**
  *
@@ -13,7 +13,7 @@ import java.io.Serializable;
 import javax.persistence.*;
  
 @Entity
-public class Order_db implements Serializable{
+public class OrderModel implements Serializable{
 
     @Id
     private Long id;
