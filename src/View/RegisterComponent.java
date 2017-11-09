@@ -5,9 +5,15 @@
  */
 package View;
 
+import Controller.RegisterController;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -15,6 +21,18 @@ import javafx.fxml.Initializable;
  * @author Utt
  */
 public class RegisterComponent implements Initializable {
+    @FXML
+    private TextField username;
+    @FXML
+    private PasswordField password;
+    @FXML
+    private PasswordField confirmPass;
+    @FXML
+    private TextField tell;
+    @FXML
+    private TextField email;
+    @FXML
+    private TextField name;
 
     /**
      * Initializes the controller class.
@@ -23,5 +41,17 @@ public class RegisterComponent implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+    public void submitRegister() throws IOException {
+        RegisterController registerController = 
+                new RegisterController(
+                        this.username.getText(),
+                        this.email.getText(),
+                        this.name.getText(),
+                        this.tell.getText(),
+                        this.password.getText(),
+                        this.confirmPass.getText()
+                );
+    }
     
 }
