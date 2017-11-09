@@ -32,6 +32,7 @@ public class User {
     }
     
     public String getPassword() {
+        // Test commit
         return this.password;
     }
    
