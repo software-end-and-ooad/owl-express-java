@@ -29,9 +29,9 @@ import javafx.scene.text.Text;
 public class FXMLDocumentController implements Initializable {
 
     @FXML
-    private ImageView btn_home, btn_user, btn_noti, btn_oder, btn_exit, exitlogin_button;
+    private ImageView  btn_user, btn_noti, btn_oder, btn_exit, exitlogin_button;
     @FXML
-    private AnchorPane home, user, notification, oder, login;
+    private AnchorPane home, user, notification, oder, login, btn_home;
     @FXML
     private ListView notiList;
     @FXML
