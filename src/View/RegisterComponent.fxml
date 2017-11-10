@@ -24,10 +24,14 @@
             <TextField fx:id="name" layoutX="176.0" layoutY="175.0" prefHeight="31.0" prefWidth="249.0" promptText="Fullname" />
             <TextField fx:id="email" layoutX="177.0" layoutY="122.0" prefHeight="31.0" prefWidth="249.0" promptText="E-mail" />
             <TextField fx:id="tell" layoutX="176.0" layoutY="244.0" prefHeight="31.0" prefWidth="249.0" promptText="Tell" />
-            <PasswordField fx:id="password" layoutX="176.0" layoutY="289.0" prefHeight="31.0" prefWidth="249.0" promptText="Password" />
-            <PasswordField fx:id="confirmPass" layoutX="176.0" layoutY="346.0" prefHeight="31.0" prefWidth="249.0" promptText="Confirm Password" />
+            <PasswordField fx:id="password" layoutX="176.0" layoutY="314.0" prefHeight="31.0" prefWidth="249.0" promptText="Password" />
+            <PasswordField fx:id="confirmPass" layoutX="176.0" layoutY="384.0" prefHeight="31.0" prefWidth="249.0" promptText="Confirm Password" />
             <Text fx:id="usernameValidate" fill="RED" layoutX="185.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="236.7294921875" />
             <Text fx:id="nameValidate" fill="RED" layoutX="185.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="236.72949613630772" />
+            <Text fx:id="emailValidate" fill="RED" layoutX="202.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="222.7294921875" />
+            <Text fx:id="tellValidate" fill="RED" layoutX="176.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.7294921875" />
+            <Text fx:id="passwordValidate" fill="RED" layoutX="176.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="236.72949613630772" />
+            <Text fx:id="confirmPassValidate" fill="RED" layoutX="202.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.72948951274157" />
          </children>
       </AnchorPane>
       <Text fill="WHITE" layoutX="234.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Selima; -fx-font-size: 150;" text="Sign up">

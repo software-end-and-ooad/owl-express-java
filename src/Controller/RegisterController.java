@@ -40,8 +40,26 @@ public class RegisterController {
             validate.add("username|maxLength");
         if (!checkValidate.minLength(this.username, 2))
             validate.add("username|minLength");
+        if (!checkValidate.minLength(this.username, 2))
+            validate.add("username|isRequired");
         if (!checkValidate.maxLength(this.name, 4))
             validate.add("name|maxLength");
+        if (!checkValidate.isRequired(this.name))
+            validate.add("name|isRequired");
+        if (!checkValidate.isRequired(this.email))
+            validate.add("name|isRequired");
+        if (!checkValidate.isEmail(this.email))
+            validate.add("email|isEmail");
+        if (!checkValidate.isRequired(this.tell))
+            validate.add("tell|isRequired");
+        if (!checkValidate.maxLength(this.tell, 4))
+            validate.add("tell|maxLength");
+        if (!checkValidate.minLength(this.tell, 2))
+            validate.add("tell|minLength");
+        if (!checkValidate.isNumeric(this.tell))
+            validate.add("tell|isNumeric");
+        if (!checkValidate.minLength(this.password, 2))
+            validate.add("password|minLength");
 
         ArrayList<ArrayList<String>> errList = splitListofValidateError(validate);
         return errList;
