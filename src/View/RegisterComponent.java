@@ -8,6 +8,7 @@ package View;
 import Controller.RegisterController;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -55,18 +56,27 @@ public class RegisterComponent implements Initializable {
                         this.email.getText(),
                         this.name.getText(),
                         this.tell.getText()
-
                 );
-        if( registerController.validateResgister().size() <= 0) {
+        
+        ArrayList<ArrayList<String>> errList = registerController.validateResgister();
+        if( errList.size() <= 0) {
+            this.usernameValidate.setVisible(false);
             
             if( registerController.checkRegister() == true ) {
                 
                 System.out.println("ROUTE TO OTHER PAGE");
             }
         }  else {
-            
-            System.out.println(registerController.validateResgister());
-           
+            System.out.println(errList);
+            for (int i = 0; i < errList.size(); i++) {
+                if (errList.get(i).get(0).equals("username")) {
+                    this.usernameValidate.setVisible(true);
+                    if (errList.get(i).get(1).equals("maxLength"))
+                        this.usernameValidate.setText("USERNAME MUST NO MORE 4");
+                    else if (errList.get(i).get(1).equals("minLength"))
+                        this.usernameValidate.setText("USERNAME MUST NO LESS 2");
+                }
+            }
         }
        
         

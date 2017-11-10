@@ -25,7 +25,7 @@
             <TextField fx:id="tell" layoutX="176.0" layoutY="223.0" prefHeight="31.0" prefWidth="249.0" promptText="Tell" />
             <PasswordField fx:id="password" layoutX="176.0" layoutY="289.0" prefHeight="31.0" prefWidth="249.0" promptText="Password" />
             <PasswordField fx:id="confirmPass" layoutX="176.0" layoutY="346.0" prefHeight="31.0" prefWidth="249.0" promptText="Confirm Password" />
-            <Text fx:id="usernameValidate" fill="RED" layoutX="185.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username is too long" wrappingWidth="153.7294921875" />
+            <Text fx:id="usernameValidate" fill="RED" layoutX="185.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="236.7294921875" />
          </children>
       </AnchorPane>
       <Text fill="WHITE" layoutX="234.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Selima; -fx-font-size: 150;" text="Sign up">

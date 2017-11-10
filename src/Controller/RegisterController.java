@@ -34,6 +34,7 @@ public class RegisterController {
         Validation checkValidate = new Validation();
         ArrayList<String> validate = new ArrayList<String>();
         
+        validate.clear();
         if (!checkValidate.maxLength(this.username, 4))
             validate.add("username|maxLength");
         if (!checkValidate.minLength(this.username, 2))
