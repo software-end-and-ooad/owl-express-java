@@ -38,6 +38,8 @@ public class RegisterComponent implements Initializable {
     // Validate Text Field
     @FXML
     private Text usernameValidate;
+    @FXML
+    private Text nameValidate;
     
     /**
      * Initializes the controller class.
@@ -45,6 +47,7 @@ public class RegisterComponent implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         this.usernameValidate.setVisible(false);
+        this.nameValidate.setVisible(false);
     }    
     
     public void submitRegister() throws IOException {
@@ -61,6 +64,7 @@ public class RegisterComponent implements Initializable {
         ArrayList<ArrayList<String>> errList = registerController.validateResgister();
         if( errList.size() <= 0) {
             this.usernameValidate.setVisible(false);
+            this.nameValidate.setVisible(false);
             
             if( registerController.checkRegister() == true ) {
                 
@@ -75,6 +79,11 @@ public class RegisterComponent implements Initializable {
                         this.usernameValidate.setText("USERNAME MUST NO MORE 4");
                     else if (errList.get(i).get(1).equals("minLength"))
                         this.usernameValidate.setText("USERNAME MUST NO LESS 2");
+                }
+                if (errList.get(i).get(0).equals("name")) {
+                    this.nameValidate.setVisible(true);
+                    if (errList.get(i).get(1).equals("maxLength"))
+                        this.nameValidate.setText("FULLNAME MUST NO MORE 20");
                 }
             }
         }

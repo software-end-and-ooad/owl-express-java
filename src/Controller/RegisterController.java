@@ -35,10 +35,13 @@ public class RegisterController {
         ArrayList<String> validate = new ArrayList<String>();
         
         validate.clear();
+        // ADD VALIDATION HERE
         if (!checkValidate.maxLength(this.username, 4))
             validate.add("username|maxLength");
         if (!checkValidate.minLength(this.username, 2))
             validate.add("username|minLength");
+        if (!checkValidate.maxLength(this.name, 4))
+            validate.add("name|maxLength");
 
         ArrayList<ArrayList<String>> errList = splitListofValidateError(validate);
         return errList;
