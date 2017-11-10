@@ -9,7 +9,7 @@ package Controller;
  *
  * @author Utt
  */
-public class AllDataService {
+public abstract class DataService {
     private String fullname;
     private String email;
     private String sub_distric;
@@ -83,4 +83,5 @@ public class AllDataService {
         this.password = password;
     }
     
+    public abstract void clear();
 }

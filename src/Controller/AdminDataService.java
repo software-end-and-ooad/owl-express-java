@@ -9,7 +9,7 @@ package Controller;
  *
  * @author kaogi
  */
-public class AdminDataService extends AllDataService{
+public class AdminDataService extends DataService{
     private String  role;
 
     public String getRole() {
@@ -18,6 +18,19 @@ public class AdminDataService extends AllDataService{
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    @Override
+    public void clear() {
+        this.role = null;
+        super.setAddress_other(null);
+        super.setDistric(null);
+        super.setEmail(null);
+        super.setFullname(null);
+        super.setPassword(null);
+        super.setProvince(null);
+        super.setSub_distric(null);
+        super.setTell(null);
     }
     
 }
