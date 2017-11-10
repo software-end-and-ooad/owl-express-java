@@ -5,11 +5,14 @@
  */
 package Controller;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author babyjazz
  */
 public class Validation {
+    private ArrayList<String> rule = new ArrayList<String>();
     
     public boolean maxLength(String input, int max) {
         if (input.length() > max) 
@@ -49,5 +52,14 @@ public class Validation {
            return m.matches();
     }
     
+    public ArrayList checkValidate(ArrayList<String> input) {
+        for (int i = 0; i < input.size(); i++) {
+//            if (isChar(input.get(i)) == true) {
+//                this.rule.add("error");
+//            }
+            this.rule.add(isChar(input.get(i))==true? "error": null);
+        }
+        return this.rule;
+    }
     
 }

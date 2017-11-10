@@ -8,7 +8,8 @@ import javax.persistence.*;
  * @author babyjazz
  */
 @Entity
-public class User implements Actor{
+public class Admin implements Actor{
+    
     @Id @GeneratedValue
     private long id;
     private String username;
@@ -34,4 +35,7 @@ public class User implements Actor{
     public void setPassword(String password) {
         this.password = password;
     }
+
+
+   
 }

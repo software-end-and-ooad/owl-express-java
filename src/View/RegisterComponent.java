@@ -46,12 +46,14 @@ public class RegisterComponent implements Initializable {
         RegisterController registerController = 
                 new RegisterController(
                         this.username.getText(),
+                        this.password.getText(),
+                        this.confirmPass.getText(),
                         this.email.getText(),
                         this.name.getText(),
-                        this.tell.getText(),
-                        this.password.getText(),
-                        this.confirmPass.getText()
+                        this.tell.getText()
+
                 );
+        registerController.checkRegister();
     }
     
 }
