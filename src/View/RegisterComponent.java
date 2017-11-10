@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -33,13 +34,16 @@ public class RegisterComponent implements Initializable {
     private TextField email;
     @FXML
     private TextField name;
-
+    // Validate Text Field
+    @FXML
+    private Text usernameValidate;
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        this.usernameValidate.setVisible(false);
     }    
     
     public void submitRegister() throws IOException {
@@ -53,7 +57,19 @@ public class RegisterComponent implements Initializable {
                         this.tell.getText()
 
                 );
-        registerController.checkRegister();
+        if( registerController.validateResgister().size() <= 0) {
+            
+            if( registerController.checkRegister() == true ) {
+                
+                System.out.println("ROUTE TO OTHER PAGE");
+            }
+        }  else {
+            
+            System.out.println(registerController.validateResgister());
+           
+        }
+       
+        
     }
     
 }

@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @author babyjazz
  */
 public class Validation {
+    // VALUE WILL RETURN TRUE IF INPUT IS IN CONDITION
     private ArrayList<String> rule = new ArrayList<String>();
     
     public boolean maxLength(String input, int max) {
@@ -31,7 +32,7 @@ public class Validation {
     {
         for (char c : str.toCharArray())
         {
-        if (!Character.isDigit(c)) return false;
+            if (!Character.isDigit(c)) return false;
         }
         return true;
     }
