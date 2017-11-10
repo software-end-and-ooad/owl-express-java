@@ -30,7 +30,7 @@ public class RegisterController {
         this.name = name;
         this.tell = tell;
     }
-    public ArrayList validateResgister(){
+    public ArrayList<ArrayList<String>> validateResgister(){
         Validation checkValidate = new Validation();
         ArrayList<String> validate = new ArrayList<String>();
         
@@ -39,8 +39,7 @@ public class RegisterController {
         if (!checkValidate.minLength(this.username, 2))
             validate.add("username|minLength");
 
-        splitListofValidateError(validate);
-        ArrayList<ArrayList<String>> errList = new ArrayList<ArrayList<String>>();
+        ArrayList<ArrayList<String>> errList = splitListofValidateError(validate);
         return errList;
     }
     
@@ -55,7 +54,6 @@ public class RegisterController {
             result.get(i).add(fieldError);
             result.get(i).add(ruleError);
         }
-        System.out.println(result);
         return result;
     }
     
