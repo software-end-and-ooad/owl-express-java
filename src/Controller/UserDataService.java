@@ -9,7 +9,7 @@ package Controller;
  *
  * @author Utt
  */
-public class UserDataService extends AllDataService{
+public class UserDataService extends DataService{
 
     private String  rejected_order;
     private String  type;
@@ -46,6 +46,22 @@ public class UserDataService extends AllDataService{
 
     public void setComfirm_token(String comfirm_token) {
         this.comfirm_token = comfirm_token;
+    }
+
+    @Override
+    public void clear() {
+        this.activated = false;
+        this.comfirm_token = null;
+        this.rejected_order = null;
+        this.type = null;
+        super.setAddress_other(null);
+        super.setDistric(null);
+        super.setEmail(null);
+        super.setFullname(null);
+        super.setPassword(null);
+        super.setProvince(null);
+        super.setSub_distric(null);
+        super.setTell(null);
     }
     
 }
