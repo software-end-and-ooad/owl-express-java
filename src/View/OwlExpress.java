@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controller.Validation;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
 
 /**
  *
@@ -52,7 +54,14 @@ public class OwlExpress extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        String ayy = "aa112";
+        Validation val = new Validation();
+        System.out.println(val.isChar(ayy));
         launch(args);
+        
+                
+        
+        
     }
     
 }
