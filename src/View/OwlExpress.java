@@ -25,7 +25,7 @@ public class OwlExpress extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("RegisterComponent.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("LoginComponent.fxml"));
         stage.initStyle(StageStyle.TRANSPARENT);
         root.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override

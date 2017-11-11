@@ -26,7 +26,7 @@ import javafx.scene.text.Text;
  *
  * @author Utt
  */
-public class FXMLDocumentController implements Initializable {
+public class DashboardComponent implements Initializable {
 
     @FXML
     private ImageView  btn_user, btn_noti, btn_oder, btn_exit, exitlogin_button;

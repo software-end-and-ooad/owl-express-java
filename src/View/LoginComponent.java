@@ -54,7 +54,7 @@ public class LoginComponent implements Initializable {
             Parent root;
             stage = (Stage) this.username_field.getScene().getWindow();
             //load up OTHER FXML document
-            root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+            root = FXMLLoader.load(getClass().getResource("DashboardComponent.fxml"));
             //create a new scene with root and set the stage
             Scene scene = new Scene(root);
             stage.setScene(scene);
