@@ -6,6 +6,7 @@
 package View;
 
 import Controller.LoginController;
+import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,7 +20,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -35,7 +39,15 @@ public class LoginComponent implements Initializable {
     @FXML
     private PasswordField password_field;
     @FXML
-    private CheckBox roleAdmin;
+    private AnchorPane login;
+    @FXML
+    private JFXButton login_button;
+    @FXML
+    private Text forgotPass;
+    @FXML
+    private JFXButton signup_button;
+    @FXML
+    private ImageView exitlogin_button;
 
     /**
      * Initializes the controller class.
@@ -45,6 +57,7 @@ public class LoginComponent implements Initializable {
         // TODO
     }
 
+    @FXML
     public void submitLogin() throws IOException {
         LoginController loginController = new LoginController(this.username_field.getText(), this.password_field.getText());
         
@@ -62,5 +75,18 @@ public class LoginComponent implements Initializable {
         } else {
             System.out.println("Authentication Invalid!");
         }
+    }
+
+    @FXML
+    private void clickSignUp(MouseEvent event) throws IOException {
+                 Stage stage;
+                Parent root;
+                stage = (Stage) this.signup_button.getScene().getWindow();
+                //load up OTHER FXML document
+                root = FXMLLoader.load(getClass().getResource("RegisterComponent.fxml"));
+                //create a new scene with root and set the stage
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
     }
 }

@@ -6,6 +6,7 @@
 package View;
 
 import Controller.RegisterController;
+import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -52,6 +53,8 @@ public class RegisterComponent implements Initializable {
     private Text confirmPassValidate;
     @FXML
     private Text passwordValidate;
+    @FXML
+    private JFXButton register_button;
     
     /**
      * Initializes the controller class.
@@ -66,6 +69,7 @@ public class RegisterComponent implements Initializable {
         this.confirmPassValidate.setVisible(false);
     }    
     
+    @FXML
     public void submitRegister() throws IOException {
         RegisterController registerController = 
                 new RegisterController(
@@ -87,12 +91,13 @@ public class RegisterComponent implements Initializable {
         
         ArrayList<ArrayList<String>> errList = registerController.validateResgister(); // Validate error list
         if( errList.size() <= 0) {
-            
+           
             if( registerController.checkRegister() == true ) { // if success all
                 // SUCCESS REGISTER, THEN ROUTE TO DASHBOARD
+               
                 Stage stage;
                 Parent root;
-                stage = (Stage) this.username.getScene().getWindow();
+                stage = (Stage) this.register_button.getScene().getWindow();
                 //load up OTHER FXML document
                 root = FXMLLoader.load(getClass().getResource("LoginComponent.fxml"));
                 //create a new scene with root and set the stage

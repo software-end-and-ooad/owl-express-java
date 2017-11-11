@@ -45,7 +45,7 @@ public class RegisterController {
             validate.add("username|minLength");
         if (!checkValidate.minLength(this.username, 2))
             validate.add("username|isRequired");
-        if (!checkValidate.maxLength(this.name, 4))
+        if (!checkValidate.maxLength(this.name, 20))
             validate.add("name|maxLength");
         if (!checkValidate.isRequired(this.name))
             validate.add("name|isRequired");
@@ -88,6 +88,7 @@ public class RegisterController {
     public boolean checkRegister() {
         this.uniqueEmail = false;
         this.uniqueUsername = false;
+        
         
         Database db = new Database("user");
         
