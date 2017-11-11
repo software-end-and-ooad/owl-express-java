@@ -13,6 +13,19 @@ public class User implements Actor{
     private long id;
     private String username;
     private String password;
+    private String confirmPass;
+    private String tell;
+    private String email;
+    private String name;
+
+    public User(String username, String password, String confirmPass, String email, String name, String tell) {
+        this.username = username;
+        this.password = password;
+        this.confirmPass = confirmPass;
+        this.email = email;
+        this.name = name;
+        this.tell = tell;
+    }
     
     @Override
     public long getId() {
@@ -33,5 +46,17 @@ public class User implements Actor{
     @Override
     public void setPassword(String password) {
         this.password = password;
+    }
+    public String getConfirmPass(String confirmPass) {
+        return confirmPass;
+    }
+    public String getEmail(String email) {
+        return email;
+    }
+    public String getName(String name) {
+        return name;
+    }
+    public String getTell(String telll) {
+        return tell;
     }
 }
