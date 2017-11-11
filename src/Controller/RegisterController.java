@@ -6,6 +6,7 @@
 package Controller;
 
 import Model.Database;
+import Model.User;
 import java.util.ArrayList;
 import javax.persistence.Query;
 
@@ -20,6 +21,8 @@ public class RegisterController {
     private String email;
     private String name;
     private String tell;
+    private boolean uniqueUsername;
+    private boolean uniqueEmail;
 //    private Validation validator = new Validation();
     
     public RegisterController(String username, String password, String confirmPass, String email, String name, String tell) {
@@ -81,21 +84,49 @@ public class RegisterController {
     
     
     public boolean checkRegister() {
-        
+        this.uniqueEmail = false;
+        this.uniqueUsername = false;
         
         Database db = new Database("user");
-        return false;
         
-        // FIND OR CREATE
-//        Query user = db.getEM().createQuery("SELECT username, password FROM User where username='" + this.username + "' and password='" + this.password + "'");
-//        try { // try, if can print method in user
-//            System.out.println(user.getSingleResult());
-//            return true;
-//        }
-//        catch(Exception e) {
-//            System.out.println("false");
-//            return false;
-//        }
+        // FIND OR CREATE     // UNIQUE USERNAME AND UNIQUE EMAIL
+        Query uniqueUsername = db.getEM().createQuery("SELECT username FROM User where username='" + this.username + "'");
+        Query uniqueEmail = db.getEM().createQuery("SELECT email FROM User where email='" + this.email + "'");
+        
+        System.out.println(uniqueUsername.getResultList());
+        if (uniqueUsername.getResultList().size() <= 0) {
+            if (uniqueEmail.getResultList().size() <= 0) {
+                try {
+                    // Create user
+                    db.getEM().getTransaction().begin();
+                    User user = new User(this.username, this.password, this.confirmPass, this.email, this.name, this.tell);
+                    db.getEM().persist(user);
+                    db.getEM().getTransaction().commit();
+                    
+                    return true;
+                } catch(Throwable error) {
+                    System.out.println("CANNOT CREATE USER, PLEASE CHECK SERVER ");
+                    return false;
+                }
+            } else {
+                System.out.println("EMAIL HAS ALREADY TAKEN");
+                this.uniqueEmail = true;
+                return false;
+            }
+        } else {
+            System.out.println("USERNAME HAS ALREADY TAKEN");
+            this.uniqueUsername = true;
+            return false;
+        }
+       
+    }
+    
+    public boolean getUniqueEmail() {
+        return this.uniqueEmail;
+    }
+    
+    public boolean getUniqueUsername() {
+        return this.uniqueUsername;
     }
     
 }

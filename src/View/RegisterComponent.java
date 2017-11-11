@@ -86,6 +86,15 @@ public class RegisterComponent implements Initializable {
             if( registerController.checkRegister() == true ) {
                 
                 System.out.println("ROUTE TO OTHER PAGE");
+            } else {  // CANNOT CREATE MAY BE UNIQUE USERNAME OR EMAIL
+                if (registerController.getUniqueUsername()== true) {
+                    this.usernameValidate.setVisible(true);
+                    this.usernameValidate.setText("USERNAME ALREADY TAKEN");
+                }
+                if (registerController.getUniqueEmail()== true) {
+                    this.emailValidate.setVisible(true);
+                    this.emailValidate.setText("EMAIL ALREADY TAKEN");
+                }
             }
         }  else { // If there is some error
             for (int i = 0; i < errList.size(); i++) {
