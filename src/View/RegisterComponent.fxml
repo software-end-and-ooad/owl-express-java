@@ -39,6 +39,6 @@
             <Font name="Selima" size="150.0" />
          </font>
       </Text>
-      <JFXButton layoutX="378.0" layoutY="629.0" onMouseClicked="#submitRegister" prefHeight="49.0" prefWidth="97.0" style="-fx-background-color: #3E226F; -fx-background-radius: 10;" text="Submit" />
+      <JFXButton fx:id="register_button" layoutX="378.0" layoutY="629.0" onMouseClicked="#submitRegister" prefHeight="49.0" prefWidth="97.0" style="-fx-background-color: #3E226F; -fx-background-radius: 10;" text="Submit" />
    </children>
 </AnchorPane>

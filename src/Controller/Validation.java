@@ -58,6 +58,13 @@ public class Validation {
            return m.matches();
     }
     
+    public boolean isSame(String firstInput, String sencondInput) {
+        if (!firstInput.equals(sencondInput)) {
+            return false;
+        }
+        return true;
+    }
+    
     public ArrayList checkValidate(ArrayList<String> input) {
         for (int i = 0; i < input.size(); i++) {
 //            if (isChar(input.get(i)) == true) {
@@ -67,5 +74,6 @@ public class Validation {
         }
         return this.rule;
     }
+    
     
 }

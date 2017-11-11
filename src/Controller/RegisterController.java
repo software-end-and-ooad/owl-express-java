@@ -63,6 +63,8 @@ public class RegisterController {
             validate.add("tell|isNumeric");
         if (!checkValidate.minLength(this.password, 2))
             validate.add("password|minLength");
+        if (!checkValidate.isSame(this.confirmPass, this.password))
+            validate.add("confirmPass|isSame");
 
         ArrayList<ArrayList<String>> errList = splitListofValidateError(validate);
         return errList;
@@ -93,7 +95,7 @@ public class RegisterController {
         Query uniqueUsername = db.getEM().createQuery("SELECT username FROM User where username='" + this.username + "'");
         Query uniqueEmail = db.getEM().createQuery("SELECT email FROM User where email='" + this.email + "'");
         
-        System.out.println(uniqueUsername.getResultList());
+        // Check unique username and email first
         if (uniqueUsername.getResultList().size() <= 0) {
             if (uniqueEmail.getResultList().size() <= 0) {
                 try {
@@ -108,13 +110,11 @@ public class RegisterController {
                     System.out.println("CANNOT CREATE USER, PLEASE CHECK SERVER ");
                     return false;
                 }
-            } else {
-                System.out.println("EMAIL HAS ALREADY TAKEN");
+            } else { // EMAIL HAS ALREADY TAKEN
                 this.uniqueEmail = true;
                 return false;
             }
-        } else {
-            System.out.println("USERNAME HAS ALREADY TAKEN");
+        } else { // USERNAME HAS ALERADY TAKEN
             this.uniqueUsername = true;
             return false;
         }

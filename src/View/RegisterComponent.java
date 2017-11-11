@@ -11,11 +11,15 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -83,10 +87,20 @@ public class RegisterComponent implements Initializable {
         
         ArrayList<ArrayList<String>> errList = registerController.validateResgister(); // Validate error list
         if( errList.size() <= 0) {
-            if( registerController.checkRegister() == true ) {
-                
-                System.out.println("ROUTE TO OTHER PAGE");
-            } else {  // CANNOT CREATE MAY BE UNIQUE USERNAME OR EMAIL
+            
+            if( registerController.checkRegister() == true ) { // if success all
+                // SUCCESS REGISTER, THEN ROUTE TO DASHBOARD
+                Stage stage;
+                Parent root;
+                stage = (Stage) this.username.getScene().getWindow();
+                //load up OTHER FXML document
+                root = FXMLLoader.load(getClass().getResource("LoginComponent.fxml"));
+                //create a new scene with root and set the stage
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            } else {  
+                // CANNOT CREATE MAY BE UNIQUE USERNAME OR EMAIL
                 if (registerController.getUniqueUsername()== true) {
                     this.usernameValidate.setVisible(true);
                     this.usernameValidate.setText("USERNAME ALREADY TAKEN");
@@ -96,7 +110,9 @@ public class RegisterComponent implements Initializable {
                     this.emailValidate.setText("EMAIL ALREADY TAKEN");
                 }
             }
-        }  else { // If there is some error
+            
+        }  else { 
+            // IF THERE IS SOME ERROR VALIDATE IN LIST
             for (int i = 0; i < errList.size(); i++) {
                 // ============== USERNAME ============
                 if (errList.get(i).get(0).equals("username")) {
@@ -140,7 +156,12 @@ public class RegisterComponent implements Initializable {
                         this.passwordValidate.setText("PASSWORD MUST NO LESS 2");
                 }
                 // ============== CONFIRM PASSWORD ============
-                    // NOT FINISH YET, OH SHIT!
+                if(errList.get(i).get(0).equals("confirmPass")) {
+                    this.confirmPassValidate.setVisible(true);
+                    if (errList.get(i).get(1).equals("isSame"))
+                        this.confirmPassValidate.setText("PASSWORD IS NOT MATCH");
+                }
+                
             }
         }
        
