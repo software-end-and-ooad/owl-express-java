@@ -43,7 +43,7 @@ public class RegisterController {
             validate.add("username|maxLength");
         if (!checkValidate.minLength(this.username, 2))
             validate.add("username|minLength");
-        if (!checkValidate.minLength(this.username, 2))
+        if (!checkValidate.isRequired(this.username))
             validate.add("username|isRequired");
         if (!checkValidate.maxLength(this.name, 20))
             validate.add("name|maxLength");
@@ -90,11 +90,11 @@ public class RegisterController {
         this.uniqueUsername = false;
         
         
-        Database db = new Database("user");
+        Database db = new Database("User");
         
         // FIND OR CREATE     // UNIQUE USERNAME AND UNIQUE EMAIL
-        Query uniqueUsername = db.getEM().createQuery("SELECT username FROM User where username='" + this.username + "'");
-        Query uniqueEmail = db.getEM().createQuery("SELECT email FROM User where email='" + this.email + "'");
+        Query uniqueUsername = db.getEM().createQuery("SELECT username FROM User WHERE username='" + this.username + "'");
+        Query uniqueEmail = db.getEM().createQuery("SELECT email FROM User WHERE email='" + this.email + "'");
         
         // Check unique username and email first
         if (uniqueUsername.getResultList().size() <= 0) {

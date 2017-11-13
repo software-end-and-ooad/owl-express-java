@@ -128,6 +128,8 @@ public class RegisterComponent implements Initializable {
                         this.usernameValidate.setText("USERNAME MUST NO MORE 4");
                     else if (errList.get(i).get(1).equals("minLength"))
                         this.usernameValidate.setText("USERNAME MUST NO LESS 2");
+                    else if (errList.get(i).get(1).equals("isRequired"))
+                        this.usernameValidate.setText("USERNAME IS REQUIRED");
                 }
                 if (errList.get(i).get(0).equals("name")) {
                     this.nameValidate.setVisible(true);
