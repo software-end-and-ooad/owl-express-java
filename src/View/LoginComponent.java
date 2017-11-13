@@ -43,7 +43,7 @@ public class LoginComponent implements Initializable {
     @FXML
     private JFXButton login_button;
     @FXML
-    private Text forgotPass;
+    private JFXButton forgotPass;
     @FXML
     private JFXButton signup_button;
     @FXML

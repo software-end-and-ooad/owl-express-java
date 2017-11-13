@@ -7,6 +7,8 @@ package View;
 
 import Controller.RegisterController;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -29,17 +31,17 @@ import javafx.stage.Stage;
  */
 public class RegisterComponent implements Initializable {
     @FXML
-    private TextField username;
+    private JFXTextField username;
     @FXML
-    private PasswordField password;
+    private JFXPasswordField password;
     @FXML
-    private PasswordField confirmPass;
+    private JFXPasswordField confirmPass;
     @FXML
-    private TextField tell;
+    private JFXTextField tell;
     @FXML
-    private TextField email;
+    private JFXTextField email;
     @FXML
-    private TextField name;
+    private JFXTextField name;
     // Validate Text Field
     @FXML
     private Text usernameValidate;
