@@ -28,14 +28,17 @@ public class LoginController {
         Database db = new Database("user");
 
         Query user = db.getEM().createQuery("SELECT username, password FROM User where username='" + this.username + "' and password='" + this.password + "'");
+        
         try { // try, if can print method in user
             System.out.println(user.getSingleResult());
+            db.getEM().close();
             return true;
         } catch (Exception e) {
             System.out.println("false");
+            db.getEM().close();
             return false;
         }
-
+        
     }
     public ArrayList<ArrayList<String>> validateLogin() {
         Validation checkValidate = new Validation();

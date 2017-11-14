@@ -90,11 +90,11 @@ public class RegisterController {
         this.uniqueUsername = false;
         
         
-        Database db = new Database("User");
+        Database db = new Database("user");
         
         // FIND OR CREATE     // UNIQUE USERNAME AND UNIQUE EMAIL
-        Query uniqueUsername = db.getEM().createQuery("SELECT username FROM User WHERE username='" + this.username + "'");
-        Query uniqueEmail = db.getEM().createQuery("SELECT email FROM User WHERE email='" + this.email + "'");
+        Query uniqueUsername = db.getEM().createQuery("SELECT username FROM User WHERE username='" + this.username + "'", User.class);
+        Query uniqueEmail = db.getEM().createQuery("SELECT email FROM User WHERE email='" + this.email + "'", User.class);
         
         // Check unique username and email first
         if (uniqueUsername.getResultList().size() <= 0) {
@@ -105,7 +105,7 @@ public class RegisterController {
                     User user = new User(this.username, this.password, this.confirmPass, this.email, this.name, this.tell);
                     db.getEM().persist(user);
                     db.getEM().getTransaction().commit();
-                    
+                    db.getEM().close();
                     return true;
                 } catch(Throwable error) {
                     System.out.println("CANNOT CREATE USER, PLEASE CHECK SERVER ");
