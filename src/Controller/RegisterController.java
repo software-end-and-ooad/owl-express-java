@@ -39,9 +39,9 @@ public class RegisterController {
         
         validate.clear();
         // ADD VALIDATION HERE
-        if (!checkValidate.maxLength(this.username, 4))
+        if (!checkValidate.maxLength(this.username, 8))
             validate.add("username|maxLength");
-        if (!checkValidate.minLength(this.username, 2))
+        if (!checkValidate.minLength(this.username, 4))
             validate.add("username|minLength");
         if (!checkValidate.isRequired(this.username))
             validate.add("username|isRequired");
@@ -55,9 +55,9 @@ public class RegisterController {
             validate.add("email|isEmail");
         if (!checkValidate.isRequired(this.tell))
             validate.add("tell|isRequired");
-        if (!checkValidate.maxLength(this.tell, 4))
+        if (!checkValidate.maxLength(this.tell, 11))
             validate.add("tell|maxLength");
-        if (!checkValidate.minLength(this.tell, 2))
+        if (!checkValidate.minLength(this.tell, 9))
             validate.add("tell|minLength");
         if (!checkValidate.isNumeric(this.tell))
             validate.add("tell|isNumeric");
@@ -90,7 +90,7 @@ public class RegisterController {
         this.uniqueUsername = false;
         
         
-        Database db = new Database("user");
+        Database db = new Database("User");
         
         // FIND OR CREATE     // UNIQUE USERNAME AND UNIQUE EMAIL
         Query uniqueUsername = db.getEM().createQuery("SELECT username FROM User WHERE username='" + this.username + "'", User.class);
@@ -109,6 +109,7 @@ public class RegisterController {
                     return true;
                 } catch(Throwable error) {
                     System.out.println("CANNOT CREATE USER, PLEASE CHECK SERVER ");
+                    db.getEM().close();
                     return false;
                 }
             } else { // EMAIL HAS ALREADY TAKEN

@@ -24,7 +24,7 @@ public class LoginController {
     }
 
     public boolean checkLogin() {
-        Database db = new Database("user");
+        Database db = new Database("User");
 
         Query user = db.getEM().createQuery("SELECT username, password FROM User where username='" + this.username + "' and password='" + this.password + "'");
         
