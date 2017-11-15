@@ -34,26 +34,24 @@ import javafx.stage.Stage;
 public class DashboardComponent implements Initializable {
 
     @FXML
-    private ImageView  btn_user, btn_noti, btn_oder, btn_exit, exitlogin_button;
+    private ImageView  btn_user, btn_noti, btn_oder, exitlogin_button;
     @FXML
     private AnchorPane scene_area;
     @FXML
     private JFXButton order_button, refresh_button, login_button, signup_button;
     
-    @FXML
-    private void pageButton(MouseEvent event) {
-        
-         if(event.getTarget() == btn_exit){
-            System.exit(0);
-        }
-    }
     
     @FXML
     private void orderButton(MouseEvent event) throws IOException {
         AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("LoginComponent.fxml"));
         this.scene_area.getChildren().setAll(screen_page);
     }
-
+    
+    @FXML
+    private void exitApplication() {
+            System.exit(0);
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
