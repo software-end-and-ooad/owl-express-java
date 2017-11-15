@@ -110,11 +110,11 @@ public class RegisterComponent implements Initializable {
                 // CANNOT CREATE MAY BE UNIQUE USERNAME OR EMAIL
                 if (registerController.getUniqueUsername()== true) {
                     this.usernameValidate.setVisible(true);
-                    this.usernameValidate.setText("USERNAME ALREADY TAKEN");
+                    this.usernameValidate.setText("This USERNAME is already taken");
                 }
                 if (registerController.getUniqueEmail()== true) {
                     this.emailValidate.setVisible(true);
-                    this.emailValidate.setText("EMAIL ALREADY TAKEN");
+                    this.emailValidate.setText("This EMAIL is already taken");
                 }
             }
             
@@ -125,50 +125,50 @@ public class RegisterComponent implements Initializable {
                 if (errList.get(i).get(0).equals("username")) {
                     this.usernameValidate.setVisible(true);
                     if (errList.get(i).get(1).equals("maxLength"))
-                        this.usernameValidate.setText("USERNAME MUST NO MORE 4");
+                        this.usernameValidate.setText("Username must no more than 8 characters");
                     else if (errList.get(i).get(1).equals("minLength"))
-                        this.usernameValidate.setText("USERNAME MUST NO LESS 2");
+                        this.usernameValidate.setText("Username must have at least 4 characters");
                     else if (errList.get(i).get(1).equals("isRequired"))
-                        this.usernameValidate.setText("USERNAME IS REQUIRED");
+                        this.usernameValidate.setText("Username is required");
                 }
                 if (errList.get(i).get(0).equals("name")) {
                     this.nameValidate.setVisible(true);
                     if (errList.get(i).get(1).equals("maxLength"))
-                        this.nameValidate.setText("FULLNAME MUST NO MORE 20");
+                        this.nameValidate.setText("Fullname must no more than 20 characters");
                     if (errList.get(i).get(1).equals("isRequired"))
-                        this.nameValidate.setText("FULLNAME IS REQUIRED");
+                        this.nameValidate.setText("Fullname is required");
                 }
                 // ============== EMAIL ============
                 if (errList.get(i).get(0).equals("email")) {
                     this.emailValidate.setVisible(true);
                     if (errList.get(i).get(1).equals("isEmail"))
-                        this.emailValidate.setText("EMAIL IS INVALID");
+                        this.emailValidate.setText("Email is invalid");
                     else if (errList.get(i).get(1).equals("isRequired"))
-                        this.emailValidate.setText("EMAIL IS REQUIRED");
+                        this.emailValidate.setText("Email is required");
                 }
                 // ============== TELL ============
                 if (errList.get(i).get(0).equals("tell")) {
                     this.tellValidate.setVisible(true);
                     if (errList.get(i).get(1).equals("isNumeric"))
-                        this.tellValidate.setText("TELL IS NOT NUMERIC");
+                        this.tellValidate.setText("Tel must be numberic");
                     else if (errList.get(i).get(1).equals("maxLength"))
-                        this.tellValidate.setText("TELL MUST NO MORE 4");
+                        this.tellValidate.setText("Tel must have 10 digits");
                     else if (errList.get(i).get(1).equals("minLength"))
-                        this.tellValidate.setText("TELL MUST NO LESS 2");
+                        this.tellValidate.setText("Tel must have 10 digits");
                     else if (errList.get(i).get(1).equals("isRequired"))
-                        this.tellValidate.setText("TELL IS REQUIRED");
+                        this.tellValidate.setText("Tel is required");
                 }
                 // ============== PASSWORD ============
                 if (errList.get(i).get(0).equals("password")) {
                     this.passwordValidate.setVisible(true);
                     if (errList.get(i).get(1).equals("minLength"))
-                        this.passwordValidate.setText("PASSWORD MUST NO LESS 2");
+                        this.passwordValidate.setText("Password must have at least 2 characters");
                 }
                 // ============== CONFIRM PASSWORD ============
                 if(errList.get(i).get(0).equals("confirmPass")) {
                     this.confirmPassValidate.setVisible(true);
                     if (errList.get(i).get(1).equals("isSame"))
-                        this.confirmPassValidate.setText("PASSWORD IS NOT MATCH");
+                        this.confirmPassValidate.setText("Password is not match");
                 }
                 
             }
