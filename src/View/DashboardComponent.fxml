@@ -59,7 +59,7 @@
             <Image url="@images/exit.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="sceneArea" layoutX="225.0" layoutY="57.0" prefHeight="687.0" prefWidth="850.0">
+      <AnchorPane fx:id="scene_area" layoutX="225.0" layoutY="57.0" prefHeight="687.0" prefWidth="850.0">
          <children>
             <Text layoutX="252.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sdfsdfsdf" wrappingWidth="137.8046875" />
          </children>
