@@ -10,22 +10,22 @@ package Controller;
  * @author Utt
  */
 public abstract class DataService {
-    private String fullname;
-    private String email;
-    private String username;
-    private String sub_distric;
-    private String distric;
-    private String province;
-    private String address_other;
-    private String  tell;
-    private String  password;
+    private static String fullname;
+    private static String email;
+    private static String username;
+    private static String sub_distric;
+    private static String distric;
+    private static String province;
+    private static String address_other;
+    private static String  tell;
+    private static String  password;
 
-    public String getFullname() {
+    public static String getFullname() {
         return fullname;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public static void setFullname(String fullname) {
+        DataService.fullname = fullname;
     }
     
     public void setUsername(String username) {
@@ -36,52 +36,52 @@ public abstract class DataService {
         return username;
     }
 
-    public String getEmail() {
+    public static String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public static void setEmail(String email) {
+        DataService.email = email;
     }
 
-    public String getSub_distric() {
+    public static String getSub_distric() {
         return sub_distric;
     }
 
-    public void setSub_distric(String sub_distric) {
-        this.sub_distric = sub_distric;
+    public static void setSub_distric(String sub_distric) {
+        DataService.sub_distric = sub_distric;
     }
 
-    public String getDistric() {
+    public static String getDistric() {
         return distric;
     }
 
-    public void setDistric(String distric) {
-        this.distric = distric;
+    public static void setDistric(String distric) {
+        DataService.distric = distric;
     }
 
-    public String getProvince() {
+    public static String getProvince() {
         return province;
     }
 
-    public void setProvince(String province) {
-        this.province = province;
+    public static void setProvince(String province) {
+        DataService.province = province;
     }
 
-    public String getAddress_other() {
+    public static String getAddress_other() {
         return address_other;
     }
 
-    public void setAddress_other(String address_other) {
-        this.address_other = address_other;
+    public static void setAddress_other(String address_other) {
+        DataService.address_other = address_other;
     }
 
-    public String getTell() {
+    public static String getTell() {
         return tell;
     }
 
-    public void setTell(String tell) {
-        this.tell = tell;
+    public static void setTell(String tell) {
+        DataService.tell = tell;
     }
     
     public abstract void clear();

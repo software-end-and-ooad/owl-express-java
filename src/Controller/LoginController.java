@@ -26,11 +26,18 @@ public class LoginController {
     public boolean checkLogin() {
         Database db = new Database("User");
 
-        Query user = db.getEM().createQuery("SELECT username, password FROM User where username='" + this.username + "' and password='" + this.password + "'");
+        Query userQuery = db.getEM().createQuery("SELECT u FROM User u WHERE u.username='" + this.username + "' AND u.password='" + this.password + "'");
         
-        try { // try, if can print method in user
-            System.out.println(user.getSingleResult());
+        try { // try, if can find user
+            User user = (User)userQuery.getSingleResult();
+            System.out.println(user.getUsername());
             db.getEM().close();
+            //ADD data to UserDataService
+            UserDataService.setEmail(user.getEmail());
+            UserDataService.setFullname(user.getName());
+            UserDataService.setUsername(user.getUsername());
+            UserDataService.setPassword(user.getPassword());
+            UserDataService.setTell(user.getTell());
             return true;
         } catch (Exception e) {
             System.out.println("false");

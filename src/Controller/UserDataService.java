@@ -11,10 +11,10 @@ package Controller;
  */
 public class UserDataService extends DataService{
 
-    private String  rejected_order;
-    private String  type;
-    private boolean  activated;
-    private String  comfirm_token;
+    private static String  rejected_order;
+    private static String  type;
+    private static boolean  activated;
+    private static String  comfirm_token;
 
     public void setDataService(String fullname, String email, String username, String sub_district, String district, String province, String address_other, String tell) {
         this.setFullname(fullname);
