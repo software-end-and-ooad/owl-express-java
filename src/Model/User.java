@@ -28,7 +28,7 @@ public class User implements Actor{
     }
 
     public User() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     @Override
@@ -51,16 +51,16 @@ public class User implements Actor{
     public void setPassword(String password) {
         this.password = password;
     }
-    public String getConfirmPass(String confirmPass) {
-        return confirmPass;
+    public String getConfirmPass() {
+        return this.confirmPass;
     }
-    public String getEmail(String email) {
-        return email;
+    public String getEmail() {
+        return this.email;
     }
-    public String getName(String name) {
-        return name;
+    public String getName() {
+        return this.name;
     }
-    public String getTell(String telll) {
-        return tell;
+    public String getTell() {
+        return this.tell;
     }
 }
