@@ -12,6 +12,7 @@ package Controller;
 public abstract class DataService {
     private String fullname;
     private String email;
+    private String username;
     private String sub_distric;
     private String distric;
     private String province;
@@ -25,6 +26,14 @@ public abstract class DataService {
 
     public void setFullname(String fullname) {
         this.fullname = fullname;
+    }
+    
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
+    public String getUsername() {
+        return username;
     }
 
     public String getEmail() {
@@ -74,14 +83,7 @@ public abstract class DataService {
     public void setTell(String tell) {
         this.tell = tell;
     }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
     
     public abstract void clear();
+    
 }

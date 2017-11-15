@@ -27,7 +27,6 @@ public class AdminDataService extends DataService{
         super.setDistric(null);
         super.setEmail(null);
         super.setFullname(null);
-        super.setPassword(null);
         super.setProvince(null);
         super.setSub_distric(null);
         super.setTell(null);

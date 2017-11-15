@@ -16,6 +16,18 @@ public class UserDataService extends DataService{
     private boolean  activated;
     private String  comfirm_token;
 
+    public void setDataService(String fullname, String email, String username, String sub_district, String district, String province, String address_other, String tell) {
+        this.setFullname(fullname);
+        this.setEmail(email);
+        this.setUsername(username);
+        this.setSub_distric(sub_district);
+        this.setDistric(district);
+        this.setProvince(province);
+        this.setAddress_other(address_other);
+        this.setTell(tell);
+        
+    }
+    
     public String getRejected_order() {
         return rejected_order;
     }
@@ -58,7 +70,6 @@ public class UserDataService extends DataService{
         super.setDistric(null);
         super.setEmail(null);
         super.setFullname(null);
-        super.setPassword(null);
         super.setProvince(null);
         super.setSub_distric(null);
         super.setTell(null);

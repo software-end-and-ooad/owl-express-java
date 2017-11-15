@@ -5,7 +5,9 @@
  */
 package View;
 
+import Controller.LocalStorage;
 import Controller.LoginController;
+import Controller.UserDataService;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
@@ -33,7 +35,7 @@ import javafx.stage.StageStyle;
  *
  * @author babyjazz
  */
-public class LoginComponent implements Initializable {
+public class LoginComponent extends UserDataService implements Initializable {
 
     @FXML
     private TextField username_field;
@@ -65,6 +67,8 @@ public class LoginComponent implements Initializable {
         LoginController loginController = new LoginController(this.username_field.getText(), this.password_field.getText());
         if (loginController.checkLogin() == true) {
             this.loginValidate.setVisible(false);
+            //this.setDataService(fullname, email, username, sub_district, district, province, address_other, tell);
+            new LocalStorage().setAuthen();
             // Navigate to dashboard
             Stage stage;
             Parent root;
