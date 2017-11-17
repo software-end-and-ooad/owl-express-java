@@ -28,11 +28,11 @@ public abstract class DataService {
         DataService.fullname = fullname;
     }
     
-    public void setUsername(String username) {
-        this.username = username;
+    public static void setUsername(String username) {
+        DataService.username = username;
     }
     
-    public String getUsername() {
+    public static String getUsername() {
         return username;
     }
 
@@ -82,6 +82,14 @@ public abstract class DataService {
 
     public static void setTell(String tell) {
         DataService.tell = tell;
+    }
+
+    public static String getPassword() {
+        return password;
+    }
+
+    public static void setPassword(String password) {
+        DataService.password = password;
     }
     
     public abstract void clear();
