@@ -9,6 +9,7 @@ import Controller.LocalStorage;
 import Controller.LoginController;
 import Controller.UserDataService;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXCheckBox;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -53,6 +54,8 @@ public class LoginComponent extends UserDataService implements Initializable {
     private ImageView exitlogin_button;
     @FXML
     private Text loginValidate;
+    @FXML
+    private JFXCheckBox adminCheckbox;
 
     /**
      * Initializes the controller class.
@@ -65,7 +68,13 @@ public class LoginComponent extends UserDataService implements Initializable {
     @FXML
     public void submitLogin() throws IOException {
         LoginController loginController = new LoginController(this.username_field.getText(), this.password_field.getText());
-        if (loginController.checkLogin() == true) {
+        if(!adminCheckbox.selectedProperty().get())
+            userLogin(loginController);
+        else
+            adminLogin(loginController);
+    }
+    private void userLogin(LoginController loginController) throws IOException{
+        if (loginController.userCheckLogin() == true) {
             this.loginValidate.setVisible(false);
             //this.setDataService(fullname, email, username, sub_district, district, province, address_other, tel);
             new LocalStorage().setAuthen();
@@ -83,7 +92,25 @@ public class LoginComponent extends UserDataService implements Initializable {
             this.loginValidate.setVisible(true);
         }
     }
-
+    private void adminLogin(LoginController loginController) throws IOException{
+        if (loginController.adminCheckLogin() == true) {
+            this.loginValidate.setVisible(false);
+            //this.setDataService(fullname, email, username, sub_district, district, province, address_other, tel);
+            new LocalStorage().setAuthen();
+            // Navigate to dashboard
+            Stage stage;
+            Parent root;
+            stage = (Stage) this.username_field.getScene().getWindow();
+            //load up OTHER FXML document
+            root = FXMLLoader.load(getClass().getResource("DashboardComponent.fxml"));
+            //create a new scene with root and set the stage
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } else {
+            this.loginValidate.setVisible(true);
+        }
+    }
     @FXML
     private void clickSignUp(MouseEvent event) throws IOException {
         Stage stage;

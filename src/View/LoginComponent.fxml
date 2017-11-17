@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1118.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.LoginComponent">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1118.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.LoginComponent">
    <children>
       <ImageView fitHeight="788.0" fitWidth="1130.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -20,8 +19,8 @@
       </ImageView>
       <JFXTextField fx:id="username_field" layoutX="230.0" layoutY="299.0" prefHeight="35.0" prefWidth="274.0" promptText="Username" />
       <JFXPasswordField fx:id="password_field" layoutX="230.0" layoutY="356.0" prefHeight="35.0" prefWidth="274.0" promptText="Password" />
-      <JFXButton fx:id="forgotPass" layoutX="284.0" layoutY="480.0" prefHeight="39.0" prefWidth="233.0" text="Forget username or password?" textFill="WHITE" />
-      <JFXButton fx:id="login_button" layoutX="379.0" layoutY="432.0" onMouseClicked="#submitLogin" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #FCCF4D;" text="Sign in" textFill="WHITE">
+      <JFXButton fx:id="forgotPass" layoutX="255.0" layoutY="490.0" prefHeight="39.0" prefWidth="224.0" text="Forget username or password?" textFill="WHITE" />
+      <JFXButton fx:id="login_button" layoutX="379.0" layoutY="432.0" onMousePressed="#submitLogin" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #FCCF4D;" text="Sign in" textFill="WHITE">
          <font>
             <Font name="The Bold Font" size="21.0" />
          </font></JFXButton>
@@ -37,5 +36,6 @@
       </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcf4d9" height="200.0" layoutX="556.0" layoutY="300.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="14.0" />
       <Text fx:id="loginValidate" fill="RED" layoutX="233.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username or password is not correct!" wrappingWidth="274.0000094246784" />
+      <JFXCheckBox fx:id="adminCheckbox" layoutX="230.0" layoutY="444.0" text="Admin" />
    </children>
 </AnchorPane>

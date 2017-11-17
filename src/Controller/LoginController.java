@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Admin;
 import Model.User;
 import Model.Database;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class LoginController extends Validation {
         this.password = password;
     }
 
-    public boolean checkLogin() {
+    public boolean userCheckLogin() {
         Database db = new Database("User");
 
         Query userQuery = db.getEM().createQuery("SELECT u FROM User u WHERE u.username='" + this.username + "' AND u.password='" + this.password + "'");
@@ -38,6 +39,26 @@ public class LoginController extends Validation {
             UserDataService.setUsername(user.getUsername());
             UserDataService.setPassword(user.getPassword());
             UserDataService.setTel(user.getTel());
+            return true;
+        } catch (Exception e) {
+            System.out.println("false");
+            db.getEM().close();
+            return false;
+        }
+        
+    }
+    public boolean adminCheckLogin() {
+        Database db = new Database("Admin");
+
+        Query adminQuery = db.getEM().createQuery("SELECT a FROM Admin a WHERE a.username='" + this.username + "' AND a.password='" + this.password + "'");
+        
+        try { // try, if can find user
+            Admin user = (Admin)adminQuery.getSingleResult();
+            System.out.println(user.getUsername());
+            db.getEM().close();
+            //ADD data to UserDataService
+            
+            
             return true;
         } catch (Exception e) {
             System.out.println("false");
