@@ -17,7 +17,7 @@ public abstract class DataService {
     private static String distric;
     private static String province;
     private static String address_other;
-    private static String  tell;
+    private static String  tel;
     private static String  password;
 
     public static String getFullname() {
@@ -76,12 +76,12 @@ public abstract class DataService {
         DataService.address_other = address_other;
     }
 
-    public static String getTell() {
-        return tell;
+    public static String getTel() {
+        return tel;
     }
 
-    public static void setTell(String tell) {
-        DataService.tell = tell;
+    public static void setTel(String tel) {
+        DataService.tel = tel;
     }
 
     public static String getPassword() {

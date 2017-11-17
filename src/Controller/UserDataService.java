@@ -24,7 +24,7 @@ public class UserDataService extends DataService{
         this.setDistric(district);
         this.setProvince(province);
         this.setAddress_other(address_other);
-        this.setTell(tell);
+        this.setTel(tell);
         
     }
     
@@ -72,7 +72,7 @@ public class UserDataService extends DataService{
         super.setFullname(null);
         super.setProvince(null);
         super.setSub_distric(null);
-        super.setTell(null);
+        super.setTel(null);
     }
     
 }

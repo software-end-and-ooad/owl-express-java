@@ -12,7 +12,7 @@ import javax.persistence.TypedQuery;
  *
  * @author babyjazz
  */
-public class LoginController {
+public class LoginController extends Validation {
 
     private String username;
     private String password;
@@ -37,7 +37,7 @@ public class LoginController {
             UserDataService.setFullname(user.getName());
             UserDataService.setUsername(user.getUsername());
             UserDataService.setPassword(user.getPassword());
-            UserDataService.setTell(user.getTell());
+            UserDataService.setTel(user.getTel());
             return true;
         } catch (Exception e) {
             System.out.println("false");
@@ -61,18 +61,6 @@ public class LoginController {
         return errList;
     }
 
-    private ArrayList splitListofValidateError(ArrayList errList) {
-        ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
-        for (int i = 0; i < errList.size(); i++) {
-            String errValidate = (String) errList.get(i);
-            String fieldError = errValidate.substring(0, errValidate.indexOf("|"));
-            String ruleError = errValidate.substring(errValidate.indexOf("|") + 1);
-
-            result.add(new ArrayList<String>());
-            result.get(i).add(fieldError);
-            result.get(i).add(ruleError);
-        }
-        return result;
-    }
+    
 
 }

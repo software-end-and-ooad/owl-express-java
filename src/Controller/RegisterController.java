@@ -14,24 +14,24 @@ import javax.persistence.Query;
  *
  * @author babyjazz
  */
-public class RegisterController {
+public class RegisterController extends Validation{
     private String username;
     private String password;
     private String confirmPass;
     private String email;
     private String name;
-    private String tell;
+    private String tel;
     private boolean uniqueUsername;
     private boolean uniqueEmail;
 //    private Validation validator = new Validation();
     
-    public RegisterController(String username, String password, String confirmPass, String email, String name, String tell) {
+    public RegisterController(String username, String password, String confirmPass, String email, String name, String tel) {
         this.username = username;
         this.password = password;
         this.confirmPass = confirmPass;
         this.email = email;
         this.name = name;
-        this.tell = tell;
+        this.tel = tel;
     }
     public ArrayList<ArrayList<String>> validateResgister(){
         Validation checkValidate = new Validation();
@@ -53,14 +53,14 @@ public class RegisterController {
             validate.add("name|isRequired");
         if (!checkValidate.isEmail(this.email))
             validate.add("email|isEmail");
-        if (!checkValidate.isRequired(this.tell))
-            validate.add("tell|isRequired");
-        if (!checkValidate.maxLength(this.tell, 11))
-            validate.add("tell|maxLength");
-        if (!checkValidate.minLength(this.tell, 9))
-            validate.add("tell|minLength");
-        if (!checkValidate.isNumeric(this.tell))
-            validate.add("tell|isNumeric");
+        if (!checkValidate.isRequired(this.tel))
+            validate.add("tel|isRequired");
+        if (!checkValidate.maxLength(this.tel, 11))
+            validate.add("tel|maxLength");
+        if (!checkValidate.minLength(this.tel, 9))
+            validate.add("tel|minLength");
+        if (!checkValidate.isNumeric(this.tel))
+            validate.add("tel|isNumeric");
         if (!checkValidate.minLength(this.password, 2))
             validate.add("password|minLength");
         if (!checkValidate.isSame(this.confirmPass, this.password))
@@ -70,19 +70,6 @@ public class RegisterController {
         return errList;
     }
     
-    private ArrayList splitListofValidateError(ArrayList errList) {
-        ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
-        for (int i = 0; i < errList.size(); i++) {
-            String errValidate = (String) errList.get(i);
-            String fieldError = errValidate.substring(0, errValidate.indexOf("|"));
-            String ruleError = errValidate.substring(errValidate.indexOf("|")+1);
-
-            result.add(new ArrayList<String>());
-            result.get(i).add(fieldError);
-            result.get(i).add(ruleError);
-        }
-        return result;
-    }
     
     
     public boolean checkRegister() {
@@ -102,7 +89,7 @@ public class RegisterController {
                 try {
                     // Create user
                     db.getEM().getTransaction().begin();
-                    User user = new User(this.username, this.password, this.confirmPass, this.email, this.name, this.tell);
+                    User user = new User(this.username, this.password, this.confirmPass, this.email, this.name, this.tel);
                     db.getEM().persist(user);
                     db.getEM().getTransaction().commit();
                     db.getEM().close();

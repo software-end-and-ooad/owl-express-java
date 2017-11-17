@@ -29,7 +29,7 @@ public class AdminDataService extends DataService{
         super.setFullname(null);
         super.setProvince(null);
         super.setSub_distric(null);
-        super.setTell(null);
+        super.setTel(null);
     }
     
 }

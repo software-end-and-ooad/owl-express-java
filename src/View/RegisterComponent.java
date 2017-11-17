@@ -37,7 +37,7 @@ public class RegisterComponent implements Initializable {
     @FXML
     private JFXPasswordField confirmPass;
     @FXML
-    private JFXTextField tell;
+    private JFXTextField tel;
     @FXML
     private JFXTextField email;
     @FXML
@@ -50,7 +50,7 @@ public class RegisterComponent implements Initializable {
     @FXML
     private Text emailValidate;
     @FXML
-    private Text tellValidate;
+    private Text telValidate;
     @FXML
     private Text confirmPassValidate;
     @FXML
@@ -66,7 +66,7 @@ public class RegisterComponent implements Initializable {
         this.usernameValidate.setVisible(false);
         this.nameValidate.setVisible(false);
         this.emailValidate.setVisible(false);
-        this.tellValidate.setVisible(false);
+        this.telValidate.setVisible(false);
         this.passwordValidate.setVisible(false);
         this.confirmPassValidate.setVisible(false);
     }    
@@ -80,14 +80,14 @@ public class RegisterComponent implements Initializable {
                         this.confirmPass.getText(),
                         this.email.getText(),
                         this.name.getText(),
-                        this.tell.getText()
+                        this.tel.getText()
                 );
         
         // INITIAL ERROR MESSAGE VISIBLE
         this.usernameValidate.setVisible(false);
         this.nameValidate.setVisible(false);
         this.emailValidate.setVisible(false);
-        this.tellValidate.setVisible(false);
+        this.telValidate.setVisible(false);
         this.passwordValidate.setVisible(false);
         this.confirmPassValidate.setVisible(false);
         
@@ -147,16 +147,16 @@ public class RegisterComponent implements Initializable {
                         this.emailValidate.setText("Email is required");
                 }
                 // ============== TELL ============
-                if (errList.get(i).get(0).equals("tell")) {
-                    this.tellValidate.setVisible(true);
+                if (errList.get(i).get(0).equals("tel")) {
+                    this.telValidate.setVisible(true);
                     if (errList.get(i).get(1).equals("isNumeric"))
-                        this.tellValidate.setText("Tel must be numberic");
+                        this.telValidate.setText("Tel must be numberic");
                     else if (errList.get(i).get(1).equals("maxLength"))
-                        this.tellValidate.setText("Tel must have 10 digits");
+                        this.telValidate.setText("Tel must have 10 digits");
                     else if (errList.get(i).get(1).equals("minLength"))
-                        this.tellValidate.setText("Tel must have 10 digits");
+                        this.telValidate.setText("Tel must have 10 digits");
                     else if (errList.get(i).get(1).equals("isRequired"))
-                        this.tellValidate.setText("Tel is required");
+                        this.telValidate.setText("Tel is required");
                 }
                 // ============== PASSWORD ============
                 if (errList.get(i).get(0).equals("password")) {

@@ -16,14 +16,60 @@ import javax.persistence.*;
 public class OrderModel implements Serializable{
 
     @Id
-    private Long id;
+    private long id;
+    private long OrderedbyUserID;
+    private String sourceAddress;
+    private String destinationAddress;
+    private String status;
 
-    public Long getId() {
+    public OrderModel(long id, long OrderedbyUserID, String sourceAddress, String destinationAddress, String status) {
+        this.id = id;
+        this.OrderedbyUserID = OrderedbyUserID;
+        this.sourceAddress = sourceAddress;
+        this.destinationAddress = destinationAddress;
+        this.status = status;
+    }
+
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
+
+    public long getOrderedbyUserID() {
+        return OrderedbyUserID;
+    }
+
+    public void setOrderedbyUserID(long OrderedbyUserID) {
+        this.OrderedbyUserID = OrderedbyUserID;
+    }
+
+    public String getSourceAddress() {
+        return sourceAddress;
+    }
+
+    public void setSourceAddress(String sourceAddress) {
+        this.sourceAddress = sourceAddress;
+    }
+
+    public String getDestinationAddress() {
+        return destinationAddress;
+    }
+
+    public void setDestinationAddress(String destinationAddress) {
+        this.destinationAddress = destinationAddress;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+
     
 }

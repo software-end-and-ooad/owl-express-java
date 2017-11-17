@@ -75,5 +75,19 @@ public class Validation {
         return this.rule;
     }
     
+    protected ArrayList splitListofValidateError(ArrayList errList) {
+        ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
+        for (int i = 0; i < errList.size(); i++) {
+            String errValidate = (String) errList.get(i);
+            String fieldError = errValidate.substring(0, errValidate.indexOf("|"));
+            String ruleError = errValidate.substring(errValidate.indexOf("|") + 1);
+
+            result.add(new ArrayList<String>());
+            result.get(i).add(fieldError);
+            result.get(i).add(ruleError);
+        }
+        return result;
+    }
+    
     
 }

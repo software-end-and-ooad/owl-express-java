@@ -67,7 +67,7 @@ public class LoginComponent extends UserDataService implements Initializable {
         LoginController loginController = new LoginController(this.username_field.getText(), this.password_field.getText());
         if (loginController.checkLogin() == true) {
             this.loginValidate.setVisible(false);
-            //this.setDataService(fullname, email, username, sub_district, district, province, address_other, tell);
+            //this.setDataService(fullname, email, username, sub_district, district, province, address_other, tel);
             new LocalStorage().setAuthen();
             // Navigate to dashboard
             Stage stage;

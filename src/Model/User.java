@@ -14,17 +14,17 @@ public class User implements Actor{
     private String username;
     private String password;
     private String confirmPass;
-    private String tell;
+    private String tel;
     private String email;
     private String name;
 
-    public User(String username, String password, String confirmPass, String email, String name, String tell) {
+    public User(String username, String password, String confirmPass, String email, String name, String tel) {
         this.username = username;
         this.password = password;
         this.confirmPass = confirmPass;
         this.email = email;
         this.name = name;
-        this.tell = tell;
+        this.tel = tel;
     }
 
     public User() {
@@ -60,7 +60,7 @@ public class User implements Actor{
     public String getName() {
         return this.name;
     }
-    public String getTell() {
-        return this.tell;
+    public String getTel() {
+        return this.tel;
     }
 }
