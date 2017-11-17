@@ -34,6 +34,7 @@ public class LoginController extends Validation {
             System.out.println(user.getUsername());
             db.getEM().close();
             //ADD data to UserDataService
+            UserDataService.setAccountID(user.getId());
             UserDataService.setEmail(user.getEmail());
             UserDataService.setFullname(user.getName());
             UserDataService.setUsername(user.getUsername());

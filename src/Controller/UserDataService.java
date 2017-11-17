@@ -16,7 +16,8 @@ public class UserDataService extends DataService{
     private static boolean  activated;
     private static String  comfirm_token;
 
-    public void setDataService(String fullname, String email, String username, String sub_district, String district, String province, String address_other, String tell) {
+    public void setDataService(long id,String fullname, String email, String username, String sub_district, String district, String province, String address_other, String tell) {
+        this.setAccountID(id);
         this.setFullname(fullname);
         this.setEmail(email);
         this.setUsername(username);

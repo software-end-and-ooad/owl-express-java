@@ -19,17 +19,57 @@ public class Order implements Serializable{
     private long id;
     private long userID;
     private long postmanID;
+    private long price;
+    private String size;
+    private String trackID;
     private String sourceAddress;
     private String destinationAddress;
     private String status;
 
-    public Order(long userID, long postmanID, String sourceAddress, String destinationAddress, String status) {
+    public Order(long userID, String size, String sourceAddress, String destinationAddress) {
         this.userID = userID;
-        this.postmanID = postmanID;
+        this.postmanID = 0;
+        this.size = size;
+        this.trackID = getRandomWord();
         this.sourceAddress = sourceAddress;
         this.destinationAddress = destinationAddress;
-        this.status = status;
+        this.status = "Not yet picked";
     }
+    
+    private String getRandomWord() {
+    String r = "";
+    for(int i = 0; i < 4; i++) {
+        r += (char)(Math.random() * 26 + 97);
+    }
+    return r;
+    }
+
+    public long getPrice() {
+        return price;
+    }
+
+    public void setPrice(long price) {
+        this.price = price;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public String getTrackID() {
+        return trackID;
+    }
+
+    public void setTrackID(String trackID) {
+        this.trackID = trackID;
+    }
+    
+
+   
 
     public long getUserID() {
         return userID;
