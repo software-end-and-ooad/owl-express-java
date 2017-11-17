@@ -108,7 +108,7 @@ public class MakeOrderController extends Validation{
     }
     return r;
     }
-    public ArrayList<ArrayList<String>> validateResgister(){
+    public ArrayList<ArrayList<String>> validateOrder(){
         Validation checkValidate = new Validation();
         ArrayList<String> validate = new ArrayList<String>();
         
@@ -119,13 +119,15 @@ public class MakeOrderController extends Validation{
         if (!checkValidate.minLength(this.sourceAddress, 10))
             validate.add("sourceAddress|minLength");
         if (!checkValidate.isRequired(this.sourceAddress))
-            validate.add("destinationAddress|isRequired");
+            validate.add("sourceAddress|isRequired");
         if (!checkValidate.maxLength(this.destinationAddress, 30))
             validate.add("destinationAddress|maxLength");
         if (!checkValidate.minLength(this.destinationAddress, 10))
             validate.add("destinationAddress|minLength");
         if (!checkValidate.isRequired(this.destinationAddress))
             validate.add("destinationAddress|isRequired");
+        if (!checkValidate.isRequired(this.size))
+            validate.add("size|isRequired");
        
 
         ArrayList<ArrayList<String>> errList = splitListofValidateError(validate);
@@ -141,7 +143,7 @@ public class MakeOrderController extends Validation{
         Database db = new Database("Order");
         
         // FIND OR CREATE     // UNIQUE TrackID
-        Query uniqueTrack = db.getEM().createQuery("SELECT trackID FROM User WHERE trackID='" + this.trackID + "'", Order.class);
+        Query uniqueTrack = db.getEM().createQuery("SELECT trackID FROM Order WHERE trackID='" + this.trackID + "'", Order.class);
        
             if (uniqueTrack.getResultList().size() <= 0) {
                 try {

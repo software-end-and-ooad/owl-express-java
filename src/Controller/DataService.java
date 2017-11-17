@@ -19,6 +19,16 @@ public abstract class DataService {
     private static String address_other;
     private static String  tel;
     private static String  password;
+    private static long accountID;
+
+    public static long getAccountID() {
+        return accountID;
+    }
+
+    public static void setAccountID(long accountID) {
+        DataService.accountID = accountID;
+    }
+    
 
     public static String getFullname() {
         return fullname;

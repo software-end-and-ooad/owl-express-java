@@ -26,23 +26,20 @@ public class Order implements Serializable{
     private String destinationAddress;
     private String status;
 
-    public Order(long userID, String size, String sourceAddress, String destinationAddress) {
+    public Order(long userID, long postmanID, long price, String size, String trackID, String sourceAddress, String destinationAddress, String status) {
         this.userID = userID;
-        this.postmanID = 0;
+        this.postmanID = postmanID;
+        this.price = price;
         this.size = size;
-        this.trackID = getRandomWord();
+        this.trackID = trackID;
         this.sourceAddress = sourceAddress;
         this.destinationAddress = destinationAddress;
-        this.status = "Not yet picked";
+        this.status = status;
     }
+
     
-    private String getRandomWord() {
-    String r = "";
-    for(int i = 0; i < 4; i++) {
-        r += (char)(Math.random() * 26 + 97);
-    }
-    return r;
-    }
+    
+    
 
     public long getPrice() {
         return price;

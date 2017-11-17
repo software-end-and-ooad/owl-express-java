@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="663.0" prefWidth="828.0" style="-fx-background-color: #FFF8DC;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MakeOrderComponentController">
+   <children>
+      <Text fx:id="headText" layoutX="236.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAKE AN ORDER">
+         <font>
+            <Font size="46.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="sourceText" layoutX="145.0" layoutY="151.0" prefHeight="45.0" prefWidth="538.0" text="Source Address" />
+      <JFXTextField fx:id="destinationBox" layoutX="145.0" layoutY="249.0" prefHeight="45.0" prefWidth="538.0" text="Destination Address" />
+      <Text fx:id="sourceError" fill="#f81616" layoutX="145.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="322.7392578125" />
+      <Text fx:id="destinationError" fill="#f81616" layoutX="145.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="322.7392578125" />
+      <JFXComboBox fx:id="comboSize" layoutX="249.0" layoutY="357.0" prefHeight="45.0" prefWidth="329.0" promptText="Size" />
+      <JFXButton fx:id="submitBTN" layoutX="290.0" layoutY="472.0" onMouseClicked="#submitOrder" prefHeight="94.0" prefWidth="249.0" style="-fx-background-color: #DC143C;" text="Make an Order!!" textFill="WHITE" />
+      <Text fx:id="sizeError" fill="#f81616" layoutX="252.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="322.7392578125" />
+   </children>
+</AnchorPane>

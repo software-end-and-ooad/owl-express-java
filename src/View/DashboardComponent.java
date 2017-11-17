@@ -33,7 +33,7 @@ public class DashboardComponent implements Initializable {
     
     @FXML
     private void orderButton(MouseEvent event) throws IOException {
-        AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("LoginComponent.fxml"));
+        AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("MakeOrderComponent.fxml"));
         this.scene_area.getChildren().setAll(screen_page);
     }
     
