@@ -27,34 +27,18 @@ public class OwlExpress extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("LoginComponent.fxml"));
         stage.initStyle(StageStyle.TRANSPARENT);
-        root.setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                xOffset = event.getSceneX();
-                yOffset = event.getSceneY();
-            }
-        });
-
-        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                if(yOffset < 40){
-                    stage.setX(event.getScreenX() - xOffset);
-                    stage.setY(event.getScreenY() - yOffset);
-                }
-            }
-        });
+        root = MoveWindow.moveWindow(root, stage);
         Scene scene = new Scene(root);
         scene.setFill(javafx.scene.paint.Color.TRANSPARENT);
         stage.setScene(scene);
         stage.show();
     }
-    
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

@@ -106,7 +106,7 @@ public class RegisterComponent implements Initializable {
                 stage = (Stage) this.register_button.getScene().getWindow();
                 //load up OTHER FXML document
                 root = FXMLLoader.load(getClass().getResource("LoginComponent.fxml"));
-                root = moveWindow(root, stage);
+                root = root = MoveWindow.moveWindow(root, stage);
                 //create a new scene with root and set the stage
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
@@ -178,25 +178,5 @@ public class RegisterComponent implements Initializable {
                 
             }
         } 
-    }
-    private Parent moveWindow(Parent root,Stage stage){
-        root.setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                xOffset = event.getSceneX();
-                yOffset = event.getSceneY();
-            }
-        });
-
-        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                if(yOffset < 40){
-                    stage.setX(event.getScreenX() - xOffset);
-                    stage.setY(event.getScreenY() - yOffset);
-                }
-            }
-        });
-        return root;
     }
 }
