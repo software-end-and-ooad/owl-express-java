@@ -4,15 +4,16 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/Controller/LoginController.java</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/Controller/DataService.java</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/Controller/LocalStorage.java</file>
+            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/MoveWindow.java</file>
+            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/OwlExpress.java</file>
             <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/LoginComponent.java</file>
+            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/ProfileMenuComponent.java</file>
             <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/Model/User.java</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/Model/Actor.java</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/DashboardComponent.java</file>
+            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/ProfileMenuComponent.fxml</file>
             <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/DashboardComponent.fxml</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/ProfileMenuController.java</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/Controller/UserDataService.java</file>
+            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/DashboardComponent.java</file>
+            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/Controller/RegisterController.java</file>
+            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/RegisterComponent.java</file>
         </group>
     </open-files>
 </project-private>

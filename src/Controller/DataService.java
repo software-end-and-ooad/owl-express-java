@@ -12,23 +12,16 @@ package Controller;
 public abstract class DataService {
     private static String fullname;
     private static String email;
+    private static String tel;
+    private static String address;//ที่อยู่
+    private static String distric;//แขวง
+    private static String area;//เขต
+    private static String province;//จังหวัด
+    private static String addressDetail;
     private static String username;
-    private static String sub_distric;
-    private static String distric;
-    private static String province;
-    private static String address_other;
-    private static String  tel;
     private static String  password;
+    private static String  zipCode;
     private static long accountID;
-
-    public static long getAccountID() {
-        return accountID;
-    }
-
-    public static void setAccountID(long accountID) {
-        DataService.accountID = accountID;
-    }
-    
 
     public static String getFullname() {
         return fullname;
@@ -36,14 +29,6 @@ public abstract class DataService {
 
     public static void setFullname(String fullname) {
         DataService.fullname = fullname;
-    }
-    
-    public static void setUsername(String username) {
-        DataService.username = username;
-    }
-    
-    public static String getUsername() {
-        return username;
     }
 
     public static String getEmail() {
@@ -54,12 +39,20 @@ public abstract class DataService {
         DataService.email = email;
     }
 
-    public static String getSub_distric() {
-        return sub_distric;
+    public static String getTel() {
+        return tel;
     }
 
-    public static void setSub_distric(String sub_distric) {
-        DataService.sub_distric = sub_distric;
+    public static void setTel(String tel) {
+        DataService.tel = tel;
+    }
+
+    public static String getAddress() {
+        return address;
+    }
+
+    public static void setAddress(String address) {
+        DataService.address = address;
     }
 
     public static String getDistric() {
@@ -70,6 +63,14 @@ public abstract class DataService {
         DataService.distric = distric;
     }
 
+    public static String getArea() {
+        return area;
+    }
+
+    public static void setArea(String area) {
+        DataService.area = area;
+    }
+
     public static String getProvince() {
         return province;
     }
@@ -78,20 +79,20 @@ public abstract class DataService {
         DataService.province = province;
     }
 
-    public static String getAddress_other() {
-        return address_other;
+    public static String getAddressDetail() {
+        return addressDetail;
     }
 
-    public static void setAddress_other(String address_other) {
-        DataService.address_other = address_other;
+    public static void setAddressDetail(String addressDetail) {
+        DataService.addressDetail = addressDetail;
     }
 
-    public static String getTel() {
-        return tel;
+    public static String getUsername() {
+        return username;
     }
 
-    public static void setTel(String tel) {
-        DataService.tel = tel;
+    public static void setUsername(String username) {
+        DataService.username = username;
     }
 
     public static String getPassword() {
@@ -101,7 +102,23 @@ public abstract class DataService {
     public static void setPassword(String password) {
         DataService.password = password;
     }
-    
+
+    public static long getAccountID() {
+        return accountID;
+    }
+
+    public static void setAccountID(long accountID) {
+        DataService.accountID = accountID;
+    }
+
+    public static String getZipCode() {
+        return zipCode;
+    }
+
+    public static void setZipCode(String zipCode) {
+        DataService.zipCode = zipCode;
+    }
+
     public abstract void clear();
     
 }

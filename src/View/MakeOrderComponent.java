@@ -29,7 +29,7 @@ import javafx.stage.Stage;
  *
  * @author kaogi
  */
-public class MakeOrderComponentController implements Initializable {
+public class MakeOrderComponent implements Initializable {
 
     
     

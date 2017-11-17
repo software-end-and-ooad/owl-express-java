@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="687.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ProfileMenuComponent">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="profilePane" prefHeight="687.0" prefWidth="850.0">
+         <children>
+            <Text fx:id="name" layoutX="145.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="name" wrappingWidth="199.6708984375" />
+            <Text fx:id="email" layoutX="145.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="email" wrappingWidth="199.6708984375" />
+            <Text fx:id="tel" layoutX="145.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="tel" wrappingWidth="199.6708984375" />
+            <Text fx:id="address" layoutX="145.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="address" wrappingWidth="583.6708984375" />
+            <JFXButton fx:id="editButton" layoutX="379.0" layoutY="567.0" onMouseClicked="#clickEdit" text="Edit porfile" />
+            <Text layoutX="308.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" wrappingWidth="234.20947265625">
+               <font>
+                  <Font size="80.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="editPane" prefHeight="687.0" prefWidth="850.0" visible="false">
+         <children>
+            <JFXTextField fx:id="fullnameField" layoutX="208.0" layoutY="155.0" prefHeight="29.0" prefWidth="435.0" promptText="Fullname" />
+            <JFXTextField fx:id="emailField" layoutX="208.0" layoutY="217.0" prefHeight="29.0" prefWidth="435.0" promptText="E-mail" />
+            <JFXTextField fx:id="telField" layoutX="208.0" layoutY="285.0" prefHeight="29.0" prefWidth="435.0" promptText="Tel." />
+            <JFXTextField fx:id="addressField" layoutX="208.0" layoutY="344.0" prefHeight="29.0" prefWidth="435.0" promptText="Address" />
+            <JFXTextField fx:id="districField" layoutX="208.0" layoutY="417.0" prefHeight="29.0" prefWidth="200.0" promptText="Distric" />
+            <JFXTextField fx:id="areaField" layoutX="443.0" layoutY="417.0" prefHeight="29.0" prefWidth="200.0" promptText="Area" />
+            <JFXTextField fx:id="provinceField" layoutX="208.0" layoutY="487.0" prefHeight="29.0" prefWidth="200.0" promptText="Province" />
+            <JFXTextField fx:id="zipCodeField" layoutX="443.0" layoutY="487.0" prefHeight="29.0" prefWidth="200.0" promptText="Zip code" />
+            <JFXButton fx:id="confirmButton" layoutX="376.0" layoutY="565.0" onMouseClicked="#clickComfirm" prefHeight="43.0" prefWidth="99.0" text="Confirm" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

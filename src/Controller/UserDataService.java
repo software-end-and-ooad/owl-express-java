@@ -16,15 +16,15 @@ public class UserDataService extends DataService{
     private static boolean  activated;
     private static String  comfirm_token;
 
-    public void setDataService(long id,String fullname, String email, String username, String sub_district, String district, String province, String address_other, String tell) {
+    public void setDataService(long id,String fullname, String email, String username, String area, String district, String province, String addressDetail, String tell) {
         this.setAccountID(id);
         this.setFullname(fullname);
         this.setEmail(email);
         this.setUsername(username);
-        this.setSub_distric(sub_district);
+        this.setArea(area);
         this.setDistric(district);
         this.setProvince(province);
-        this.setAddress_other(address_other);
+        this.setAddressDetail(addressDetail);
         this.setTel(tell);
         
     }
@@ -67,12 +67,12 @@ public class UserDataService extends DataService{
         this.comfirm_token = null;
         this.rejected_order = null;
         this.type = null;
-        super.setAddress_other(null);
+        super.setAddressDetail(null);
         super.setDistric(null);
         super.setEmail(null);
         super.setFullname(null);
         super.setProvince(null);
-        super.setSub_distric(null);
+        super.setArea(null);
         super.setTel(null);
     }
     

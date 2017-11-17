@@ -8,16 +8,21 @@ import javax.persistence.*;
  * @author babyjazz
  */
 @Entity
-public class User implements Actor{
+public class User{
     @Id @GeneratedValue
     private long id;
+    private String name;
+    private String email;
+    private String tel;
+    private String address;//ที่อยู่
+    private String distric;//แขวง
+    private String area;//เขต
+    private String province;//จังหวัด
+    private String zipCode;//รหัสไปรษณี
     private String username;
     private String password;
     private String confirmPass;
-    private String tel;
-    private String email;
-    private String name;
-
+    
     public User(String username, String password, String confirmPass, String email, String name, String tel) {
         this.username = username;
         this.password = password;
@@ -31,23 +36,18 @@ public class User implements Actor{
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    @Override
     public long getId() {
         return id;
     }
-    @Override
     public String getUsername() {
         return username;
     }
-    @Override
     public void setUsername(String username) {
         this.username = username;
     }
-    @Override
     public String getPassword() {
         return password;
     }
-    @Override
     public void setPassword(String password) {
         this.password = password;
     }
@@ -63,4 +63,45 @@ public class User implements Actor{
     public String getTel() {
         return this.tel;
     }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getDistric() {
+        return distric;
+    }
+
+    public void setDistric(String distric) {
+        this.distric = distric;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+    
 }
