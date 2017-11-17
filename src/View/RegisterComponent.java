@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,6 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -30,6 +32,8 @@ import javafx.stage.Stage;
  * @author Utt
  */
 public class RegisterComponent implements Initializable {
+    double xOffset;
+    double yOffset;
     @FXML
     private JFXTextField username;
     @FXML
@@ -102,6 +106,7 @@ public class RegisterComponent implements Initializable {
                 stage = (Stage) this.register_button.getScene().getWindow();
                 //load up OTHER FXML document
                 root = FXMLLoader.load(getClass().getResource("LoginComponent.fxml"));
+                root = moveWindow(root, stage);
                 //create a new scene with root and set the stage
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
@@ -172,9 +177,26 @@ public class RegisterComponent implements Initializable {
                 }
                 
             }
-        }
-       
-        
+        } 
     }
-    
+    private Parent moveWindow(Parent root,Stage stage){
+        root.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                xOffset = event.getSceneX();
+                yOffset = event.getSceneY();
+            }
+        });
+
+        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if(yOffset < 40){
+                    stage.setX(event.getScreenX() - xOffset);
+                    stage.setY(event.getScreenY() - yOffset);
+                }
+            }
+        });
+        return root;
+    }
 }
