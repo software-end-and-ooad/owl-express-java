@@ -37,7 +37,6 @@ public class MakeOrderComponent implements Initializable {
     private Text headText;
     @FXML
     private JFXTextField sourceText;
-    @FXML
     private JFXTextField destinationBox;
     @FXML
     private Text sourceError;
@@ -49,6 +48,50 @@ public class MakeOrderComponent implements Initializable {
     private JFXButton submitBTN;
     @FXML
     private Text sizeError;
+    @FXML
+    private JFXTextField destinationText;
+    @FXML
+    private JFXTextField sourceDistrictText;
+    @FXML
+    private Text sourceDistrictError;
+    @FXML
+    private Text sourceAreaError;
+    @FXML
+    private JFXTextField sourceProvinceText;
+    @FXML
+    private JFXTextField sourceZipcodeText;
+    @FXML
+    private Text sourceZipcodeError;
+    @FXML
+    private Text sourceOtherError;
+    @FXML
+    private JFXTextField destinationDistrictText;
+    @FXML
+    private JFXTextField destinationAreaText;
+    @FXML
+    private JFXTextField destinationProvinceText;
+    @FXML
+    private JFXTextField destinationZipcodeText;
+    @FXML
+    private JFXTextField destinationOtherText;
+    @FXML
+    private JFXButton enterAddressBTN;
+    @FXML
+    private Text destinationDistrictError;
+    @FXML
+    private Text destinationAreaError;
+    @FXML
+    private Text destinationProvinceError;
+    @FXML
+    private Text destinationZipcodeError;
+    @FXML
+    private Text destinationOtherError;
+    @FXML
+    private JFXTextField sourceAreaText;
+    @FXML
+    private JFXTextField sourceOtherText;
+    @FXML
+    private Text sourceProvinceError;
 
     /**
      * Initializes the controller class.
@@ -58,9 +101,20 @@ public class MakeOrderComponent implements Initializable {
         // TODO
         comboSize.getItems().removeAll(comboSize.getItems());
         comboSize.getItems().addAll("S","M","L","XL");
-        sourceError.setVisible(false);
-        destinationError.setVisible(false);
         sizeError.setVisible(false);
+        sourceError.setVisible(false);
+        sourceAreaError.setVisible(false);
+        sourceDistrictError.setVisible(false);
+        sourceProvinceError.setVisible(false);
+        sourceZipcodeError.setVisible(false);
+        sourceOtherError.setVisible(false);
+        //
+        destinationError.setVisible(false);
+        destinationAreaError.setVisible(false);
+        destinationDistrictError.setVisible(false);
+        destinationProvinceError.setVisible(false);
+        destinationZipcodeError.setVisible(false);
+        destinationOtherError.setVisible(false);
     }    
 
     @FXML
@@ -68,7 +122,7 @@ public class MakeOrderComponent implements Initializable {
         sourceError.setVisible(false);
         destinationError.setVisible(false);
         sizeError.setVisible(false);
-        MakeOrderController makeOrderController = new MakeOrderController(UserDataService.getAccountID(), comboSize.getValue(), sourceText.getText(), destinationBox.getText());
+        MakeOrderController makeOrderController = new MakeOrderController(UserDataService.getAccountID(), comboSize.getValue(), sourceText.getText(), sourceDistrictText.getText(), sourceAreaText.getText(), sourceProvinceText.getText(), sourceZipcodeText.getText(), sourceOtherText.getText(), destinationText.getText(), destinationDistrictText.getText(), destinationAreaText.getText(), destinationProvinceText.getText(), destinationZipcodeText.getText(), destinationOtherText.getText());
          ArrayList<ArrayList<String>> errList = makeOrderController.validateOrder();
          if( errList.size() <= 0) {
            boolean submitstatus = makeOrderController.checkMakeOrder();
@@ -78,9 +132,42 @@ public class MakeOrderComponent implements Initializable {
            }
            
            submitBTN.setVisible(false);
+           enterAddressBTN.setVisible(false);
            comboSize.setVisible(false);
+           
            sourceText.setVisible(false);
-           destinationBox.setVisible(false);
+           sourceAreaText.setVisible(false);
+           sourceDistrictText.setVisible(false);
+           sourceProvinceText.setVisible(false);
+           sourceZipcodeText.setVisible(false);
+           sourceOtherText.setVisible(false);
+           //
+           destinationText.setVisible(false);
+           destinationAreaText.setVisible(false);
+           destinationDistrictText.setVisible(false);
+           destinationProvinceText.setVisible(false);
+           destinationZipcodeText.setVisible(false);
+           destinationOtherText.setVisible(false);
+           
+           sizeError.setVisible(false);
+           sourceError.setVisible(false);
+           sourceAreaError.setVisible(false);
+           sourceDistrictError.setVisible(false);
+           sourceProvinceError.setVisible(false);
+           sourceZipcodeError.setVisible(false);
+           sourceOtherError.setVisible(false);
+           //
+           destinationError.setVisible(false);
+           destinationAreaError.setVisible(false);
+           destinationDistrictError.setVisible(false);
+           destinationProvinceError.setVisible(false);
+           destinationZipcodeError.setVisible(false);
+           destinationOtherError.setVisible(false);
+           
+           
+           
+           
+           
            headText.setText("Order success!!");
             
          }
@@ -107,6 +194,47 @@ public class MakeOrderComponent implements Initializable {
                     else if (errList.get(i).get(1).equals("isRequired"))
                         this.destinationError.setText("Source address is required");
                 }
+                if (errList.get(i).get(0).equals("sourcearea")) {
+                    this.sourceAreaError.setVisible(true);
+                    if (errList.get(i).get(1).equals("isRequired"))
+                        this.sourceAreaError.setText("Source area is required");
+                }
+                if (errList.get(i).get(0).equals("sourcedistric")) {
+                    this.sourceDistrictError.setVisible(true);
+                    if (errList.get(i).get(1).equals("isRequired"))
+                        this.sourceDistrictError.setText("Source district is required");
+                }
+                if (errList.get(i).get(0).equals("sourceprovince")) {
+                    this.sourceProvinceError.setVisible(true);
+                    if (errList.get(i).get(1).equals("isRequired"))
+                        this.sourceProvinceError.setText("Source province is required");
+                }
+                if (errList.get(i).get(0).equals("sourcezipCode")) {
+                    this.sourceZipcodeError.setVisible(true);
+                    if (errList.get(i).get(1).equals("isRequired"))
+                        this.sourceZipcodeError.setText("Source zipcode is required");
+                }
+                
+                if (errList.get(i).get(0).equals("destinationarea")) {
+                    this.destinationAreaError.setVisible(true);
+                    if (errList.get(i).get(1).equals("isRequired"))
+                        this.destinationAreaError.setText("Destination area is required");
+                }
+                if (errList.get(i).get(0).equals("destinationdistric")) {
+                    this.destinationDistrictError.setVisible(true);
+                    if (errList.get(i).get(1).equals("isRequired"))
+                        this.destinationDistrictError.setText("Destination district is required");
+                }
+                if (errList.get(i).get(0).equals("destinationprovince")) {
+                    this.destinationProvinceError.setVisible(true);
+                    if (errList.get(i).get(1).equals("isRequired"))
+                        this.destinationProvinceError.setText("Destination province is required");
+                }
+                if (errList.get(i).get(0).equals("destinationzipCode")) {
+                    this.destinationZipcodeError.setVisible(true);
+                    if (errList.get(i).get(1).equals("isRequired"))
+                        this.destinationProvinceError.setText("Destination zipcode is required");
+                }
                 
                 if (errList.get(i).get(0).equals("size")) {
                     this.sizeError.setVisible(true);
@@ -117,6 +245,34 @@ public class MakeOrderComponent implements Initializable {
                 
             }
             
+        }
+    }
+
+    @FXML
+    private void submitAddress(MouseEvent event) {
+        if(UserDataService.getAddress() != null)
+        {
+            sourceText.setText(UserDataService.getAddress());
+        }
+        if(UserDataService.getDistric()!= null)
+        {
+            sourceDistrictText.setText(UserDataService.getDistric());
+        }
+        if(UserDataService.getArea()!= null)
+        {
+            sourceAreaText.setText(UserDataService.getArea());
+        }
+        if(UserDataService.getProvince()!= null)
+        {
+            sourceProvinceText.setText(UserDataService.getProvince());
+        }
+        if(UserDataService.getZipCode()!= null)
+        {
+            sourceZipcodeText.setText(UserDataService.getZipCode());
+        }
+        if(UserDataService.getOtherAddress()!= null)
+        {
+            sourceOtherText.setText(UserDataService.getOtherAddress());
         }
     }
 
