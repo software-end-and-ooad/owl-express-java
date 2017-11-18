@@ -106,7 +106,7 @@ public class RegisterComponent implements Initializable {
                 stage = (Stage) this.register_button.getScene().getWindow();
                 //load up OTHER FXML document
                 root = FXMLLoader.load(getClass().getResource("LoginComponent.fxml"));
-                root = root = MoveWindow.moveWindow(root, stage);
+                root = MoveWindow.moveWindow(root, stage);
                 //create a new scene with root and set the stage
                 Scene scene = new Scene(root);
                 stage.setScene(scene);

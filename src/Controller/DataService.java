@@ -17,7 +17,7 @@ public abstract class DataService {
     private static String distric;//แขวง
     private static String area;//เขต
     private static String province;//จังหวัด
-    private static String addressDetail;
+    private static String otherAddress;
     private static String username;
     private static String  password;
     private static String  zipCode;
@@ -79,12 +79,12 @@ public abstract class DataService {
         DataService.province = province;
     }
 
-    public static String getAddressDetail() {
-        return addressDetail;
+    public static String getOtherAddress() {
+        return otherAddress;
     }
 
-    public static void setAddressDetail(String addressDetail) {
-        DataService.addressDetail = addressDetail;
+    public static void setOtherAddress(String otherAddress) {
+        DataService.otherAddress = otherAddress;
     }
 
     public static String getUsername() {

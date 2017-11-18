@@ -19,6 +19,7 @@ public class User{
     private String area;//เขต
     private String province;//จังหวัด
     private String zipCode;//รหัสไปรษณี
+    private String otherAddress;
     private String username;
     private String password;
     private String confirmPass;
@@ -57,12 +58,27 @@ public class User{
     public String getEmail() {
         return this.email;
     }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
     public String getName() {
         return this.name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
     public String getTel() {
         return this.tel;
     }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+    
 
     public String getAddress() {
         return address;
@@ -102,6 +118,14 @@ public class User{
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public String getOtherAddress() {
+        return otherAddress;
+    }
+
+    public void setOtherAddress(String otherAddress) {
+        this.otherAddress = otherAddress;
     }
     
 }

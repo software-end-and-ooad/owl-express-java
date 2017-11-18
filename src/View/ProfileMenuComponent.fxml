@@ -26,15 +26,24 @@
       </AnchorPane>
       <AnchorPane fx:id="editPane" prefHeight="687.0" prefWidth="850.0" visible="false">
          <children>
-            <JFXTextField fx:id="fullnameField" layoutX="208.0" layoutY="155.0" prefHeight="29.0" prefWidth="435.0" promptText="Fullname" />
-            <JFXTextField fx:id="emailField" layoutX="208.0" layoutY="217.0" prefHeight="29.0" prefWidth="435.0" promptText="E-mail" />
-            <JFXTextField fx:id="telField" layoutX="208.0" layoutY="285.0" prefHeight="29.0" prefWidth="435.0" promptText="Tel." />
-            <JFXTextField fx:id="addressField" layoutX="208.0" layoutY="344.0" prefHeight="29.0" prefWidth="435.0" promptText="Address" />
-            <JFXTextField fx:id="districField" layoutX="208.0" layoutY="417.0" prefHeight="29.0" prefWidth="200.0" promptText="Distric" />
-            <JFXTextField fx:id="areaField" layoutX="443.0" layoutY="417.0" prefHeight="29.0" prefWidth="200.0" promptText="Area" />
-            <JFXTextField fx:id="provinceField" layoutX="208.0" layoutY="487.0" prefHeight="29.0" prefWidth="200.0" promptText="Province" />
-            <JFXTextField fx:id="zipCodeField" layoutX="443.0" layoutY="487.0" prefHeight="29.0" prefWidth="200.0" promptText="Zip code" />
+            <JFXTextField fx:id="fullnameField" layoutX="208.0" layoutY="92.0" prefHeight="29.0" prefWidth="435.0" promptText="Fullname" />
+            <JFXTextField fx:id="emailField" layoutX="208.0" layoutY="158.0" prefHeight="29.0" prefWidth="435.0" promptText="E-mail" />
+            <JFXTextField fx:id="telField" layoutX="208.0" layoutY="226.0" prefHeight="29.0" prefWidth="435.0" promptText="Tel." />
+            <JFXTextField fx:id="addressField" layoutX="208.0" layoutY="294.0" prefHeight="29.0" prefWidth="435.0" promptText="Address" />
+            <JFXTextField fx:id="districField" layoutX="208.0" layoutY="363.0" prefHeight="29.0" prefWidth="200.0" promptText="Distric" />
+            <JFXTextField fx:id="areaField" layoutX="443.0" layoutY="363.0" prefHeight="29.0" prefWidth="200.0" promptText="Area" />
+            <JFXTextField fx:id="provinceField" layoutX="208.0" layoutY="430.0" prefHeight="29.0" prefWidth="200.0" promptText="Province" />
+            <JFXTextField fx:id="zipCodeField" layoutX="443.0" layoutY="430.0" prefHeight="29.0" prefWidth="200.0" promptText="Zip code" />
+            <JFXTextField fx:id="otherField" layoutX="208.0" layoutY="496.0" prefHeight="29.0" prefWidth="435.0" promptText="Other" />
             <JFXButton fx:id="confirmButton" layoutX="376.0" layoutY="565.0" onMouseClicked="#clickComfirm" prefHeight="43.0" prefWidth="99.0" text="Confirm" />
+            <Text fx:id="fullnameValidate" fill="#f80606" layoutX="208.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+            <Text fx:id="emailValidate" fill="#f80606" layoutX="208.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+            <Text fx:id="telValidate" fill="#f80606" layoutX="208.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+            <Text fx:id="addressValidate" fill="#f80606" layoutX="208.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+            <Text fx:id="districValidate" fill="#f80606" layoutX="208.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+            <Text fx:id="areaValidate" fill="#f80606" layoutX="443.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+            <Text fx:id="provinceValidate" fill="#f80606" layoutX="208.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+            <Text fx:id="zipCodeValidate" fill="#f80606" layoutX="443.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
          </children>
       </AnchorPane>
    </children>

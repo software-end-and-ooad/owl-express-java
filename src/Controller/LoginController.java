@@ -33,13 +33,19 @@ public class LoginController extends Validation {
             User user = (User)userQuery.getSingleResult();
             System.out.println(user.getUsername());
             db.getEM().close();
-            //ADD data to UserDataService
+            //LOAD data to UserDataService
             UserDataService.setAccountID(user.getId());
             UserDataService.setEmail(user.getEmail());
             UserDataService.setFullname(user.getName());
             UserDataService.setUsername(user.getUsername());
             UserDataService.setPassword(user.getPassword());
             UserDataService.setTel(user.getTel());
+            UserDataService.setAddress(user.getAddress());
+            UserDataService.setDistric(user.getDistric());
+            UserDataService.setArea(user.getArea());
+            UserDataService.setProvince(user.getProvince());
+            UserDataService.setZipCode(user.getZipCode());
+            UserDataService.setOtherAddress(user.getOtherAddress());
             return true;
         } catch (Exception e) {
             System.out.println("false");

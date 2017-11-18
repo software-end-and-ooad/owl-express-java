@@ -23,7 +23,7 @@ public class AdminDataService extends DataService{
     @Override
     public void clear() {
         this.role = null;
-        super.setAddressDetail(null);
+        super.setOtherAddress(null);
         super.setDistric(null);
         super.setEmail(null);
         super.setFullname(null);
