@@ -15,29 +15,29 @@
             <Font size="46.0" />
          </font>
       </Text>
-      <JFXTextField fx:id="sourceText" layoutX="21.0" layoutY="112.0" prefHeight="45.0" prefWidth="316.0" text="Source Address" />
-      <JFXTextField fx:id="destinationText" layoutX="468.0" layoutY="112.0" prefHeight="45.0" prefWidth="345.0" text="Destination Address" />
+      <JFXTextField fx:id="sourceText" layoutX="21.0" layoutY="112.0" prefHeight="45.0" prefWidth="316.0" promptText="Source Address" />
+      <JFXTextField fx:id="sourceDistrictText" layoutX="21.0" layoutY="193.0" prefHeight="45.0" prefWidth="316.0" promptText="Source District" />
+      <JFXTextField fx:id="sourceAreaText" layoutX="21.0" layoutY="269.0" prefHeight="45.0" prefWidth="316.0" promptText="Source Area" />
+      <JFXTextField fx:id="sourceProvinceText" layoutX="21.0" layoutY="347.0" prefHeight="45.0" prefWidth="316.0" promptText="Source Province" />
+      <JFXTextField fx:id="sourceZipcodeText" layoutX="21.0" layoutY="416.0" prefHeight="45.0" prefWidth="316.0" promptText="Source Zipcode" />
+      <JFXTextField fx:id="sourceOtherText" layoutX="24.0" layoutY="487.0" prefHeight="45.0" prefWidth="316.0" promptText="Source other" />
+      <JFXTextField fx:id="destinationText" layoutX="468.0" layoutY="112.0" prefHeight="45.0" prefWidth="345.0" promptText="Destination Address" />
+      <JFXTextField fx:id="destinationDistrictText" layoutX="468.0" layoutY="193.0" prefHeight="45.0" prefWidth="345.0" promptText="Destination District" />
+      <JFXTextField fx:id="destinationAreaText" layoutX="468.0" layoutY="271.0" prefHeight="45.0" prefWidth="345.0" promptText="Destination Area" />
+      <JFXTextField fx:id="destinationProvinceText" layoutX="468.0" layoutY="347.0" prefHeight="45.0" prefWidth="345.0" promptText="Destination Province" />
+      <JFXTextField fx:id="destinationZipcodeText" layoutX="469.0" layoutY="416.0" prefHeight="45.0" prefWidth="345.0" promptText="Destination Zipcode" />
+      <JFXTextField fx:id="destinationOtherText" layoutX="469.0" layoutY="492.0" prefHeight="45.0" prefWidth="345.0" promptText="Destination Other" />
+      <JFXComboBox fx:id="comboSize" layoutX="342.0" layoutY="560.0" prefHeight="45.0" prefWidth="144.0" promptText="Size" />
+      <JFXButton fx:id="enterAddressBTN" layoutX="51.0" layoutY="582.0" onMouseClicked="#submitAddress" prefHeight="31.0" prefWidth="219.0" style="-fx-background-color: #DC143C;" text="Use my address!" textFill="WHITE" />
+      <JFXButton fx:id="submitBTN" layoutX="572.0" layoutY="582.0" onMouseClicked="#submitOrder" prefHeight="31.0" prefWidth="219.0" style="-fx-background-color: #DC143C;" text="Make an Order!!" textFill="WHITE" />
       <Text fx:id="sourceError" fill="#f81616" layoutX="18.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="322.7392578125" />
       <Text fx:id="destinationError" fill="#f81616" layoutX="468.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="322.7392578125" />
-      <JFXComboBox fx:id="comboSize" layoutX="342.0" layoutY="560.0" prefHeight="45.0" prefWidth="144.0" promptText="Size" />
-      <JFXButton fx:id="submitBTN" layoutX="572.0" layoutY="582.0" onMouseClicked="#submitOrder" prefHeight="31.0" prefWidth="219.0" style="-fx-background-color: #DC143C;" text="Make an Order!!" textFill="WHITE" />
       <Text fx:id="sizeError" fill="#f81616" layoutX="345.0" layoutY="635.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="137.7392578125" />
-      <JFXTextField fx:id="sourceDistrictText" layoutX="21.0" layoutY="193.0" prefHeight="45.0" prefWidth="316.0" text="Source District" />
       <Text fx:id="sourceDistrictError" fill="#f81616" layoutX="18.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="322.7392578125" />
-      <JFXTextField fx:id="sourceAreaText" layoutX="21.0" layoutY="269.0" prefHeight="45.0" prefWidth="316.0" text="Source Area" />
       <Text fx:id="sourceAreaError" fill="#f81616" layoutX="18.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="322.7392578125" />
-      <JFXTextField fx:id="sourceProvinceText" layoutX="21.0" layoutY="347.0" prefHeight="45.0" prefWidth="316.0" text="Source Province" />
-      <JFXTextField fx:id="sourceZipcodeText" layoutX="21.0" layoutY="416.0" prefHeight="45.0" prefWidth="316.0" text="Source Zipcode" />
       <Text fx:id="sourceProvinceError" fill="#f81616" layoutX="18.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="322.7392578125" />
       <Text fx:id="sourceZipcodeError" fill="#f81616" layoutX="21.0" layoutY="484.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="322.7392578125" />
-      <JFXTextField fx:id="sourceOtherText" layoutX="24.0" layoutY="487.0" prefHeight="45.0" prefWidth="316.0" text="Source other" />
       <Text fx:id="sourceOtherError" fill="#f81616" layoutX="24.0" layoutY="555.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="322.7392578125" />
-      <JFXTextField fx:id="destinationDistrictText" layoutX="468.0" layoutY="193.0" prefHeight="45.0" prefWidth="345.0" text="Destination District" />
-      <JFXTextField fx:id="destinationAreaText" layoutX="468.0" layoutY="271.0" prefHeight="45.0" prefWidth="345.0" text="Destination Area" />
-      <JFXTextField fx:id="destinationProvinceText" layoutX="468.0" layoutY="347.0" prefHeight="45.0" prefWidth="345.0" text="Destination Province" />
-      <JFXTextField fx:id="destinationZipcodeText" layoutX="469.0" layoutY="416.0" prefHeight="45.0" prefWidth="345.0" text="Destination Zipcode" />
-      <JFXTextField fx:id="destinationOtherText" layoutX="469.0" layoutY="492.0" prefHeight="45.0" prefWidth="345.0" text="Destination Other" />
-      <JFXButton fx:id="enterAddressBTN" layoutX="51.0" layoutY="582.0" onMouseClicked="#submitAddress" prefHeight="31.0" prefWidth="219.0" style="-fx-background-color: #DC143C;" text="Use my address!" textFill="WHITE" />
       <Text fx:id="destinationDistrictError" fill="#f81616" layoutX="468.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="322.7392578125" />
       <Text fx:id="destinationAreaError" fill="#f81616" layoutX="468.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="322.7392578125" />
       <Text fx:id="destinationProvinceError" fill="#f81616" layoutX="468.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="322.7392578125" />

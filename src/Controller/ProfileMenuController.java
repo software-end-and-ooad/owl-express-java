@@ -41,10 +41,10 @@ public class ProfileMenuController extends Validation{
         
         validate.clear();
         // ADD VALIDATION HERE
-        if (!checkValidate.maxLength(this.fullname, 20))
-            validate.add("fullname|maxLength");
         if (!checkValidate.isRequired(this.fullname))
             validate.add("fullname|isRequired");
+        if (!checkValidate.maxLength(this.fullname, 20))
+            validate.add("fullname|maxLength");
         if (!checkValidate.isEmail(this.email))
             validate.add("email|maxLength");
         if (!checkValidate.isRequired(this.email))
@@ -65,14 +65,14 @@ public class ProfileMenuController extends Validation{
             validate.add("area|isRequired");
         if (!checkValidate.isRequired(this.province))
             validate.add("province|isRequired");
+        if (!checkValidate.isRequired(this.zipCode))
+            validate.add("zipCode|isRequired");
         if (!checkValidate.isNumeric(this.zipCode))
             validate.add("zipCode|isNumeric");
         if (!checkValidate.maxLength(this.zipCode, 6))
             validate.add("zipCode|maxLength");
         if (!checkValidate.minLength(this.zipCode, 5))
             validate.add("zipCode|minLength");
-        if (!checkValidate.isRequired(this.zipCode))
-            validate.add("zipCode|isRequired");
 
         ArrayList<ArrayList<String>> errList = splitListofValidateError(validate);
         return errList;
@@ -103,12 +103,4 @@ public class ProfileMenuController extends Validation{
         user.setOtherAddress(this.otherAddress);
         db.getEM().getTransaction().commit();
     }
-//     private String fullname;
-//    private String email;
-//    private String tel;
-//    private String address;
-//    private String distric;
-//    private String area;
-//    private String province;
-//    private String zipCode;
 }
