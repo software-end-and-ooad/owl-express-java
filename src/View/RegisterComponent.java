@@ -60,7 +60,7 @@ public class RegisterComponent implements Initializable {
     @FXML
     private Text passwordValidate;
     @FXML
-    private JFXButton register_button;
+    private JFXButton register_button, login_button;
     
     /**
      * Initializes the controller class.
@@ -178,5 +178,18 @@ public class RegisterComponent implements Initializable {
                 
             }
         } 
+    }
+    @FXML
+    public void submitLogin() throws IOException {
+        Stage stage;
+        Parent root;
+        stage = (Stage) this.register_button.getScene().getWindow();
+                //load up OTHER FXML document
+        root = FXMLLoader.load(getClass().getResource("LoginComponent.fxml"));
+        root = MoveWindow.moveWindow(root, stage);
+                //create a new scene with root and set the stage
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

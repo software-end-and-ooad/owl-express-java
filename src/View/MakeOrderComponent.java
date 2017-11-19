@@ -184,7 +184,6 @@ public class MakeOrderComponent implements Initializable {
                     else if (errList.get(i).get(1).equals("isRequired"))
                         this.destinationError.setText("Destination address is required");
                 }
-                
                 if (errList.get(i).get(0).equals("sourceAddress")) {
                     this.sourceError.setVisible(true);
                     if (errList.get(i).get(1).equals("maxLength"))
@@ -235,16 +234,13 @@ public class MakeOrderComponent implements Initializable {
                     if (errList.get(i).get(1).equals("isRequired"))
                         this.destinationProvinceError.setText("Destination zipcode is required");
                 }
-                
                 if (errList.get(i).get(0).equals("size")) {
                     this.sizeError.setVisible(true);
                     if (errList.get(i).get(1).equals("isRequired"))
                         this.sizeError.setText("Source address is required");
                 }
-                
-                
+  
             }
-            
         }
     }
 
@@ -275,7 +271,4 @@ public class MakeOrderComponent implements Initializable {
             sourceOtherText.setText(UserDataService.getOtherAddress());
         }
     }
-
-    
-    
 }

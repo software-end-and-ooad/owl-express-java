@@ -43,9 +43,9 @@ public class ProfileMenuComponent implements Initializable {
         this.email.setText(UserDataService.getEmail());
         this.tel.setText(UserDataService.getTel());
         if(UserDataService.getAddress() != null)
-            addressString = UserDataService.getAddress() +" "+ UserDataService.getDistric()+" "+ UserDataService.getArea()+" "+ UserDataService.getProvince()+" "+ UserDataService.getZipCode()+"\n"+ UserDataService.getOtherAddress();
+            addressString = UserDataService.getAddress() +", "+ UserDataService.getDistric()+", "+ UserDataService.getArea()+", "+ UserDataService.getProvince()+", "+ UserDataService.getZipCode()+"\n"+ UserDataService.getOtherAddress();
         else
-            addressString = "Address";
+            addressString = " ";
         this.address.setText(addressString);
     }    
     @FXML
@@ -99,7 +99,7 @@ public class ProfileMenuComponent implements Initializable {
             this.name.setText(UserDataService.getFullname());
             this.email.setText(UserDataService.getEmail());
             this.tel.setText(UserDataService.getTel());
-            String addressString = UserDataService.getAddress() +" "+ UserDataService.getDistric()+" "+ UserDataService.getArea()+" "+ UserDataService.getProvince()+" "+ UserDataService.getZipCode()+"\n"+ UserDataService.getOtherAddress();
+            String addressString = UserDataService.getAddress() +", "+ UserDataService.getDistric()+", "+ UserDataService.getArea()+", "+ UserDataService.getProvince()+", "+ UserDataService.getZipCode()+"\n"+ UserDataService.getOtherAddress();
             this.address.setText(addressString);
         }
         else{
