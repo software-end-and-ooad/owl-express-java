@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
 <?import javafx.scene.image.*?>
+
 <!--<?import com.jfoenix.controls.JFXButton?>-->
 <!--<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -47,7 +48,7 @@
             <Font name="The Bold Font" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="40.0" layoutY="368.0" prefHeight="35.0" prefWidth="133.0" text="Check Package" textFill="#432160">
+      <JFXButton fx:id="checkPackageBTN" layoutX="40.0" layoutY="368.0" onMouseClicked="#checkPackage" prefHeight="35.0" prefWidth="133.0" text="Check Package" textFill="#432160">
          <font>
             <Font name="The Bold Font" size="14.0" />
          </font>

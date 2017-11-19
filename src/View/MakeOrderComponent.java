@@ -166,9 +166,9 @@ public class MakeOrderComponent implements Initializable {
            
            
            
+            
            
-           
-           headText.setText("Order success!!");
+           headText.setText("Your trackID is " +makeOrderController.getTrackID());
             
          }
          else

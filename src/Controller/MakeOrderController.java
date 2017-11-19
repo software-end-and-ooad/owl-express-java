@@ -34,6 +34,10 @@ public class MakeOrderController extends Validation{
     private String status;
     private String trackID;
     private boolean uniqueTrackID;
+
+    public String getTrackID() {
+        return trackID;
+    }
     
     
 //    private Validation validator = new Validation();

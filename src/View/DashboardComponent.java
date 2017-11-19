@@ -24,11 +24,9 @@ import javafx.scene.layout.AnchorPane;
 public class DashboardComponent implements Initializable {
 
     @FXML
-    private ImageView  btn_user, btn_noti, btn_oder, exitlogin_button;
-    @FXML
     private AnchorPane scene_area;
     @FXML
-    private JFXButton order_button, refresh_button, login_button, signup_button;
+    private JFXButton checkPackageBTN;
     
     
     @FXML
@@ -49,6 +47,12 @@ public class DashboardComponent implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
+    }
+
+    @FXML
+    private void checkPackage(MouseEvent event)throws IOException {
+        AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("CheckOrderComponent.fxml"));
+        this.scene_area.getChildren().setAll(screen_page);
     }
 
 }
