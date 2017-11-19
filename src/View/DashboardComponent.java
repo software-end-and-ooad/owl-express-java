@@ -46,7 +46,7 @@ public class DashboardComponent implements Initializable {
     @FXML
     private void logoutButton(MouseEvent event) throws IOException {
         
-        new LocalStorage().resetAuthen();
+        if(new LocalStorage().resetAuthen());
         
         Stage stage;
         Parent root;

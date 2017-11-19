@@ -33,6 +33,7 @@ public class LocalStorage{
             out.write(passwordData, 0, passwordData.length);
             out.write("\r\n".getBytes());
             out.write(roleData, 0, roleData.length);
+            out.close();
         } catch (IOException x) {
             System.err.println(x);
         }
@@ -45,13 +46,14 @@ public class LocalStorage{
             this.username = reader.readLine();
             this.password = reader.readLine();
             this.role = reader.readLine();
+            in.close();
             return true;
         } catch (Exception e) {
             return false;
         }
     }
-    public void resetAuthen(){
-        this.file.delete();
+    public boolean resetAuthen(){
+        return this.file.delete();
     }
 
     public String getUsername() {
