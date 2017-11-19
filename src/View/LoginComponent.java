@@ -78,7 +78,7 @@ public class LoginComponent extends UserDataService implements Initializable {
         if (loginController.userCheckLogin() == true) {
             this.loginValidate.setVisible(false);
             //this.setDataService(fullname, email, username, sub_district, district, province, address_other, tel);
-            new LocalStorage().setAuthen();
+            new LocalStorage().setAuthen(this.username_field.getText(), this.password_field.getText(), "User");
             // Navigate to dashboard
             Stage stage;
             Parent root;
@@ -98,7 +98,7 @@ public class LoginComponent extends UserDataService implements Initializable {
         if (loginController.adminCheckLogin() == true) {
             this.loginValidate.setVisible(false);
             //this.setDataService(fullname, email, username, sub_district, district, province, address_other, tel);
-            new LocalStorage().setAuthen();
+            new LocalStorage().setAuthen(this.username_field.getText(), this.password_field.getText(), "Admin");
             // Navigate to dashboard
             Stage stage;
             Parent root;

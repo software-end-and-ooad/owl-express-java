@@ -5,21 +5,65 @@
  */
 package Controller;
 
-import java.io.FileReader;
+import static java.nio.file.StandardOpenOption.*;
+import java.nio.file.*;
+import java.io.*;
 
 /**
  *
  * @author babyjazz
  */
-public class LocalStorage extends UserDataService{
+public class LocalStorage{
     
-    public void setAuthen() {
+    private File file = new File("loginfile.txt");
+    private Path path = Paths.get("loginfile.txt");
+    private String username;
+    private String password;
+    private String role;
+    public void setAuthen(String username, String password, String role) {
+        // Convert the string to a
+        // byte array.
+        byte usernameData[] = username.getBytes();
+        byte passwordData[] = password.getBytes();
+        byte roleData[] = role.getBytes();
         
-        try {
-            System.out.println(this.getUsername());
-            System.out.println("set storage");
-        } catch(Exception error) {
-            System.out.println("Cannot set authentication in local storage");
+        try (OutputStream out = new BufferedOutputStream(Files.newOutputStream(path, CREATE))) {
+            out.write(usernameData, 0, usernameData.length);
+            out.write("\r\n".getBytes());
+            out.write(passwordData, 0, passwordData.length);
+            out.write("\r\n".getBytes());
+            out.write(roleData, 0, roleData.length);
+        } catch (IOException x) {
+            System.err.println(x);
         }
     }
+    public boolean checkAuthen(){
+        
+        try {
+            InputStreamReader in = new InputStreamReader((InputStream)Files.newInputStream(path));
+            BufferedReader reader = new BufferedReader(in);
+            this.username = reader.readLine();
+            this.password = reader.readLine();
+            this.role = reader.readLine();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+    public void resetAuthen(){
+        this.file.delete();
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+    
 }

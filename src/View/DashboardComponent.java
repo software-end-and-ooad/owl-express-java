@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controller.LocalStorage;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
@@ -13,9 +14,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 /**
  *
@@ -38,6 +42,22 @@ public class DashboardComponent implements Initializable {
     private void profileButton(MouseEvent event) throws IOException {
         AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("ProfileMenuComponent.fxml"));
         this.scene_area.getChildren().setAll(screen_page);
+    }
+    @FXML
+    private void logoutButton(MouseEvent event) throws IOException {
+        
+        new LocalStorage().resetAuthen();
+        
+        Stage stage;
+        Parent root;
+        stage = (Stage) this.scene_area.getScene().getWindow();
+        //load up OTHER FXML document
+        root = FXMLLoader.load(getClass().getResource("LoginComponent.fxml"));
+        root = MoveWindow.moveWindow(root, stage);
+        //create a new scene with root and set the stage
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     @FXML
     private void exitApplication() {
