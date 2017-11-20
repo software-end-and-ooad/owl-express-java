@@ -63,9 +63,9 @@
             <Font name="The Bold Font" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="88.0" layoutY="653.0" onMouseClicked="#exitApplication" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="41.0" fitWidth="92.0" layoutX="84.0" layoutY="644.0" onMouseClicked="#exitApplication" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/Exit.png" />
+            <Image url="@images/door.png" />
          </image>
       </ImageView>
       <AnchorPane fx:id="scene_area" layoutX="222.0" layoutY="125.0" prefHeight="626.0" prefWidth="853.0" />
