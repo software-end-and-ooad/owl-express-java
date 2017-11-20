@@ -275,6 +275,10 @@ public class MakeOrderComponent implements Initializable {
         {
             sourceText.setText(UserDataService.getAddress());
         }
+        if(UserDataService.getFullname()!= null)
+        {
+            senderText.setText(UserDataService.getFullname());
+        }
         if(UserDataService.getDistric()!= null)
         {
             sourceDistrictText.setText(UserDataService.getDistric());
