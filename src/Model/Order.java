@@ -20,7 +20,7 @@ public class Order implements Serializable{
     private long id;
     private long userID;
     private long postmanID;
-    private long price;
+    private long price = 0;
     private String size;
     private String trackID;
     private String sourceAddress;
@@ -256,7 +256,7 @@ public class Order implements Serializable{
         this.status = status;
     }
     public String toString(){
-        return this.getTrackID()+" "+this.getUserID()+" "+this.getOrderDate();
+        return this.getTrackID()+"|      "+this.getUserID()+"      "+this.getSenderName()+"      "+this.getOrderDate()+"      "+this.getStatus();
     }
 
     
