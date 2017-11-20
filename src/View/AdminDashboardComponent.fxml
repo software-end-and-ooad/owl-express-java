@@ -10,7 +10,7 @@
    <children>
       <ImageView fitHeight="786.0" fitWidth="1137.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../UIOOAD/PageAdmin.png" />
+            <Image url="@images/pageAdmin.png" />
          </image>
       </ImageView>
       <Text fill="#fcf4d9" layoutX="615.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome,">
@@ -25,22 +25,22 @@
       </Text>
       <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="1080.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../UIOOAD/ex.png" />
+            <Image url="@images/ex.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="58.0" fitWidth="69.0" layoutX="70.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../allOrder.png" />
+            <Image url="@images/allOrder.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="64.0" fitWidth="59.0" layoutX="79.0" layoutY="372.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../allUserDetail.png" />
+            <Image url="@images/allUserDetail.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="67.0" fitWidth="59.0" layoutX="76.0" layoutY="493.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../newAdmin.png" />
+            <Image url="@images/newAdmin.png" />
          </image>
       </ImageView>
       <Text fill="WHITE" layoutX="67.0" layoutY="675.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Out" />
