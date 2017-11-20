@@ -11,6 +11,7 @@ package Model;
  */
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.Date;
  
 @Entity
 public class Order implements Serializable{
@@ -37,6 +38,7 @@ public class Order implements Serializable{
     private String senderName;
     private String receiverName;
     private String status;
+    private Date orderDate;
 
     public Order(long userID, long postmanID, long price, String size, String trackID, String sourceAddress, 
                 String sourcedistric,
@@ -52,7 +54,8 @@ public class Order implements Serializable{
                 String destinationotherAddress,
                 String senderName,
                 String receiverName,
-                String status) {
+                String status,
+                Date orderDate) {
         this.userID = userID;
         this.postmanID = postmanID;
         this.price = price;
@@ -73,6 +76,11 @@ public class Order implements Serializable{
         this.senderName =  senderName;
         this.receiverName= receiverName;
         this.status = status;
+        this.orderDate = orderDate;
+    }
+
+    public Date getOrderDate() {
+        return orderDate;
     }
 
     public String getSenderName() {
