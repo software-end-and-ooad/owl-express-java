@@ -92,6 +92,15 @@ public class MakeOrderComponent implements Initializable {
     private JFXTextField sourceOtherText;
     @FXML
     private Text sourceProvinceError;
+    @FXML
+    private JFXTextField senderText;
+    @FXML
+    private Text senderError;
+    @FXML
+    private JFXTextField receiverText;
+    private Text ReceiverError;
+    @FXML
+    private Text receiverError;
 
     /**
      * Initializes the controller class.
@@ -108,6 +117,7 @@ public class MakeOrderComponent implements Initializable {
         sourceProvinceError.setVisible(false);
         sourceZipcodeError.setVisible(false);
         sourceOtherError.setVisible(false);
+        senderError.setVisible(false);
         //
         destinationError.setVisible(false);
         destinationAreaError.setVisible(false);
@@ -115,6 +125,7 @@ public class MakeOrderComponent implements Initializable {
         destinationProvinceError.setVisible(false);
         destinationZipcodeError.setVisible(false);
         destinationOtherError.setVisible(false);
+        receiverError.setVisible(false);
     }    
 
     @FXML
@@ -122,7 +133,7 @@ public class MakeOrderComponent implements Initializable {
         sourceError.setVisible(false);
         destinationError.setVisible(false);
         sizeError.setVisible(false);
-        MakeOrderController makeOrderController = new MakeOrderController(UserDataService.getAccountID(), comboSize.getValue(), sourceText.getText(), sourceDistrictText.getText(), sourceAreaText.getText(), sourceProvinceText.getText(), sourceZipcodeText.getText(), sourceOtherText.getText(), destinationText.getText(), destinationDistrictText.getText(), destinationAreaText.getText(), destinationProvinceText.getText(), destinationZipcodeText.getText(), destinationOtherText.getText());
+        MakeOrderController makeOrderController = new MakeOrderController(UserDataService.getAccountID(), comboSize.getValue(), sourceText.getText(), sourceDistrictText.getText(), sourceAreaText.getText(), sourceProvinceText.getText(), sourceZipcodeText.getText(), sourceOtherText.getText(), destinationText.getText(), destinationDistrictText.getText(), destinationAreaText.getText(), destinationProvinceText.getText(), destinationZipcodeText.getText(), destinationOtherText.getText(), senderText.getText(), receiverText.getText());
          ArrayList<ArrayList<String>> errList = makeOrderController.validateOrder();
          if( errList.size() <= 0) {
            boolean submitstatus = makeOrderController.checkMakeOrder();
@@ -141,6 +152,7 @@ public class MakeOrderComponent implements Initializable {
            sourceProvinceText.setVisible(false);
            sourceZipcodeText.setVisible(false);
            sourceOtherText.setVisible(false);
+           senderText.setVisible(false);
            //
            destinationText.setVisible(false);
            destinationAreaText.setVisible(false);
@@ -148,6 +160,7 @@ public class MakeOrderComponent implements Initializable {
            destinationProvinceText.setVisible(false);
            destinationZipcodeText.setVisible(false);
            destinationOtherText.setVisible(false);
+           receiverText.setVisible(false);
            
            sizeError.setVisible(false);
            sourceError.setVisible(false);
@@ -163,6 +176,7 @@ public class MakeOrderComponent implements Initializable {
            destinationProvinceError.setVisible(false);
            destinationZipcodeError.setVisible(false);
            destinationOtherError.setVisible(false);
+           receiverError.setVisible(false);
            
            
            
@@ -187,11 +201,11 @@ public class MakeOrderComponent implements Initializable {
                 if (errList.get(i).get(0).equals("sourceAddress")) {
                     this.sourceError.setVisible(true);
                     if (errList.get(i).get(1).equals("maxLength"))
-                        this.destinationError.setText("Source address must no more than 30 characters");
+                        this.sourceError.setText("Source address must no more than 30 characters");
                     else if (errList.get(i).get(1).equals("minLength"))
-                        this.destinationError.setText("Source address must have at least 10 characters");
+                        this.sourceError.setText("Source address must have at least 10 characters");
                     else if (errList.get(i).get(1).equals("isRequired"))
-                        this.destinationError.setText("Source address is required");
+                        this.sourceError.setText("Source address is required");
                 }
                 if (errList.get(i).get(0).equals("sourcearea")) {
                     this.sourceAreaError.setVisible(true);
@@ -232,13 +246,24 @@ public class MakeOrderComponent implements Initializable {
                 if (errList.get(i).get(0).equals("destinationzipCode")) {
                     this.destinationZipcodeError.setVisible(true);
                     if (errList.get(i).get(1).equals("isRequired"))
-                        this.destinationProvinceError.setText("Destination zipcode is required");
+                        this.destinationZipcodeError.setText("Destination zipcode is required");
                 }
                 if (errList.get(i).get(0).equals("size")) {
                     this.sizeError.setVisible(true);
                     if (errList.get(i).get(1).equals("isRequired"))
                         this.sizeError.setText("Source address is required");
                 }
+                if (errList.get(i).get(0).equals("senderName")) {
+                    this.senderError.setVisible(true);
+                    if (errList.get(i).get(1).equals("isRequired"))
+                        this.senderError.setText("Sender's name is required");
+                }
+                if (errList.get(i).get(0).equals("receiverName")) {
+                    this.receiverError.setVisible(true);
+                    if (errList.get(i).get(1).equals("isRequired"))
+                        this.receiverError.setText("Receiver's name is required");
+                }
+                
   
             }
         }

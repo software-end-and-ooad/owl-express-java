@@ -55,8 +55,8 @@ public class CheckOrderComponentController implements Initializable {
                 CheckOrderController checking = new CheckOrderController(searchBox.getText());
                 if(checking.checkOrderFinder())
                 {
-                    headText.setText("Order from " + checking.getSourcezipCode()+ " Zipcode");
-                    resultText.setText("to " + checking.getDestinationzipCode() + " Zipcode");
+                    headText.setText("Order from " + checking.getSenderName());
+                    resultText.setText("to " + checking.getReceiverName());
                     searchBox.setVisible(false);
                     resultText.setVisible(true);
                     resultText2.setVisible(true);

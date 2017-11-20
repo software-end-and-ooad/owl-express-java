@@ -32,6 +32,8 @@ public class MakeOrderController extends Validation{
     private String destinationzipCode;
     private String destinationotherAddress;
     private String status;
+    private String senderName;
+    private String receiverName; 
     private String trackID;
     private boolean uniqueTrackID;
 
@@ -53,7 +55,9 @@ public class MakeOrderController extends Validation{
                 String destinationarea,
                 String destinationprovince,
                 String destinationzipCode,
-                String destinationotherAddress) {
+                String destinationotherAddress,
+                String senderName,
+                String receiverName) {
         this.userID = userID;
         this.postmanID = 0;
         this.price = 0;
@@ -71,6 +75,8 @@ public class MakeOrderController extends Validation{
         this.destinationzipCode = destinationzipCode;
         this.destinationotherAddress = destinationotherAddress;
         this.status = "Not yet picked";
+        this.senderName = senderName;
+        this.receiverName = receiverName;
         this.trackID = getRandomWord();
         this.uniqueTrackID = false;
     }
@@ -179,6 +185,10 @@ public class MakeOrderController extends Validation{
             validate.add("destinationdistric|isRequired");
         if (!checkValidate.isRequired(this.size))
             validate.add("size|isRequired");
+        if (!checkValidate.isRequired(this.senderName))
+            validate.add("senderName|isRequired");
+        if (!checkValidate.isRequired(this.receiverName))
+            validate.add("receiverName|isRequired");
        
 
         ArrayList<ArrayList<String>> errList = splitListofValidateError(validate);
@@ -200,7 +210,7 @@ public class MakeOrderController extends Validation{
                 try {
                     // Create user
                     db.getEM().getTransaction().begin();
-                    Order order = new Order(this.userID, this.postmanID, this.price, this.size, this.trackID, this.sourceAddress, this.sourcedistric, this.sourcearea, this.sourceprovince, this.sourcezipCode, this.sourceotherAddress, this.destinationAddress, this.destinationdistric, this.destinationarea, this.destinationprovince, this.destinationzipCode, this.destinationotherAddress, this.status);
+                    Order order = new Order(this.userID, this.postmanID, this.price, this.size, this.trackID, this.sourceAddress, this.sourcedistric, this.sourcearea, this.sourceprovince, this.sourcezipCode, this.sourceotherAddress, this.destinationAddress, this.destinationdistric, this.destinationarea, this.destinationprovince, this.destinationzipCode, this.destinationotherAddress, this.senderName, this.receiverName, this.status);
                     db.getEM().persist(order);
                     db.getEM().getTransaction().commit();
                     db.getEM().close();

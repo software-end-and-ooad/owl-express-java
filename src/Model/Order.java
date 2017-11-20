@@ -34,6 +34,8 @@ public class Order implements Serializable{
     private String destinationprovince;
     private String destinationzipCode;
     private String destinationotherAddress;
+    private String senderName;
+    private String receiverName;
     private String status;
 
     public Order(long userID, long postmanID, long price, String size, String trackID, String sourceAddress, 
@@ -48,6 +50,8 @@ public class Order implements Serializable{
                 String destinationprovince,
                 String destinationzipCode,
                 String destinationotherAddress,
+                String senderName,
+                String receiverName,
                 String status) {
         this.userID = userID;
         this.postmanID = postmanID;
@@ -66,7 +70,25 @@ public class Order implements Serializable{
         this.destinationprovince = destinationprovince;
         this.destinationzipCode = destinationzipCode;
         this.destinationotherAddress = destinationotherAddress;
+        this.senderName =  senderName;
+        this.receiverName= receiverName;
         this.status = status;
+    }
+
+    public String getSenderName() {
+        return senderName;
+    }
+
+    public void setSenderName(String senderName) {
+        this.senderName = senderName;
+    }
+
+    public String getReceiverName() {
+        return receiverName;
+    }
+
+    public void setReceiverName(String receiverName) {
+        this.receiverName = receiverName;
     }
 
     public String getSourcedistric() {

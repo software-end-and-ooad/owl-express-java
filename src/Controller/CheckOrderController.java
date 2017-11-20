@@ -31,6 +31,8 @@ public class CheckOrderController{
     private String destinationprovince;
     private String destinationzipCode;
     private String destinationotherAddress;
+    private String senderName;
+    private String receiverName;
     private String status;
     private String trackID;
     private boolean uniqueTrackID;
@@ -122,7 +124,8 @@ public class CheckOrderController{
             this.destinationzipCode = order.getDestinationzipCode();
             this.sourcezipCode = order.getSourcezipCode();
             this.status = order.getStatus();
-           
+           this.senderName = order.getSenderName();
+           this.receiverName = order.getReceiverName();
             return true;
         } catch (Exception e) {
             System.out.println("false");
@@ -131,6 +134,14 @@ public class CheckOrderController{
         }
        
        
+    }
+
+    public String getSenderName() {
+        return senderName;
+    }
+
+    public String getReceiverName() {
+        return receiverName;
     }
     
 }
