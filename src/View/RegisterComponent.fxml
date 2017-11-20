@@ -68,5 +68,15 @@
             <Font size="17.0" />
          </font>
       </JFXButton>
+      <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="1040.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/shorthen.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="1080.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/ex.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

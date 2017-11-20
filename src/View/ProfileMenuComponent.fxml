@@ -17,9 +17,9 @@
             <Text fx:id="tel" layoutX="145.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="tel" wrappingWidth="199.6708984375" />
             <Text fx:id="address" layoutX="145.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="address" wrappingWidth="583.6708984375" />
             <JFXButton fx:id="editButton" layoutX="379.0" layoutY="567.0" onMouseClicked="#clickEdit" text="Edit porfile" />
-            <Text layoutX="308.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" wrappingWidth="234.20947265625">
+            <Text layoutX="280.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" wrappingWidth="311.20947265625">
                <font>
-                  <Font size="80.0" />
+                  <Font name="The Bold Font" size="80.0" />
                </font>
             </Text>
          </children>
