@@ -79,7 +79,7 @@
             <Font name="The Bold Font" size="55.0" />
          </font>
       </Text>
-      <Text fill="#50e3c2" layoutX="864.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+      <Text fx:id="usernameText" fill="#50e3c2" layoutX="864.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
          <font>
             <Font name="The Bold Font" size="39.0" />
          </font>

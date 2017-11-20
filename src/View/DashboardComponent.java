@@ -6,6 +6,7 @@
 package View;
 
 import Controller.LocalStorage;
+import Controller.UserDataService;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
@@ -19,6 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -31,6 +33,8 @@ public class DashboardComponent implements Initializable {
     private AnchorPane scene_area;
     @FXML
     private JFXButton checkPackageBTN;
+    @FXML
+    private Text usernameText;
     
     
     @FXML
@@ -66,7 +70,7 @@ public class DashboardComponent implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        usernameText.setText(UserDataService.getUsername());
     }
 
     @FXML
