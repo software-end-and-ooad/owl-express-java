@@ -38,7 +38,7 @@ public class Order implements Serializable{
     private String senderName;
     private String receiverName;
     private String status;
-    private Date orderDate;
+    private String orderDate;
 
     public Order(long userID, long postmanID, long price, String size, String trackID, String sourceAddress, 
                 String sourcedistric,
@@ -55,7 +55,7 @@ public class Order implements Serializable{
                 String senderName,
                 String receiverName,
                 String status,
-                Date orderDate) {
+                String orderDate) {
         this.userID = userID;
         this.postmanID = postmanID;
         this.price = price;
@@ -79,7 +79,7 @@ public class Order implements Serializable{
         this.orderDate = orderDate;
     }
 
-    public Date getOrderDate() {
+    public String getOrderDate() {
         return orderDate;
     }
 
@@ -228,10 +228,6 @@ public class Order implements Serializable{
         this.id = id;
     }
 
-    public long getuserID() {
-        return userID;
-    }
-
     public void setuserID(long userID) {
         this.userID = userID;
     }
@@ -259,7 +255,9 @@ public class Order implements Serializable{
     public void setStatus(String status) {
         this.status = status;
     }
-
+    public String toString(){
+        return this.getTrackID()+" "+this.getUserID()+" "+this.getOrderDate();
+    }
 
     
 }

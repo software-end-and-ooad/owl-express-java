@@ -8,6 +8,7 @@ package Controller;
 import Model.Database;
 import Model.Order;
 import java.text.DateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.persistence.Query;
@@ -38,7 +39,7 @@ public class MakeOrderController extends Validation{
     private String receiverName; 
     private String trackID;
     private boolean uniqueTrackID;
-    private Date orderDate;
+    private String orderDate;
 
     public String getTrackID() {
         return trackID;
@@ -213,11 +214,11 @@ public class MakeOrderController extends Validation{
             if (uniqueTrack.getResultList().size() <= 0) {
                 try {
                     
-                    this.orderDate = new Date();
+//                    this.orderDate = new Date();
                     
                     // Create new Order
                     db.getEM().getTransaction().begin();
-                    Order order = new Order(this.userID, this.postmanID, this.price, this.size, this.trackID, this.sourceAddress, this.sourcedistric, this.sourcearea, this.sourceprovince, this.sourcezipCode, this.sourceotherAddress, this.destinationAddress, this.destinationdistric, this.destinationarea, this.destinationprovince, this.destinationzipCode, this.destinationotherAddress, this.senderName, this.receiverName, this.status, this.orderDate);
+                    Order order = new Order(this.userID, this.postmanID, this.price, this.size, this.trackID, this.sourceAddress, this.sourcedistric, this.sourcearea, this.sourceprovince, this.sourcezipCode, this.sourceotherAddress, this.destinationAddress, this.destinationdistric, this.destinationarea, this.destinationprovince, this.destinationzipCode, this.destinationotherAddress, this.senderName, this.receiverName, this.status, this.orderDate = LocalDateTime.now().toString());
                     db.getEM().persist(order);
                     db.getEM().getTransaction().commit();
                     db.getEM().close();
