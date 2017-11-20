@@ -127,4 +127,8 @@ public class LoginComponent extends UserDataService implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    private void exitApplication() {
+            System.exit(0);
+    }
 }

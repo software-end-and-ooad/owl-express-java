@@ -53,18 +53,20 @@ public class OwlExpress extends Application {
                 Query userQuery = db.getEM().createQuery("SELECT u FROM User u WHERE u.username='" + loginfile.getUsername() + "' AND u.password='" + loginfile.getPassword() + "'");
                 User user = (User)userQuery.getSingleResult();
                 //LOAD data to UserDataService
-                UserDataService.setAccountID(user.getId());
-                UserDataService.setEmail(user.getEmail());
-                UserDataService.setFullname(user.getName());
-                UserDataService.setUsername(user.getUsername());
-                UserDataService.setPassword(user.getPassword());
-                UserDataService.setTel(user.getTel());
-                UserDataService.setAddress(user.getAddress());
-                UserDataService.setDistric(user.getDistric());
-                UserDataService.setArea(user.getArea());
-                UserDataService.setProvince(user.getProvince());
-                UserDataService.setZipCode(user.getZipCode());
-                UserDataService.setOtherAddress(user.getOtherAddress());
+                UserDataService.setDataService(
+                        user.getId(), 
+                        user.getName(), 
+                        user.getEmail(), 
+                        user.getTel(), 
+                        user.getAddress(), 
+                        user.getDistric(), 
+                        user.getArea(), 
+                        user.getProvince(), 
+                        user.getZipCode(), 
+                        user.getOtherAddress(), 
+                        user.getUsername(), 
+                        user.getPassword()
+                );
                 db.getEM().close();
                 //load up OTHER FXML document
                 root = FXMLLoader.load(getClass().getResource("DashboardComponent.fxml"));
