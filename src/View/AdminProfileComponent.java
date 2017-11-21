@@ -5,6 +5,8 @@
  */
 package View;
 
+import Controller.AdminDataService;
+import Controller.AdminProfileController;
 import Controller.ProfileMenuController;
 import Controller.UserDataService;
 import com.jfoenix.controls.JFXButton;
@@ -22,83 +24,67 @@ import javafx.scene.text.Text;
  *
  * @author 58011424
  */
-public class ProfileMenuComponent implements Initializable {
+public class AdminProfileComponent implements Initializable {
     @FXML
     private AnchorPane profilePane, editPane;
     @FXML
-    private Text name, tel, email, address;
+    private Text name, tel, email, zipCode;
     @FXML
-    private Text fullnameValidate, telValidate, emailValidate, addressValidate, districValidate, areaValidate,  provinceValidate, zipCodeValidate;
+    private Text fullnameValidate, telValidate, emailValidate, zipCodeValidate, nationIDValidate;
     @FXML
-    private JFXTextField fullnameField, emailField, telField, addressField, districField, areaField, provinceField, zipCodeField, otherField;
+    private JFXTextField fullnameField, emailField, telField, zipCodeField, nationIDField;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        String addressString;
-        this.name.setText(UserDataService.getFullname());
-        this.email.setText(UserDataService.getEmail());
-        this.tel.setText(UserDataService.getTel());
-        if(UserDataService.getAddress() != null)
-            addressString = UserDataService.getAddress() +", "+ UserDataService.getDistric()+", "+ UserDataService.getArea()+", "+ UserDataService.getProvince()+", "+ UserDataService.getZipCode()+"\n"+ UserDataService.getOtherAddress();
-        else
-            addressString = " ";
-        this.address.setText(addressString);
-    }    
+        this.name.setText(AdminDataService.getFullname());
+        this.email.setText(AdminDataService.getEmail());
+        this.tel.setText(AdminDataService.getTel());
+        this.zipCode.setText(AdminDataService.getZipCode());
+    } 
     @FXML
     public void clickEdit(){
         //Init old data to field
-        this.fullnameField.setText(UserDataService.getFullname());
-        this.emailField.setText(UserDataService.getEmail());
-        this.telField.setText(UserDataService.getTel());
-        this.addressField.setText(UserDataService.getAddress());
-        this.districField.setText(UserDataService.getDistric());
-        this.areaField.setText(UserDataService.getArea());
-        this.provinceField.setText(UserDataService.getProvince());
-        this.zipCodeField.setText(UserDataService.getZipCode());
-        this.otherField.setText(UserDataService.getOtherAddress());
+        this.fullnameField.setText(AdminDataService.getFullname());
+        this.emailField.setText(AdminDataService.getEmail());
+        this.telField.setText(AdminDataService.getTel());
+        this.nationIDField.setText(AdminDataService.getNationID());
+        this.zipCodeField.setText(AdminDataService.getZipCode());
                 
         this.profilePane.setVisible(false);
         this.editPane.setVisible(true);
     }
     @FXML
     public void clickComfirm(){
-        ProfileMenuController profileMenuController = 
-                new ProfileMenuController(
+        AdminProfileController adminProfileController = 
+                new AdminProfileController(
                     this.fullnameField.getText(),
                     this.emailField.getText(),
                     this.telField.getText(),
-                    this.addressField.getText(),
-                    this.districField.getText(),
-                    this.areaField.getText(),
-                    this.provinceField.getText(),
                     this.zipCodeField.getText(),
-                    this.otherField.getText()
+                    this.nationIDField.getText()
                 );
         // INITIAL ERROR MESSAGE VISIBLE
         this.fullnameValidate.setVisible(false);
         this.emailValidate.setVisible(false);
         this.telValidate.setVisible(false);
-        this.addressValidate.setVisible(false);
-        this.districValidate.setVisible(false);
-        this.areaValidate.setVisible(false);
-        this.provinceValidate.setVisible(false);
         this.zipCodeValidate.setVisible(false);
+        this.nationIDValidate.setVisible(false);
         
-        ArrayList<ArrayList<String>> errList = profileMenuController.validateProfile(); // Validate error list
+        ArrayList<ArrayList<String>> errList = adminProfileController.validateProfile(); // Validate error list
         //If no error
         if(errList.size() <= 0){
-            profileMenuController.editProfile();
+            adminProfileController.editProfile();
             //Change to profile pane
             this.profilePane.setVisible(true);
             this.editPane.setVisible(false);
             //Display on profile menu
-            this.name.setText(UserDataService.getFullname());
-            this.email.setText(UserDataService.getEmail());
-            this.tel.setText(UserDataService.getTel());
-            String addressString = UserDataService.getAddress() +", "+ UserDataService.getDistric()+", "+ UserDataService.getArea()+", "+ UserDataService.getProvince()+", "+ UserDataService.getZipCode()+"\n"+ UserDataService.getOtherAddress();
-            this.address.setText(addressString);
+            this.fullnameField.setText(AdminDataService.getFullname());
+            this.emailField.setText(AdminDataService.getEmail());
+            this.telField.setText(AdminDataService.getTel());
+            this.nationIDField.setText(AdminDataService.getNationID());
+            this.zipCodeField.setText(AdminDataService.getZipCode());
         }
         else{
             // IF THERE IS SOME ERROR VALIDATE IN LIST
@@ -131,30 +117,6 @@ public class ProfileMenuComponent implements Initializable {
                     else if (errList.get(i).get(1).equals("isRequired"))
                         this.telValidate.setText("Tel is required");
                 }
-                // ============== ADDRESS ============
-                if (errList.get(i).get(0).equals("address")) {
-                    this.addressValidate.setVisible(true);
-                    if (errList.get(i).get(1).equals("isRequired"))
-                        this.addressValidate.setText("Address is required");
-                }
-                // ============== DISTRIC ============
-                if (errList.get(i).get(0).equals("distric")) {
-                    this.districValidate.setVisible(true);
-                    if (errList.get(i).get(1).equals("isRequired"))
-                        this.districValidate.setText("Distric is required");
-                }
-                // ============== AREA ============
-                if (errList.get(i).get(0).equals("area")) {
-                    this.areaValidate.setVisible(true);
-                    if (errList.get(i).get(1).equals("isRequired"))
-                        this.areaValidate.setText("Area is required");
-                }
-                // ============== PROVINCE ============
-                if (errList.get(i).get(0).equals("province")) {
-                    this.provinceValidate.setVisible(true);
-                    if (errList.get(i).get(1).equals("isRequired"))
-                        this.provinceValidate.setText("Province is required");
-                }
                 // ============== ZIPCODE ============
                 if (errList.get(i).get(0).equals("zipCode")) {
                     this.zipCodeValidate.setVisible(true);
@@ -166,6 +128,18 @@ public class ProfileMenuComponent implements Initializable {
                         this.zipCodeValidate.setText("Invalid zip code");
                     else if (errList.get(i).get(1).equals("minLength"))
                         this.zipCodeValidate.setText("Invalid zip code");
+                }
+                 // ============== NATIONID ============
+                if (errList.get(i).get(0).equals("nationID")) {
+                    this.nationIDValidate.setVisible(true);
+                    if (errList.get(i).get(1).equals("isNumeric"))
+                        this.nationIDValidate.setText("Nation No. must be numberic");
+                    else if (errList.get(i).get(1).equals("maxLength"))
+                        this.nationIDValidate.setText("Nation No. must have 13 digits");
+                    else if (errList.get(i).get(1).equals("minLength"))
+                        this.nationIDValidate.setText("Nation No. must have 13 digits");
+                    else if (errList.get(i).get(1).equals("isRequired"))
+                        this.nationIDValidate.setText("Nation No. is required");
                 }
             }
         }

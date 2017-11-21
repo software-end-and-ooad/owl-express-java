@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controller.AdminDataService;
 import Controller.LocalStorage;
 import Controller.LoginController;
 import Controller.UserDataService;
@@ -79,9 +80,29 @@ public class OwlExpress extends Application {
                 stage.show();
             }else if(loginfile.getRole().compareTo("Admin") == 0){
                 Query adminQuery = db.getEM().createQuery("SELECT a FROM Admin a WHERE a.username='" + loginfile.getUsername() + "' AND a.password='" + loginfile.getPassword() + "'");
-                Admin user = (Admin)adminQuery.getSingleResult();
+                Admin admin = (Admin)adminQuery.getSingleResult();
+                //ADD data to AdminDataService
+                AdminDataService.setAdminDataService(
+                        admin.getId(),
+                        admin.getNationID(),
+                        admin.getFullname(), 
+                        admin.getEmail(), 
+                        admin.getTel(), 
+                        admin.getZipCode(),  
+                        admin.getUsername(), 
+                        admin.getPassword()
+                );
+                db.getEM().close();
+                //load up OTHER FXML document
+                root = FXMLLoader.load(getClass().getResource("AdminDashboardComponent.fxml"));
+                stage.initStyle(StageStyle.TRANSPARENT);
+                root = MoveWindow.moveWindow(root, stage);
+                //create a new scene with root and set the stage
+                Scene scene = new Scene(root);
+                scene.setFill(javafx.scene.paint.Color.TRANSPARENT);
+                stage.setScene(scene);
+                stage.show();
             }
-
         }
     }
 
