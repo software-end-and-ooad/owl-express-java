@@ -62,12 +62,20 @@ public class LoginController extends Validation {
         Query adminQuery = db.getEM().createQuery("SELECT a FROM Admin a WHERE a.username='" + this.username + "' AND a.password='" + this.password + "'");
         
         try { // try, if can find user
-            Admin user = (Admin)adminQuery.getSingleResult();
-            System.out.println(user.getUsername());
+            Admin admin = (Admin)adminQuery.getSingleResult();
+            System.out.println(admin.getUsername());
             db.getEM().close();
-            //ADD data to UserDataService
-            
-            
+            //ADD data to AdminDataService
+            AdminDataService.setAdminDataService(
+                    admin.getId(),
+                    admin.getNationID(),
+                    admin.getFullname(), 
+                    admin.getEmail(), 
+                    admin.getTel(), 
+                    admin.getZipCode(),  
+                    admin.getUsername(), 
+                    admin.getPassword()
+            );
             return true;
         } catch (Exception e) {
             System.out.println("false");

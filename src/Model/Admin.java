@@ -12,8 +12,10 @@ public class Admin{
     
     @Id @GeneratedValue
     private long id;
-    private String passportID;
+    private String nationID;
     private String fullname;
+    private String email;
+    private String tel;
     private String username;
     private String password;
     private String zipCode;//รหัสไปรษณี
@@ -48,12 +50,28 @@ public class Admin{
         this.zipCode = zipCode;
     }
 
-    public String getPassportID() {
-        return passportID;
+    public String getNationID() {
+        return nationID;
     }
 
-    public void setPassportID(String passportID) {
-        this.passportID = passportID;
+    public void setNationID(String nationID) {
+        this.nationID = nationID;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
 }
