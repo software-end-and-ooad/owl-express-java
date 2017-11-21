@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="626.0" prefWidth="853.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AdminAllOrderComponent">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="allOrderPane" prefHeight="626.0" prefWidth="853.0">
+         <children>
+            <JFXListView fx:id="listOrder" focusTraversable="false" layoutX="14.0" layoutY="14.0" prefHeight="599.0" prefWidth="693.0" />
+            <JFXButton fx:id="editButton" layoutX="716.0" layoutY="50.0" onMouseClicked="#editButton" prefHeight="61.0" prefWidth="117.0" style="-fx-background-color: BLUE; -fx-background-radius: 10;" text="Edit" textFill="#fffbfb">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="716.0" layoutY="135.0" onMouseClicked="#refreshButton" prefHeight="61.0" prefWidth="117.0" style="-fx-background-color: BLUE; -fx-background-radius: 10;" text="Refresh" textFill="#fffbfb">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="AnchorPane" fx:id="editPane" prefHeight="626.0" prefWidth="853.0" visible="false">
+         <children>
+            <Text layoutX="264.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Order">
+               <font>
+                  <Font size="72.0" />
+               </font>
+            </Text>
+            <Text layoutX="166.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sender">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Text>
+            <Text layoutX="578.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Receiver">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Text>
+            <Text fx:id="srcName" layoutX="111.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
+            <Text fx:id="srcAddress" layoutX="111.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
+            <Text fx:id="srcDistrict" layoutX="111.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
+            <Text fx:id="srcArea" layoutX="111.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
+            <Text fx:id="srcProvince" layoutX="111.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
+            <Text fx:id="srcZipCode" layoutX="111.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
+            <Text fx:id="srcOther" layoutX="111.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
+            <Text fx:id="desName" layoutX="532.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
+            <Text fx:id="desAddress" layoutX="532.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
+            <Text fx:id="desDistrict" layoutX="532.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
+            <Text fx:id="desArea" layoutX="532.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
+            <Text fx:id="desProvince" layoutX="532.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
+            <Text fx:id="desZipCode" layoutX="532.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
+            <Text fx:id="desOther" layoutX="532.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
+            <JFXButton fx:id="doneButton" layoutX="653.0" layoutY="513.0" onMouseClicked="#doneButton" prefHeight="56.0" prefWidth="117.0" style="-fx-background-color: RED; -fx-background-radius: 10;" text="Done" textFill="WHITE">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </JFXButton>
+            <JFXCheckBox fx:id="invalidAddrCheck" layoutX="264.0" layoutY="522.0" prefHeight="43.0" prefWidth="167.0" text="Invalid address">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="deliveredCheck" layoutX="124.0" layoutY="522.0" prefHeight="43.0" prefWidth="117.0" text="Delivered">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXTextField fx:id="priceField" layoutX="447.0" layoutY="529.0" promptText="Price" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

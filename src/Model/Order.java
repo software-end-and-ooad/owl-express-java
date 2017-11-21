@@ -11,6 +11,7 @@ package Model;
  */
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.Date;
  
 @Entity
 public class Order implements Serializable{
@@ -19,7 +20,7 @@ public class Order implements Serializable{
     private long id;
     private long userID;
     private long postmanID;
-    private long price;
+    private long price = 0;
     private String size;
     private String trackID;
     private String sourceAddress;
@@ -37,6 +38,7 @@ public class Order implements Serializable{
     private String senderName;
     private String receiverName;
     private String status;
+    private String orderDate;
 
     public Order(long userID, long postmanID, long price, String size, String trackID, String sourceAddress, 
                 String sourcedistric,
@@ -52,7 +54,8 @@ public class Order implements Serializable{
                 String destinationotherAddress,
                 String senderName,
                 String receiverName,
-                String status) {
+                String status,
+                String orderDate) {
         this.userID = userID;
         this.postmanID = postmanID;
         this.price = price;
@@ -73,6 +76,11 @@ public class Order implements Serializable{
         this.senderName =  senderName;
         this.receiverName= receiverName;
         this.status = status;
+        this.orderDate = orderDate;
+    }
+
+    public String getOrderDate() {
+        return orderDate;
     }
 
     public String getSenderName() {
@@ -220,10 +228,6 @@ public class Order implements Serializable{
         this.id = id;
     }
 
-    public long getuserID() {
-        return userID;
-    }
-
     public void setuserID(long userID) {
         this.userID = userID;
     }
@@ -251,7 +255,9 @@ public class Order implements Serializable{
     public void setStatus(String status) {
         this.status = status;
     }
-
+    public String toString(){
+        return this.getTrackID()+"|      "+this.getUserID()+"      "+this.getSenderName()+"      "+this.getOrderDate()+"      "+this.getStatus();
+    }
 
     
 }
