@@ -6,6 +6,9 @@
 package View;
 
 import Controller.RegisterController;
+import Controller.SendEmail;
+import Model.Database;
+import Model.User;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -23,6 +26,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -34,6 +38,7 @@ import javafx.stage.Stage;
 public class RegisterComponent implements Initializable {
     double xOffset;
     double yOffset;
+    SendEmail sendEmail;
     @FXML
     private JFXTextField username;
     @FXML
@@ -61,7 +66,12 @@ public class RegisterComponent implements Initializable {
     private Text passwordValidate;
     @FXML
     private JFXButton register_button, login_button;
-    
+    @FXML
+    private AnchorPane verifyPane;
+    @FXML
+    private JFXTextField verifyField;
+    @FXML 
+    private JFXButton verifyButton;
     /**
      * Initializes the controller class.
      */
@@ -96,33 +106,30 @@ public class RegisterComponent implements Initializable {
         this.confirmPassValidate.setVisible(false);
         
         ArrayList<ArrayList<String>> errList = registerController.validateResgister(); // Validate error list
-        if( errList.size() <= 0) {
-           
-            if( registerController.checkRegister() == true ) { // if success all
-                // SUCCESS REGISTER, THEN ROUTE TO DASHBOARD
-               
-                Stage stage;
-                Parent root;
-                stage = (Stage) this.register_button.getScene().getWindow();
-                //load up OTHER FXML document
-                root = FXMLLoader.load(getClass().getResource("LoginComponent.fxml"));
-                root = MoveWindow.moveWindow(root, stage);
-                //create a new scene with root and set the stage
-                Scene scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-            } else {  
+        if (errList.size() <= 0) {
+
+            if (registerController.checkRegister() == true) { // if success all
+                //Verify email
+                sendEmail = new SendEmail(this.email.getText());
+                sendEmail.sendEmail();
+                this.verifyPane.setVisible(true);
+                this.verifyField.setVisible(true);
+                this.verifyButton.setVisible(true);
+                
+                this.register_button.setDisable(true);
+                this.login_button.setDisable(true);
+            } else {
                 // CANNOT CREATE MAY BE UNIQUE USERNAME OR EMAIL
-                if (registerController.getUniqueUsername()== true) {
+                if (registerController.getUniqueUsername() == true) {
                     this.usernameValidate.setVisible(true);
                     this.usernameValidate.setText("This USERNAME is already taken");
                 }
-                if (registerController.getUniqueEmail()== true) {
+                if (registerController.getUniqueEmail() == true) {
                     this.emailValidate.setVisible(true);
                     this.emailValidate.setText("This EMAIL is already taken");
                 }
             }
-            
+
         }  else { 
             // IF THERE IS SOME ERROR VALIDATE IN LIST
             for (int i = 0; i < errList.size(); i++) {
@@ -178,6 +185,41 @@ public class RegisterComponent implements Initializable {
                 
             }
         } 
+    }
+    @FXML
+    public void submitVerify() throws IOException{
+        if (this.verifyField.getText().compareTo(this.sendEmail.getVerify()) == 0) {
+            Database db = new Database("User");
+            try {
+                // Create user
+                db.getEM().getTransaction().begin();
+                User user = new User(this.username.getText(), this.password.getText(), this.confirmPass.getText(), this.email.getText(), this.name.getText(), this.tel.getText());
+                db.getEM().persist(user);
+                db.getEM().getTransaction().commit();
+                db.getEM().close();
+            } catch (Throwable error) {
+                System.out.println("CANNOT CREATE USER, PLEASE CHECK SERVER ");
+                db.getEM().close();
+            }
+            this.verifyPane.setVisible(false);
+            this.verifyField.setVisible(false);
+            this.verifyButton.setVisible(false);
+
+            this.register_button.setDisable(false);
+            this.login_button.setDisable(false);
+            // SUCCESS REGISTER, THEN ROUTE TO DASHBOARD
+            Stage stage;
+            Parent root;
+            stage = (Stage) this.register_button.getScene().getWindow();
+            //load up OTHER FXML document
+            root = FXMLLoader.load(getClass().getResource("LoginComponent.fxml"));
+            root = MoveWindow.moveWindow(root, stage);
+            //create a new scene with root and set the stage
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+
     }
     @FXML
     public void submitLogin() throws IOException {

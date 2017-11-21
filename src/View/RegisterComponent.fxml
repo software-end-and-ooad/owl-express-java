@@ -60,7 +60,7 @@
          <font>
             <Font size="12.0" />
          </font></Text>
-      <JFXButton fx:id="login__button" layoutX="735.0" layoutY="602.0" onMouseClicked="#submitLogin" prefHeight="38.0" prefWidth="226.0" ripplerFill="WHITE" text="Already have an account?" textFill="#f5f5f5" wrapText="true">
+      <JFXButton fx:id="login_button" layoutX="735.0" layoutY="602.0" onMouseClicked="#submitLogin" prefHeight="38.0" prefWidth="226.0" ripplerFill="WHITE" text="Already have an account?" textFill="#f5f5f5" wrapText="true">
          <effect>
             <Shadow height="54.87" radius="28.5475" width="61.32" />
          </effect>
@@ -78,5 +78,16 @@
             <Image url="@images/ex.png" />
          </image>
       </ImageView>
+      <AnchorPane fx:id="verifyPane" layoutX="200.0" layoutY="217.0" opacity="0.8" prefHeight="370.0" prefWidth="714.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20;" visible="false" />
+      <JFXTextField fx:id="verifyField" alignment="CENTER" focusColor="BLACK" layoutX="409.0" layoutY="289.0" prefHeight="91.0" prefWidth="296.0" promptText="Code" text="Enter code" unFocusColor="BLACK" visible="false">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="verifyButton" layoutX="495.0" layoutY="419.0" onMouseClicked="#submitVerify" style="-fx-background-color: #86847E; -fx-background-radius: 10;" text="Verify" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="27.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
