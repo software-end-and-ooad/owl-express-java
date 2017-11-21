@@ -128,4 +128,11 @@ public class User{
         this.otherAddress = otherAddress;
     }
     
+    @Override
+    public String toString()
+    {
+     
+        return "UserID: "+ this.id + " Username: " + this.username + " Fullname: " + this.name + " Email: " + this.email + " Zipcode: " + this.zipCode ;
+    }
+    
 }
