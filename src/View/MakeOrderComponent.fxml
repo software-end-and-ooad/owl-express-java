@@ -14,7 +14,7 @@
    <children>
       <Text fx:id="headText" fill="#432160" layoutX="13.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAKE AN ORDER">
          <font>
-            <Font name="The Bold Font" size="46.0" />
+            <Font name="Bangna New" size="46.0" />
          </font>
       </Text>
       <JFXTextField fx:id="sourceText" layoutX="430.0" layoutY="62.0" prefHeight="45.0" prefWidth="337.0" promptText="Source Address" />
@@ -23,14 +23,14 @@
       <JFXTextField fx:id="sourceProvinceText" layoutX="552.0" layoutY="150.0" prefHeight="45.0" prefWidth="219.0" promptText="Source Province" />
       <JFXTextField fx:id="sourceZipcodeText" layoutX="22.0" layoutY="236.0" prefHeight="45.0" prefWidth="209.0" promptText="Source Zipcode" />
       <JFXTextField fx:id="sourceOtherText" layoutX="291.0" layoutY="236.0" prefHeight="45.0" prefWidth="219.0" promptText="Source other" />
-      <JFXTextField fx:id="destinationText" layoutX="437.0" layoutY="310.0" prefHeight="45.0" prefWidth="337.0" promptText="Destination Address" />
+      <JFXTextField fx:id="destinationText" layoutX="437.0" layoutY="315.0" prefHeight="45.0" prefWidth="337.0" promptText="Destination Address" />
       <JFXTextField fx:id="destinationDistrictText" layoutX="18.0" layoutY="387.0" prefHeight="45.0" prefWidth="209.0" promptText="Destination District" />
       <JFXTextField fx:id="destinationAreaText" layoutX="298.0" layoutY="387.0" prefHeight="45.0" prefWidth="219.0" promptText="Destination Area" />
       <JFXTextField fx:id="destinationProvinceText" layoutX="559.0" layoutY="387.0" prefHeight="45.0" prefWidth="219.0" promptText="Destination Province" />
       <JFXTextField fx:id="destinationZipcodeText" layoutX="24.0" layoutY="463.0" prefHeight="45.0" prefWidth="196.0" promptText="Destination Zipcode" />
       <JFXTextField fx:id="destinationOtherText" layoutX="298.0" layoutY="463.0" prefHeight="45.0" prefWidth="219.0" promptText="Destination Other" />
       <JFXComboBox fx:id="comboSize" layoutX="567.0" layoutY="463.0" prefHeight="45.0" prefWidth="196.0" promptText="Size" />
-      <JFXButton fx:id="enterAddressBTN" layoutX="548.0" layoutY="236.0" onMouseClicked="#submitAddress" prefHeight="52.0" prefWidth="219.0" style="-fx-background-color: #FF7A5A;" text="Use my address!" textFill="WHITE">
+      <JFXButton fx:id="enterAddressBTN" layoutX="385.0" layoutY="13.0" onMouseClicked="#submitAddress" prefHeight="52.0" prefWidth="219.0" style="-fx-background-color: #FF7A5A;" text="Use my address!" textFill="WHITE">
          <font>
             <Font name="The Bold Font" size="22.0" />
          </font></JFXButton>
@@ -39,7 +39,7 @@
             <Font name="The Bold Font" size="22.0" />
          </font></JFXButton>
       <Text fx:id="sourceError" fill="#f81616" layoutX="431.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="313.0" />
-      <Text fx:id="destinationError" fill="#f81616" layoutX="437.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="337.2259521484375" />
+      <Text fx:id="destinationError" fill="#f81616" layoutX="437.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="337.2259521484375" />
       <Text fx:id="sizeError" fill="#f81616" layoutX="567.0" layoutY="531.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="196.0" />
       <Text fx:id="sourceDistrictError" fill="#f81616" layoutX="24.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="209.0" />
       <Text fx:id="sourceAreaError" fill="#f81616" layoutX="291.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="219.0" />
@@ -53,7 +53,7 @@
       <Text fx:id="destinationOtherError" fill="#f81616" layoutX="298.0" layoutY="531.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="196.0" />
       <JFXTextField fx:id="senderText" layoutX="21.0" layoutY="62.0" prefHeight="45.0" prefWidth="346.0" promptText="Source Name" />
       <Text fx:id="senderError" fill="#f81616" layoutX="21.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="346.0" />
-      <JFXTextField fx:id="receiverText" layoutX="21.0" layoutY="310.0" prefHeight="45.0" prefWidth="346.0" promptText="Receiver Name" />
+      <JFXTextField fx:id="receiverText" layoutX="21.0" layoutY="316.0" prefHeight="45.0" prefWidth="346.0" promptText="Receiver Name" />
       <Text fx:id="receiverError" fill="#f81616" layoutX="22.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="346.0" />
    </children>
 </AnchorPane>
