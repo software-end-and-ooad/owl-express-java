@@ -12,13 +12,13 @@
    <children>
       <AnchorPane id="AnchorPane" fx:id="allOrderPane" prefHeight="626.0" prefWidth="853.0">
          <children>
-            <JFXListView fx:id="listOrder" focusTraversable="false" layoutX="14.0" layoutY="14.0" prefHeight="599.0" prefWidth="693.0" />
-            <JFXButton fx:id="editButton" layoutX="716.0" layoutY="50.0" onMouseClicked="#editButton" prefHeight="61.0" prefWidth="117.0" style="-fx-background-color: BLUE; -fx-background-radius: 10;" text="Edit" textFill="#fffbfb">
+            <JFXListView fx:id="listOrder" focusTraversable="false" layoutX="14.0" layoutY="14.0" prefHeight="599.0" prefWidth="693.0" style="-fx-background-color: #FFF7D7;" />
+            <JFXButton fx:id="editButton" layoutX="716.0" layoutY="50.0" onMouseClicked="#editButton" prefHeight="61.0" prefWidth="117.0" style="-fx-background-color: #FF7A5A; -fx-background-radius: 10;" text="Edit" textFill="#fffbfb">
                <font>
                   <Font size="35.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="716.0" layoutY="135.0" onMouseClicked="#refreshButton" prefHeight="61.0" prefWidth="117.0" style="-fx-background-color: BLUE; -fx-background-radius: 10;" text="Refresh" textFill="#fffbfb">
+            <JFXButton layoutX="716.0" layoutY="135.0" onMouseClicked="#refreshButton" prefHeight="61.0" prefWidth="117.0" style="-fx-background-color: #50E3C2; -fx-background-radius: 10;" text="Refresh" textFill="#fffbfb">
                <font>
                   <Font size="24.0" />
                </font>
@@ -56,7 +56,7 @@
             <Text fx:id="desProvince" layoutX="532.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
             <Text fx:id="desZipCode" layoutX="532.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
             <Text fx:id="desOther" layoutX="532.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
-            <JFXButton fx:id="doneButton" layoutX="653.0" layoutY="513.0" onMouseClicked="#doneButton" prefHeight="56.0" prefWidth="117.0" style="-fx-background-color: RED; -fx-background-radius: 10;" text="Done" textFill="WHITE">
+            <JFXButton fx:id="doneButton" layoutX="653.0" layoutY="513.0" onMouseClicked="#doneButton" prefHeight="56.0" prefWidth="117.0" style="-fx-background-color: FF7A5A; -fx-background-radius: 10;" text="Done" textFill="WHITE">
                <font>
                   <Font size="28.0" />
                </font>

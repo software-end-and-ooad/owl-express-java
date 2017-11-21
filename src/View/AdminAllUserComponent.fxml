@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="626.0" prefWidth="853.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AdminAllUserComponentController">
+<AnchorPane id="AnchorPane" prefHeight="626.0" prefWidth="853.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AdminAllUserComponent">
    <children>
       <AnchorPane id="AnchorPane" fx:id="allOrderPane" layoutX="10.0" layoutY="10.0" prefHeight="626.0" prefWidth="853.0">
          <children>
