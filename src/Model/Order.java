@@ -256,7 +256,7 @@ public class Order implements Serializable{
         this.status = status;
     }
     public String toString(){
-        return this.getTrackID()+"|      "+this.getUserID()+"      "+this.getSenderName()+"      "+this.getOrderDate()+"      "+this.getStatus();
+        return this.getTrackID()+"|      "+this.getUserID()+"      "+this.getSenderName()+"      "+this.getOrderDate()+"      "+this.getStatus()+"      "+this.getPrice();
     }
 
     

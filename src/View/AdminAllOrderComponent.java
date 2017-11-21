@@ -79,7 +79,7 @@ public class AdminAllOrderComponent implements Initializable {
             srcProvince.setText(order.getSourceprovince());
             srcZipCode.setText(order.getSourcezipCode());
             srcOther.setText(order.getSourceotherAddress());
-            //Show receiver inffo
+            //Show receiver info
             desName.setText(order.getReceiverName());
             desAddress.setText(order.getDestinationAddress());
             desDistrict.setText(order.getDestinationdistric());
@@ -129,6 +129,7 @@ public class AdminAllOrderComponent implements Initializable {
     }
     @FXML
     public void refreshButton() throws IOException{
+        //Same as initialize
         ArrayList<String> orderString = new ArrayList<String>();
         listOrder.getItems().clear();
         Database db = new Database("Order");
