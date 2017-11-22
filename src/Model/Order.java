@@ -227,13 +227,6 @@ public class Order implements Serializable{
     public void setId(long id) {
         this.id = id;
     }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
-    public void setuserID(long userID) {
-        this.userID = userID;
-    }
 
     public String getSourceAddress() {
         return sourceAddress;

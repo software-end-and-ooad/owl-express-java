@@ -49,11 +49,7 @@ public class DashboardComponent implements Initializable {
         this.scene_area.getChildren().setAll(screen_page);
     }
     
-    @FXML
-    private void historyButton(MouseEvent event) throws IOException {
-       AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("NewAdminComponent.fxml"));
-       this.scene_area.getChildren().setAll(screen_page);
-    }
+    
     @FXML
     private void profileButton(MouseEvent event) throws IOException {
         AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("ProfileMenuComponent.fxml"));
