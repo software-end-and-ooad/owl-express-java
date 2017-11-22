@@ -8,8 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="626.0" prefWidth="853.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="View.AdminProfileComponent">
+<AnchorPane id="AnchorPane" prefHeight="626.0" prefWidth="853.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AdminProfileComponent">
    <children>
       <AnchorPane fx:id="editPane" prefHeight="687.0" prefWidth="850.0" visible="false">
          <children>
@@ -37,7 +36,7 @@
             <Text fx:id="email" layoutX="145.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="email" wrappingWidth="199.6708984375" />
             <Text fx:id="tel" layoutX="145.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="tel" wrappingWidth="199.6708984375" />
             <Text fx:id="zipCode" layoutX="145.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="address" wrappingWidth="583.6708984375" />
-            <JFXButton fx:id="editButton" layoutX="379.0" layoutY="567.0" onMouseClicked="#clickEdit" text="Edit porfile" />
+            <JFXButton fx:id="editButton" layoutX="361.0" layoutY="570.0" onMouseClicked="#clickEdit" text="Edit porfile" />
          </children>
       </AnchorPane>
    </children>

@@ -19,6 +19,19 @@ public class Admin{
     private String username;
     private String password;
     private String zipCode;//รหัสไปรษณี
+
+    public Admin(String nationID, String fullname, String email, String tel, String username, String password, String zipCode) {
+        this.nationID = nationID;
+        this.fullname = fullname;
+        this.email = email;
+        this.tel = tel;
+        this.username = username;
+        this.password = password;
+        this.zipCode = zipCode;
+    }
+    
+    
+    
     public long getId() {
         return id;
     }
