@@ -6,6 +6,7 @@
 package View;
 
 import Controller.LocalStorage;
+import Controller.SendEmail;
 import Controller.UserDataService;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;

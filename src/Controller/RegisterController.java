@@ -86,19 +86,7 @@ public class RegisterController extends Validation{
         // Check unique username and email first
         if (uniqueUsername.getResultList().size() <= 0) {
             if (uniqueEmail.getResultList().size() <= 0) {
-                try {
-                    // Create user
-                    db.getEM().getTransaction().begin();
-                    User user = new User(this.username, this.password, this.confirmPass, this.email, this.name, this.tel);
-                    db.getEM().persist(user);
-                    db.getEM().getTransaction().commit();
-                    db.getEM().close();
-                    return true;
-                } catch(Throwable error) {
-                    System.out.println("CANNOT CREATE USER, PLEASE CHECK SERVER ");
-                    db.getEM().close();
-                    return false;
-                }
+                return true;
             } else { // EMAIL HAS ALREADY TAKEN
                 this.uniqueEmail = true;
                 return false;
