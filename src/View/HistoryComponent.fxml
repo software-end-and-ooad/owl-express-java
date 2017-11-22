@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -9,6 +10,10 @@
 
 <AnchorPane id="AnchorPane" prefHeight="626.0" prefWidth="853.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.HistoryComponent">
    <children>
-      <ListView fx:id="orderList" layoutX="14.0" layoutY="14.0" prefHeight="597.0" prefWidth="822.0" />
+      <ListView layoutX="14.0" layoutY="14.0" prefHeight="597.0" prefWidth="822.0" visible="false" />
+      <JFXTextArea fx:id="orderList" labelFloat="true" layoutX="14.0" layoutY="14.0" prefHeight="597.0" prefWidth="822.0" wrapText="true">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextArea>
    </children>
 </AnchorPane>

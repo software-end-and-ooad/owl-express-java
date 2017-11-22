@@ -8,15 +8,12 @@ package View;
 import Controller.DataService;
 import Controller.HistoryController;
 import Model.Order;
-import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXTextArea;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 
 /**
  * FXML Controller class
@@ -28,21 +25,26 @@ public class HistoryComponent implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
     @FXML
-    private ListView orderList;
+    private JFXTextArea orderList;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        String text="\n";
         HistoryController checking = new HistoryController(DataService.getAccountID());
         List<Order> queriedList = checking.HistoryFinder();
+        
+        orderList.setBorder(null);
         
         if(queriedList!=null){
             for(Order l:queriedList)
             {
-                orderList.getItems().add("TrackID: " + l.getTrackID() + "\t\t Size: " + l.getSize() + "\t\t Price: " + l.getPrice() + "\t\t Sender's Name: " + l.getSenderName() + "\t\t Receiver's name: " + l.getReceiverName());
+                text = text + "TrackID : " + l.getTrackID()  + "\t\t Size : " + l.getSize() + "\t\t Price : " + l.getPrice() + "\nSender's Name  :\t" + l.getSenderName() + "\nReceiver's name :\t" + l.getReceiverName()+"\n"+
+                       "________________________________________________________________________________________________________________________________"+"\n\n";
             }
-            
+            orderList.setText(text);
         }
               
     }    
