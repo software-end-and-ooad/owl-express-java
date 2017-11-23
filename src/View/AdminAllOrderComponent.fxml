@@ -12,66 +12,181 @@
    <children>
       <AnchorPane id="AnchorPane" fx:id="allOrderPane" prefHeight="626.0" prefWidth="853.0">
          <children>
-            <JFXListView fx:id="listOrder" focusTraversable="false" layoutX="14.0" layoutY="14.0" prefHeight="599.0" prefWidth="693.0" />
-            <JFXButton fx:id="editButton" layoutX="716.0" layoutY="50.0" onMouseClicked="#editButton" prefHeight="61.0" prefWidth="117.0" style="-fx-background-color: BLUE; -fx-background-radius: 10;" text="Edit" textFill="#fffbfb">
+            <JFXListView fx:id="listOrder" focusTraversable="false" layoutY="29.0" prefHeight="482.0" prefWidth="853.0" style="-fx-background-color: #FCF4D9#50E3C2;" />
+            <JFXButton fx:id="editButton" layoutX="558.0" layoutY="549.0" onMouseClicked="#editButton" prefHeight="46.0" prefWidth="86.0" style="-fx-background-color: #50E3C2; -fx-background-radius: 10;" text="Edit" textFill="#fffbfb">
                <font>
-                  <Font size="35.0" />
+                  <Font name="The Bold Font" size="21.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="716.0" layoutY="135.0" onMouseClicked="#refreshButton" prefHeight="61.0" prefWidth="117.0" style="-fx-background-color: BLUE; -fx-background-radius: 10;" text="Refresh" textFill="#fffbfb">
+            <JFXButton layoutX="668.0" layoutY="549.0" onMouseClicked="#refreshButton" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: #50E3C2; -fx-background-radius: 10;" text="Refresh" textFill="#fffbfb">
                <font>
-                  <Font size="24.0" />
+                  <Font name="The Bold Font" size="21.0" />
                </font>
             </JFXButton>
          </children>
       </AnchorPane>
-      <AnchorPane id="AnchorPane" fx:id="editPane" prefHeight="626.0" prefWidth="853.0" visible="false">
+      <AnchorPane id="AnchorPane" fx:id="editPane" layoutY="14.0" prefHeight="626.0" prefWidth="853.0" visible="false">
          <children>
-            <Text layoutX="264.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Order">
+            <Text fill="#432160" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Order">
                <font>
-                  <Font size="72.0" />
+                  <Font name="The Bold Font" size="54.0" />
                </font>
             </Text>
-            <Text layoutX="166.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sender">
+            <Text fill="#50e3c2" layoutX="286.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sender">
                <font>
-                  <Font size="29.0" />
+                  <Font name="The Bold Font" size="38.0" />
                </font>
             </Text>
-            <Text layoutX="578.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Receiver">
+            <Text fill="#50e3c2" layoutX="568.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Receiver">
                <font>
-                  <Font size="29.0" />
+                  <Font name="The Bold Font" size="38.0" />
                </font>
             </Text>
-            <Text fx:id="srcName" layoutX="111.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
-            <Text fx:id="srcAddress" layoutX="111.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
-            <Text fx:id="srcDistrict" layoutX="111.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
-            <Text fx:id="srcArea" layoutX="111.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
-            <Text fx:id="srcProvince" layoutX="111.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
-            <Text fx:id="srcZipCode" layoutX="111.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
-            <Text fx:id="srcOther" layoutX="111.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
-            <Text fx:id="desName" layoutX="532.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
-            <Text fx:id="desAddress" layoutX="532.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
-            <Text fx:id="desDistrict" layoutX="532.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
-            <Text fx:id="desArea" layoutX="532.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
-            <Text fx:id="desProvince" layoutX="532.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
-            <Text fx:id="desZipCode" layoutX="532.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
-            <Text fx:id="desOther" layoutX="532.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375" />
-            <JFXButton fx:id="doneButton" layoutX="653.0" layoutY="513.0" onMouseClicked="#doneButton" prefHeight="56.0" prefWidth="117.0" style="-fx-background-color: RED; -fx-background-radius: 10;" text="Done" textFill="WHITE">
+            <Text fx:id="srcName" layoutX="252.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375">
                <font>
-                  <Font size="28.0" />
+                  <Font size="23.0" />
+               </font></Text>
+            <Text fx:id="srcAddress" layoutX="252.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375">
+               <font>
+                  <Font size="23.0" />
+               </font></Text>
+            <Text fx:id="srcDistrict" layoutX="252.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375">
+               <font>
+                  <Font size="23.0" />
+               </font></Text>
+            <Text fx:id="srcArea" layoutX="252.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375">
+               <font>
+                  <Font size="23.0" />
+               </font></Text>
+            <Text fx:id="srcProvince" layoutX="252.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375">
+               <font>
+                  <Font size="23.0" />
+               </font></Text>
+            <Text fx:id="srcZipCode" layoutX="252.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375">
+               <font>
+                  <Font size="23.0" />
+               </font></Text>
+            <Text fx:id="srcOther" layoutX="252.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375">
+               <font>
+                  <Font size="23.0" />
+               </font></Text>
+            <Text fx:id="desName" layoutX="551.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375">
+               <font>
+                  <Font size="23.0" />
+               </font></Text>
+            <Text fx:id="desAddress" layoutX="551.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375">
+               <font>
+                  <Font size="23.0" />
+               </font></Text>
+            <Text fx:id="desDistrict" layoutX="551.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375">
+               <font>
+                  <Font size="23.0" />
+               </font></Text>
+            <Text fx:id="desArea" layoutX="551.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375">
+               <font>
+                  <Font size="23.0" />
+               </font></Text>
+            <Text fx:id="desProvince" layoutX="551.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375">
+               <font>
+                  <Font size="23.0" />
+               </font></Text>
+            <Text fx:id="desZipCode" layoutX="551.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375">
+               <font>
+                  <Font size="23.0" />
+               </font></Text>
+            <Text fx:id="desOther" layoutX="551.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="199.6708984375">
+               <font>
+                  <Font size="23.0" />
+               </font></Text>
+            <JFXButton fx:id="doneButton" layoutX="692.0" layoutY="528.0" onMouseClicked="#doneButton" prefHeight="54.0" prefWidth="117.0" style="-fx-background-color: #FF7A5A; -fx-background-radius: 10;" text="Done" textFill="WHITE">
+               <font>
+                  <Font name="The Bold Font" size="29.0" />
                </font>
             </JFXButton>
-            <JFXCheckBox fx:id="invalidAddrCheck" layoutX="264.0" layoutY="522.0" prefHeight="43.0" prefWidth="167.0" text="Invalid address">
+            <JFXCheckBox fx:id="invalidAddrCheck" layoutX="267.0" layoutY="461.0" prefHeight="43.0" prefWidth="209.0" text="Invalid address">
                <font>
-                  <Font size="17.0" />
+                  <Font size="23.0" />
                </font>
             </JFXCheckBox>
-            <JFXCheckBox fx:id="deliveredCheck" layoutX="124.0" layoutY="522.0" prefHeight="43.0" prefWidth="117.0" text="Delivered">
+            <JFXCheckBox fx:id="deliveredCheck" layoutX="51.0" layoutY="461.0" prefHeight="38.0" prefWidth="152.0" text="Delivered" textFill="#0d0d0d">
                <font>
-                  <Font size="17.0" />
+                  <Font size="23.0" />
                </font>
             </JFXCheckBox>
-            <JFXTextField fx:id="priceField" layoutX="447.0" layoutY="529.0" promptText="Price" />
+            <JFXTextField fx:id="priceField" layoutX="516.0" layoutY="461.0" promptText="Price">
+               <font>
+                  <Font size="22.0" />
+               </font></JFXTextField>
+            <Text layoutX="51.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+            <Text layoutX="51.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+            <Text layoutX="51.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="District">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+            <Text layoutX="51.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Area">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+            <Text layoutX="53.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Province">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+            <Text layoutX="51.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zip code">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+            <Text layoutX="51.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Other">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+            <Text layoutX="185.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+            <Text layoutX="185.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+            <Text layoutX="185.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+            <Text layoutX="185.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+            <Text layoutX="185.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+            <Text layoutX="185.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+            <Text layoutX="185.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </children>
