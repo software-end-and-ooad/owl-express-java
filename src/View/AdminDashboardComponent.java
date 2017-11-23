@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controller.AdminDataService;
 import Controller.LocalStorage;
 import java.io.IOException;
 import java.net.URL;
@@ -39,7 +40,7 @@ public class AdminDashboardComponent implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        this.username.setText(AdminDataService.getUsername());
     }    
 
     @FXML
@@ -81,5 +82,8 @@ public class AdminDashboardComponent implements Initializable {
          AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("NewAdminComponent.fxml"));
         this.scene_area.getChildren().setAll(screen_page);
     }
-    
+    @FXML
+    private void exitApplication() {
+            System.exit(0);
+    }
 }

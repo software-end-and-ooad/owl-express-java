@@ -43,22 +43,22 @@
             <Image url="@images/profile.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="66.0" layoutY="294.0" onMouseClicked="#orderButton" text="Order" textFill="#432160">
+      <JFXButton focusTraversable="false" layoutX="66.0" layoutY="294.0" onMouseClicked="#orderButton" text="Order" textFill="#432160">
          <font>
             <Font name="The Bold Font" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="checkPackageBTN" layoutX="39.0" layoutY="386.0" onMouseClicked="#checkPackage" prefHeight="35.0" prefWidth="133.0" text="Check Package" textFill="#432160">
+      <JFXButton fx:id="checkPackageBTN" focusTraversable="false" layoutX="39.0" layoutY="386.0" onMouseClicked="#checkPackage" prefHeight="35.0" prefWidth="133.0" text="Check Package" textFill="#432160">
          <font>
             <Font name="The Bold Font" size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="57.0" layoutY="481.0" onMouseClicked="#historyButton" text="History" textFill="#432160">
+      <JFXButton focusTraversable="false" layoutX="57.0" layoutY="481.0" onMouseClicked="#historyButton" text="History" textFill="#432160">
          <font>
             <Font name="The Bold Font" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="59.0" layoutY="589.0" onMouseClicked="#profileButton" text="Profile" textFill="#432160">
+      <JFXButton focusTraversable="false" layoutX="59.0" layoutY="589.0" onMouseClicked="#profileButton" text="Profile" textFill="#432160">
          <font>
             <Font name="The Bold Font" size="18.0" />
          </font>
@@ -69,7 +69,7 @@
          </image>
       </ImageView>
       <AnchorPane fx:id="scene_area" layoutX="222.0" layoutY="125.0" prefHeight="626.0" prefWidth="853.0" />
-      <JFXButton layoutX="58.0" layoutY="685.0" onMouseClicked="#logoutButton" text="Log out" textFill="#432160">
+      <JFXButton focusTraversable="false" layoutX="58.0" layoutY="685.0" onMouseClicked="#logoutButton" text="Log out" textFill="#432160">
          <font>
             <Font name="The Bold Font" size="18.0" />
          </font>

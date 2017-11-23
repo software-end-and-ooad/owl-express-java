@@ -12,32 +12,32 @@
 
 <AnchorPane id="AnchorPane" prefHeight="626.0" prefWidth="853.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.NewAdminComponent">
    <children>
-      <Text fx:id="passwordValidate" fill="#fc0505" layoutX="302.0" layoutY="531.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <Text fx:id="passwordValidate" fill="#fc0505" layoutX="302.0" layoutY="519.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
          <font>
             <Font size="12.0" />
          </font>
       </Text>
-      <Text fx:id="confirmPassValidate" fill="#fc0505" layoutX="302.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <Text fx:id="confirmPassValidate" fill="#fc0505" layoutX="302.0" layoutY="583.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
          <font>
             <Font size="12.0" />
          </font>
       </Text>
-      <Text fx:id="telValidate" fill="#fc0505" layoutX="302.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <Text fx:id="telValidate" fill="#fc0505" layoutX="302.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
          <font>
             <Font size="12.0" />
          </font>
       </Text>
-      <Text fx:id="emailValidate" fill="#fc0505" layoutX="302.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <Text fx:id="emailValidate" fill="#fc0505" layoutX="302.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
          <font>
             <Font size="12.0" />
          </font>
       </Text>
-      <Text fx:id="nameValidate" fill="#fc0505" layoutX="302.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <Text fx:id="nameValidate" fill="#fc0505" layoutX="302.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
          <font>
             <Font size="12.0" />
          </font>
       </Text>
-      <Text fx:id="usernameValidate" fill="#fc0505" layoutX="302.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <Text fx:id="usernameValidate" fill="#fc0505" layoutX="302.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
          <font>
             <Font size="12.0" />
          </font>
@@ -50,25 +50,25 @@
             <Font name="The Bold Font" size="26.0" />
          </font>
       </JFXButton>
-      <JFXPasswordField fx:id="confirmPass" layoutX="302.0" layoutY="535.0" prefHeight="35.0" prefWidth="249.0" promptText="Confirm Password" />
-      <JFXPasswordField fx:id="password" layoutX="302.0" layoutY="473.0" prefHeight="35.0" prefWidth="249.0" promptText="Password" />
-      <JFXTextField fx:id="tel" layoutX="302.0" layoutY="413.0" prefHeight="35.0" prefWidth="249.0" promptText="Tel." />
-      <JFXTextField fx:id="name" layoutX="302.0" layoutY="196.0" prefHeight="35.0" prefWidth="249.0" promptText="Fullname" />
-      <JFXTextField fx:id="email" layoutX="302.0" layoutY="118.0" prefHeight="35.0" prefWidth="249.0" promptText="E-mail" />
       <JFXTextField fx:id="username" layoutX="302.0" layoutY="51.0" prefHeight="35.0" prefWidth="249.0" promptText="Username" />
+      <JFXTextField fx:id="email" layoutX="302.0" layoutY="118.0" prefHeight="35.0" prefWidth="249.0" promptText="E-mail" />
+      <JFXTextField fx:id="name" layoutX="302.0" layoutY="192.0" prefHeight="35.0" prefWidth="249.0" promptText="Fullname" />
+      <JFXTextField fx:id="nationID" layoutX="302.0" layoutY="266.0" prefHeight="35.0" prefWidth="249.0" promptText="Nation ID" />
+      <JFXTextField fx:id="zipCode" layoutX="302.0" layoutY="340.0" prefHeight="35.0" prefWidth="249.0" promptText="Zipcode" />
+      <JFXTextField fx:id="tel" layoutX="302.0" layoutY="408.0" prefHeight="35.0" prefWidth="249.0" promptText="Tel." />
+      <JFXPasswordField fx:id="password" layoutX="302.0" layoutY="471.0" prefHeight="35.0" prefWidth="249.0" promptText="Password" />
+      <JFXPasswordField fx:id="confirmPass" layoutX="302.0" layoutY="535.0" prefHeight="35.0" prefWidth="249.0" promptText="Confirm Password" />
       <Text fx:id="adminText" fill="#432160" layoutX="242.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Admin Account" wrappingWidth="390.6064453125">
          <font>
             <Font name="The Bold Font" size="38.0" />
          </font>
       </Text>
-      <JFXTextField fx:id="nationID" layoutX="302.0" layoutY="284.0" prefHeight="35.0" prefWidth="249.0" promptText="Nation ID" />
-      <Text fx:id="narionIDValidate" fill="#fc0505" layoutX="302.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <Text fx:id="narionIDValidate" fill="#fc0505" layoutX="302.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
          <font>
             <Font size="12.0" />
          </font>
       </Text>
-      <JFXTextField fx:id="zipCode" layoutX="302.0" layoutY="354.0" prefHeight="35.0" prefWidth="249.0" promptText="Zipcode" />
-      <Text fx:id="zipcodeValidate" fill="#fc0505" layoutX="302.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <Text fx:id="zipcodeValidate" fill="#fc0505" layoutX="302.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
          <font>
             <Font size="12.0" />
          </font>

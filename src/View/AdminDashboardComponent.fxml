@@ -23,7 +23,7 @@
             <Font name="The Bold Font" size="39.0" />
          </font>
       </Text>
-      <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="1080.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="1080.0" layoutY="10.0" onMouseClicked="#exitApplication" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/ex.png" />
          </image>
@@ -38,12 +38,12 @@
             <Image url="@images/allUserDetail.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="67.0" fitWidth="59.0" layoutX="76.0" layoutY="493.0" onMouseClicked="#adminManage" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="67.0" fitWidth="59.0" layoutX="76.0" layoutY="493.0" onMouseClicked="#addAdmin" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/newAdmin.png" />
          </image>
       </ImageView>
-      <Text fill="#432160" layoutX="74.0" layoutY="693.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log Out">
+      <Text fill="#432160" layoutX="74.0" layoutY="693.0" onMouseClicked="#signOut" strokeType="OUTSIDE" strokeWidth="0.0" text="Log Out">
          <font>
             <Font name="The Bold Font" size="16.0" />
          </font></Text>
@@ -52,25 +52,26 @@
             <Image url="@images/shorthen.png" />
          </image>
       </ImageView>
-      <Text fill="#432160" layoutX="61.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="all order">
+      <Text fill="#432160" layoutX="74.0" layoutY="329.0" onMouseClicked="#orderClick" strokeType="OUTSIDE" strokeWidth="0.0" text="all order">
          <font>
             <Font name="The Bold Font" size="18.0" />
          </font>
       </Text>
-      <Text fill="#432160" layoutX="41.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="all user detail">
+      <Text fill="#432160" layoutX="54.0" layoutY="455.0" onMouseClicked="#userDetail" strokeType="OUTSIDE" strokeWidth="0.0" text="all user detail">
          <font>
             <Font name="The Bold Font" size="18.0" />
          </font>
       </Text>
-      <Text fill="#432160" layoutX="62.0" layoutY="579.0" strokeType="OUTSIDE" strokeWidth="0.0" text="add admin">
+      <Text fill="#432160" layoutX="62.0" layoutY="579.0" onMouseClicked="#addAdmin" strokeType="OUTSIDE" strokeWidth="0.0" text="add admin">
          <font>
             <Font name="The Bold Font" size="18.0" />
          </font>
       </Text>
-      <ImageView fitHeight="48.0" fitWidth="97.0" layoutX="82.0" layoutY="629.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="48.0" fitWidth="97.0" layoutX="82.0" layoutY="629.0" onMouseClicked="#signOut" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/door.png" />
          </image>
       </ImageView>
+      <AnchorPane fx:id="scene_area" layoutX="229.0" layoutY="134.0" prefHeight="626.0" prefWidth="853.0" />
    </children>
 </AnchorPane>

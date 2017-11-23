@@ -65,6 +65,8 @@ public class RegisterComponent implements Initializable {
     @FXML
     private Text passwordValidate;
     @FXML
+    private Text verifyText;
+    @FXML
     private JFXButton register_button, login_button;
     @FXML
     private AnchorPane verifyPane;
@@ -115,6 +117,7 @@ public class RegisterComponent implements Initializable {
                 this.verifyPane.setVisible(true);
                 this.verifyField.setVisible(true);
                 this.verifyButton.setVisible(true);
+                this.verifyText.setVisible(true);
                 
                 this.register_button.setDisable(true);
                 this.login_button.setDisable(true);
@@ -204,7 +207,9 @@ public class RegisterComponent implements Initializable {
             this.verifyPane.setVisible(false);
             this.verifyField.setVisible(false);
             this.verifyButton.setVisible(false);
-
+            this.verifyText.setVisible(false);
+            this.verifyField.clear();
+            
             this.register_button.setDisable(false);
             this.login_button.setDisable(false);
             // SUCCESS REGISTER, THEN ROUTE TO DASHBOARD
