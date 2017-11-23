@@ -26,7 +26,7 @@ import javax.persistence.TypedQuery;
  *
  * @author kaogi
  */
-public class AdminAllUserComponentController implements Initializable {
+public class AdminAllUserComponent implements Initializable {
 
     @FXML
     private AnchorPane allOrderPane;

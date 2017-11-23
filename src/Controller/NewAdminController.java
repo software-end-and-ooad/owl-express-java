@@ -5,35 +5,41 @@
  */
 package Controller;
 
+import Model.Admin;
 import Model.Database;
-import Model.User;
 import java.util.ArrayList;
 import javax.persistence.Query;
 
 /**
  *
- * @author babyjazz
+ * @author kaogi
  */
-public class RegisterController extends Validation{
-    private String username;
-    private String password;
-    private String confirmPass;
-    private String email;
-    private String name;
-    private String tel;
-    private boolean uniqueUsername;
+public class NewAdminController  extends Validation{
+
+    private final String nationID;
+    private final String name;
+    private final String email;
+    private final String tel;
+    private final String username;
+    private final String password;
+    private final String zipCode;
+    private final String confirmPass;
     private boolean uniqueEmail;
-//    private Validation validator = new Validation();
+    private boolean uniqueUsername;
     
-    public RegisterController(String username, String password, String confirmPass, String email, String name, String tel) {
+    
+    public NewAdminController(String nationID, String name, String email, String tel, String username, String password, String confirmPass,String zipCode) {
+        this.nationID = nationID;
+        this.name = name;
+        this.email = email;
+        this.tel = tel;
         this.username = username;
         this.password = password;
+        this.zipCode = zipCode;
         this.confirmPass = confirmPass;
-        this.email = email;
-        this.name = name;
-        this.tel = tel;
     }
-    public ArrayList<ArrayList<String>> validateResgister(){
+    
+     public ArrayList<ArrayList<String>> validateResgister(){
         Validation checkValidate = new Validation();
         ArrayList<String> validate = new ArrayList<String>();
         
@@ -61,6 +67,22 @@ public class RegisterController extends Validation{
             validate.add("tel|minLength");
         if (!checkValidate.isNumeric(this.tel))
             validate.add("tel|isNumeric");
+        if (!checkValidate.isRequired(this.nationID))
+            validate.add("nationID|isRequired");
+        if (!checkValidate.maxLength(this.nationID, 13))
+            validate.add("nationID|size");
+        if (!checkValidate.minLength(this.nationID, 13))
+            validate.add("nationID|size");
+        if (!checkValidate.isNumeric(this.nationID))
+            validate.add("nationID|isNumeric");
+        if (!checkValidate.maxLength(this.zipCode, 5))
+            validate.add("zipcode|size");
+        if (!checkValidate.minLength(this.tel, 5))
+            validate.add("zipCode|size");
+        if (!checkValidate.isNumeric(this.zipCode))
+            validate.add("zipCode|isNumeric");
+        if (!checkValidate.isRequired(this.zipCode))
+            validate.add("zipCode|isRequired");
         if (!checkValidate.minLength(this.password, 2))
             validate.add("password|minLength");
         if (!checkValidate.isSame(this.confirmPass, this.password))
@@ -69,24 +91,34 @@ public class RegisterController extends Validation{
         ArrayList<ArrayList<String>> errList = splitListofValidateError(validate);
         return errList;
     }
-    
-    
-    
-    public boolean checkRegister() {
+     
+     public boolean checkRegister() {
         this.uniqueEmail = false;
         this.uniqueUsername = false;
         
         
-        Database db = new Database("User");
+        Database db = new Database("Admin");
         
         // FIND OR CREATE     // UNIQUE USERNAME AND UNIQUE EMAIL
-        Query uniqueUsername = db.getEM().createQuery("SELECT username FROM User WHERE username='" + this.username + "'", User.class);
-        Query uniqueEmail = db.getEM().createQuery("SELECT email FROM User WHERE email='" + this.email + "'", User.class);
+        Query uniqueUsername = db.getEM().createQuery("SELECT username FROM Admin WHERE username='" + this.username + "'", Admin.class);
+        Query uniqueEmail = db.getEM().createQuery("SELECT email FROM Admin WHERE email='" + this.email + "'", Admin.class);
         
         // Check unique username and email first
         if (uniqueUsername.getResultList().size() <= 0) {
             if (uniqueEmail.getResultList().size() <= 0) {
-                return true;
+                try {
+                    // Create user
+                    db.getEM().getTransaction().begin();
+                    Admin admin = new Admin(this.nationID, this.name, this.email, this.tel, this.username, this.password, this.zipCode);
+                    db.getEM().persist(admin);
+                    db.getEM().getTransaction().commit();
+                    db.getEM().close();
+                    return true;
+                } catch(Throwable error) {
+                    System.out.println("CANNOT CREATE Admin, PLEASE CHECK SERVER ");
+                    db.getEM().close();
+                    return false;
+                }
             } else { // EMAIL HAS ALREADY TAKEN
                 this.uniqueEmail = true;
                 return false;
@@ -97,13 +129,13 @@ public class RegisterController extends Validation{
         }
        
     }
-    
-    public boolean getUniqueEmail() {
-        return this.uniqueEmail;
-    }
-    
+
     public boolean getUniqueUsername() {
         return this.uniqueUsername;
+    }
+
+    public boolean getUniqueEmail() {
+       return this.uniqueEmail;
     }
     
 }

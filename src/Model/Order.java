@@ -228,10 +228,6 @@ public class Order implements Serializable{
         this.id = id;
     }
 
-    public void setuserID(long userID) {
-        this.userID = userID;
-    }
-
     public String getSourceAddress() {
         return sourceAddress;
     }

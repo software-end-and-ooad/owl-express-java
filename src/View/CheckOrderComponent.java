@@ -21,7 +21,7 @@ import javafx.scene.text.Text;
  *
  * @author kaogi
  */
-public class CheckOrderComponentController implements Initializable {
+public class CheckOrderComponent implements Initializable {
 
     @FXML
     private JFXTextField searchBox;
