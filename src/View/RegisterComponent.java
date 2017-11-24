@@ -6,7 +6,7 @@
 package View;
 
 import Controller.RegisterController;
-import Controller.SendEmail;
+import Controller.SendEmailController;
 import Model.Database;
 import Model.User;
 import com.jfoenix.controls.JFXButton;
@@ -38,7 +38,7 @@ import javafx.stage.Stage;
 public class RegisterComponent implements Initializable {
     double xOffset;
     double yOffset;
-    SendEmail sendEmail;
+    SendEmailController sendEmail;
     @FXML
     private JFXTextField username;
     @FXML
@@ -112,7 +112,7 @@ public class RegisterComponent implements Initializable {
 
             if (registerController.checkRegister() == true) { // if success all
                 //Verify email
-                sendEmail = new SendEmail(this.email.getText());
+                sendEmail = new SendEmailController(this.email.getText());
                 sendEmail.sendEmail();
                 this.verifyPane.setVisible(true);
                 this.verifyField.setVisible(true);

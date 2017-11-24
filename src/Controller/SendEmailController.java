@@ -17,21 +17,21 @@ import javax.mail.internet.MimeMessage;
  *
  * @author 58011424
  */
-public class SendEmail {
+public class SendEmailController {
     private final String host ="smtp.gmail.com" ;
-    private final String user = "58011424@kmitl.ac.th";
-    private final String pass = "Itt12asso";
+    private final String user = "owl.express.service@gmail.com";
+    private final String pass = "sabnlbmdbmqhlilq";
     private String to;
-    private final String from = "58011424@kmitl.ac.th";
+    private final String from = "owl.express.service@gmail.com";
     private String verify;
     
-    public SendEmail(String to) {
+    public SendEmailController(String to) {
         this.to = to;
     }
     public String sendEmail(){
         try{
             String subject = "Verify Email Address";
-            String messageText = "Thank you for registering with Owl-Express!\n" +"\n" +"To complete the registration process, verify your email address by enter this code to your application\n" + (this.verify = getRandomWord());
+            String messageText = "Thank you for registering with Owl-Express!\n" +"\n" +"To complete the registration process, verify your email address by enter this code to your application\n <br /> <h1>" + (this.verify = getRandomWord()) + "</h1>";
             boolean sessionDebug = false;
 
             Properties props = System.getProperties();
@@ -51,7 +51,7 @@ public class SendEmail {
             InternetAddress[] address = {new InternetAddress(this.to)}; //Address of header
             msg.setRecipients(Message.RecipientType.TO, address);//Receiver email
             msg.setSubject(subject); msg.setSentDate(new Date());//Message send data
-            msg.setText(messageText);//Actual message
+            msg.setContent(messageText,"text/html");//Actual message
 
            Transport transport=mailSession.getTransport("smtp");//Server through which we are going to send msg
            transport.connect(this.host, this.user, this.pass);//We need because we have to authenticate sender email and password
