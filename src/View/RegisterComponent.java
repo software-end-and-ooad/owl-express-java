@@ -196,7 +196,7 @@ public class RegisterComponent implements Initializable {
             try {
                 // Create user
                 db.getEM().getTransaction().begin();
-                User user = new User(this.username.getText(), this.password.getText(), this.confirmPass.getText(), this.email.getText(), this.name.getText(), this.tel.getText());
+                User user = new User(this.username.getText(), this.password.getText(), this.email.getText(), this.name.getText(), this.tel.getText());
                 db.getEM().persist(user);
                 db.getEM().getTransaction().commit();
                 db.getEM().close();

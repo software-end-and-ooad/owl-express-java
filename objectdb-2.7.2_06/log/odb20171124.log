@@ -1,0 +1,86 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2017-11-24 21:06:51 #1 server] 
+Server on port 6136 has started by 19352@babyjazz-PC
+
+[2017-11-24 21:07:00 #2 store] 
+Database '/home/babyjazz/Downloads/test/pap/owl-express-java/objectdb-2.7.2_06/db/db/User.odb' is opened by 19352@babyjazz-PC
+
+[2017-11-24 21:07:00 #3 store] 
+Configuration path: /home/babyjazz/Downloads/test/pap/owl-express-java/objectdb-2.7.2_06/objectdb.conf
+
+[2017-11-24 21:07:00 #4 type.user] 
+Enhancement of type Model.User is old and cannot be used (-4249747251656454882:8716667489967282621)
+
+[2017-11-24 21:07:00 #5 type] 
+Type Model.User is not enhanced.
+
+[2017-11-24 21:07:10 #6 store] 
+Database '/home/babyjazz/Downloads/test/pap/owl-express-java/objectdb-2.7.2_06/db/db/User.odb' is closed by 19352@babyjazz-PC
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2017-11-24 21:07:32 #1 explorer] 
+[ObjectDB 2.7.2_06] javax.persistence.PersistenceException
+Failed to connect to server localhost:6136 (Connection refused (Connection refused)) (error 522)
+	at com.objectdb.Explorer$1.run(Explorer.java:57)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Caused by: com.objectdb.o.UserException: Failed to connect to server localhost:6136 (Connection refused (Connection refused))
+	at com.objectdb.o.MSG.d(MSG.java:77)
+	at com.objectdb.o.CLS.M(CLS.java:155)
+	at com.objectdb.o.CST.<init>(CST.java:79)
+	at com.objectdb.o.CSF.Vi(CSF.java:90)
+	at com.objectdb.o.OMF.an(OMF.java:783)
+	at com.objectdb.jpa.EMF.an(EMF.java:131)
+	at com.objectdb.o.OMF.am(OMF.java:694)
+	at com.objectdb.jpa.EMF.createEntityManager(EMF.java:150)
+	... 17 more
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.objectdb.o.CLS.M(CLS.java:123)
+	... 23 more
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2017-11-24 21:07:46 #1 server] 
+Server on port 6136 has started by 19855@babyjazz-PC
+
+[2017-11-24 21:07:47 #2 store] 
+Database '/home/babyjazz/Downloads/test/pap/owl-express-java/objectdb-2.7.2_06/db/db/User.odb' is opened by 19855@babyjazz-PC
+
+[2017-11-24 21:07:47 #3 store] 
+Configuration path: /home/babyjazz/Downloads/test/pap/owl-express-java/objectdb-2.7.2_06/objectdb.conf
+
+[2017-11-24 21:11:45 #4 store] 
+Database '/home/babyjazz/Downloads/test/pap/owl-express-java/objectdb-2.7.2_06/db/db/Order.odb' is opened by 19855@babyjazz-PC
+
+[2017-11-24 21:11:45 #5 store] 
+Configuration path: /home/babyjazz/Downloads/test/pap/owl-express-java/objectdb-2.7.2_06/objectdb.conf
+
+[2017-11-24 21:11:47 #6 store] 
+Database '/home/babyjazz/Downloads/test/pap/owl-express-java/objectdb-2.7.2_06/db/db/Order.odb' is closed by 19855@babyjazz-PC
+
+[2017-11-24 21:13:49 #7 type.user] 
+Enhancement of type Model.User is old and cannot be used (8516656196526117704:-4249747251656454882)
+
+[2017-11-24 21:13:49 #8 type] 
+Type Model.User is not enhanced.
+

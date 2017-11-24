@@ -14,20 +14,18 @@ public class User{
     private String name;
     private String email;
     private String tel;
-    private String address;//ที่อยู่
-    private String distric;//แขวง
-    private String area;//เขต
-    private String province;//จังหวัด
-    private String zipCode;//รหัสไปรษณี
+    private String address;
+    private String distric;
+    private String area;
+    private String province;
+    private String zipCode;
     private String otherAddress;
     private String username;
     private String password;
-    private String confirmPass;
     
-    public User(String username, String password, String confirmPass, String email, String name, String tel) {
+    public User(String username, String password, String email, String name, String tel) {
         this.username = username;
         this.password = password;
-        this.confirmPass = confirmPass;
         this.email = email;
         this.name = name;
         this.tel = tel;
@@ -51,9 +49,6 @@ public class User{
     }
     public void setPassword(String password) {
         this.password = password;
-    }
-    public String getConfirmPass() {
-        return this.confirmPass;
     }
     public String getEmail() {
         return this.email;
