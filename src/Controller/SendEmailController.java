@@ -18,20 +18,23 @@ import javax.mail.internet.MimeMessage;
  * @author 58011424
  */
 public class SendEmailController {
-    private final String host ="smtp.gmail.com" ;
-    private final String user = "owl.express.service@gmail.com";
-    private final String pass = "sabnlbmdbmqhlilq";
-    private String to;
-    private final String from = "owl.express.service@gmail.com";
-    private String verify;
+    protected final String host ="smtp.gmail.com" ;
+    protected final String user = "owl.express.service@gmail.com";
+    protected final String pass = "sabnlbmdbmqhlilq";
+    protected String to;
+    protected final String from = "owl.express.service@gmail.com";
+    protected String verify;
+    String subject;
+    String messageText;
     
     public SendEmailController(String to) {
         this.to = to;
     }
-    public String sendEmail(){
+    public void sendEmail(String subject, String messageText, String verifyCode){
         try{
-            String subject = "Verify Email Address";
-            String messageText = "Thank you for registering with Owl-Express!\n" +"\n" +"To complete the registration process, verify your email address by enter this code to your application\n <br /> <h1>" + (this.verify = getRandomWord()) + "</h1>";
+            this.verify = verifyCode;
+            this.subject = subject;
+            this.messageText = messageText;
             boolean sessionDebug = false;
 
             Properties props = System.getProperties();
@@ -58,19 +61,16 @@ public class SendEmailController {
            transport.sendMessage(msg, msg.getAllRecipients());
            transport.close();
            System.out.println("message send successfully");
-           return this.verify;
         }catch(Exception ex)
         {
             System.out.println(ex);//if any error occur then error message will print3
-            return this.verify;
         }
     }
-
     public String getVerify() {
         return verify;
     }
     
-    private String getRandomWord() {
+    public static String getRandomWord() {
         String r = "";
         for(int i = 0; i < 4; i++) {
             r += (char)(Math.random() * 26 + 97);

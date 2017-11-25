@@ -19,7 +19,7 @@
       </ImageView>
       <JFXTextField fx:id="username_field" layoutX="230.0" layoutY="299.0" prefHeight="35.0" prefWidth="274.0" promptText="Username" />
       <JFXPasswordField fx:id="password_field" layoutX="230.0" layoutY="356.0" prefHeight="35.0" prefWidth="274.0" promptText="Password" />
-      <JFXButton fx:id="forgotPass" layoutX="205.0" layoutY="487.0" prefHeight="39.0" prefWidth="302.0" text="Forget username or password?" textFill="WHITE" />
+      <JFXButton fx:id="forgotPass" layoutX="205.0" layoutY="487.0" onMouseClicked="#clickForgotPass" prefHeight="39.0" prefWidth="302.0" text="Forget username or password?" textFill="WHITE" />
       <JFXButton fx:id="login_button" layoutX="379.0" layoutY="432.0" onMousePressed="#submitLogin" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #FCCF4D;" text="Sign in" textFill="WHITE">
          <font>
             <Font name="The Bold Font" size="21.0" />
@@ -47,5 +47,51 @@
             <Image url="@images/ex.png" />
          </image>
       </ImageView>
+      <AnchorPane fx:id="popUp" layoutX="210.0" layoutY="227.0" opacity="0.8" prefHeight="370.0" prefWidth="714.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20;" visible="false" />
+      <Text fx:id="emailValidate" fill="RED" layoutX="294.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid E-mail" textAlignment="CENTER" visible="false" wrappingWidth="546.87451171875">
+         <font>
+            <Font name="System Bold Italic" size="26.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="emailField" alignment="CENTER" focusColor="BLACK" focusTraversable="false" layoutX="255.0" layoutY="319.0" prefHeight="91.0" prefWidth="617.0" promptText="Enter your E-mail" unFocusColor="BLACK" visible="false">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="emailButton" focusTraversable="false" layoutX="505.0" layoutY="460.0" onMouseClicked="#submitEmail" style="-fx-background-color: #86847E; -fx-background-radius: 10;" text="Enter" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="27.0" />
+         </font>
+      </JFXButton>
+      <Text fx:id="verifyText" fill="#86847e" layoutX="294.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can find verification code in your E-mail" visible="false" wrappingWidth="546.87451171875">
+         <font>
+            <Font name="System Bold Italic" size="26.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="verifyField" alignment="CENTER" focusColor="BLACK" focusTraversable="false" layoutX="419.0" layoutY="319.0" prefHeight="91.0" prefWidth="296.0" promptText="Enter code" unFocusColor="BLACK" visible="false">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="verifyButton" focusTraversable="false" layoutX="505.0" layoutY="460.0" onMouseClicked="#submitVerify" style="-fx-background-color: #86847E; -fx-background-radius: 10;" text="Verify" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="27.0" />
+         </font>
+      </JFXButton>
+      <Text fx:id="usernameText" fill="#86847e" layoutX="360.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" visible="false" wrappingWidth="546.87451171875">
+         <font>
+            <Font name="System Bold Italic" size="43.0" />
+         </font>
+      </Text>
+      <Text fx:id="passwordText" fill="#86847e" layoutX="360.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" visible="false" wrappingWidth="546.87451171875">
+         <font>
+            <Font name="System Bold Italic" size="43.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="closeButton" focusTraversable="false" layoutX="505.0" layoutY="460.0" onMouseClicked="#close" style="-fx-background-color: #86847E; -fx-background-radius: 10;" text="Close" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="27.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

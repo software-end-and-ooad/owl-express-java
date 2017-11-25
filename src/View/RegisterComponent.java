@@ -108,12 +108,16 @@ public class RegisterComponent implements Initializable {
         this.confirmPassValidate.setVisible(false);
         
         ArrayList<ArrayList<String>> errList = registerController.validateResgister(); // Validate error list
+        String verifyCode = SendEmailController.getRandomWord();
+        String subject = "Verify Email Address";
+        String messageText = "Thank you for registering with Owl-Express!\n" +"\n" +"To complete the registration process, verify your email address by enter this code to your application\n <br /> <h1>" + verifyCode + "</h1>";
+        
         if (errList.size() <= 0) {
 
             if (registerController.checkRegister() == true) { // if success all
                 //Verify email
                 sendEmail = new SendEmailController(this.email.getText());
-                sendEmail.sendEmail();
+                sendEmail.sendEmail(subject, messageText, verifyCode);
                 this.verifyPane.setVisible(true);
                 this.verifyField.setVisible(true);
                 this.verifyButton.setVisible(true);
