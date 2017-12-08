@@ -198,7 +198,17 @@ public class LoginComponent extends UserDataService implements Initializable {
     @FXML
     private void close() {
         //Close pop up
-        //Invisible previous component
+        //Invisible all component
+        this.emailField.setVisible(false);
+        this.emailField.clear();
+        this.emailButton.setVisible(false);
+        this.emailValidate.setVisible(false);
+        
+        this.verifyText.setVisible(false);
+        this.verifyField.setVisible(false);
+        this.verifyField.clear();
+        this.verifyButton.setVisible(false);
+        
         this.usernameText.setVisible(false);
         this.passwordText.setVisible(false);
         this.closeButton.setVisible(false);

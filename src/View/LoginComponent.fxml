@@ -47,8 +47,15 @@
             <Image url="@images/ex.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="popUp" layoutX="210.0" layoutY="227.0" opacity="0.8" prefHeight="370.0" prefWidth="714.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20;" visible="false" />
-      <Text fx:id="emailValidate" fill="RED" layoutX="294.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid E-mail" textAlignment="CENTER" visible="false" wrappingWidth="546.87451171875">
+      <AnchorPane fx:id="popUp" layoutX="210.0" layoutY="227.0" opacity="0.8" prefHeight="370.0" prefWidth="714.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20;" visible="false">
+         <children>
+            <ImageView fitHeight="54.0" fitWidth="56.0" layoutX="646.0" layoutY="14.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/exitPop.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <Text fx:id="emailValidate" fill="RED" layoutX="294.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid E-mail" textAlignment="CENTER" visible="false" wrappingWidth="546.87451171875">
          <font>
             <Font name="System Bold Italic" size="26.0" />
          </font>
@@ -58,12 +65,12 @@
             <Font size="50.0" />
          </font>
       </JFXTextField>
-      <JFXButton fx:id="emailButton" focusTraversable="false" layoutX="505.0" layoutY="460.0" onMouseClicked="#submitEmail" style="-fx-background-color: #86847E; -fx-background-radius: 10;" text="Enter" visible="false">
+      <JFXButton fx:id="emailButton" focusTraversable="false" layoutX="505.0" layoutY="490.0" onMouseClicked="#submitEmail" style="-fx-background-color: #86847E; -fx-background-radius: 10;" text="Enter" visible="false">
          <font>
             <Font name="System Bold Italic" size="27.0" />
          </font>
       </JFXButton>
-      <Text fx:id="verifyText" fill="#86847e" layoutX="294.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can find verification code in your E-mail" visible="false" wrappingWidth="546.87451171875">
+      <Text fx:id="verifyText" fill="#86847e" layoutX="294.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can find verification code in your E-mail" visible="false" wrappingWidth="546.87451171875">
          <font>
             <Font name="System Bold Italic" size="26.0" />
          </font>
@@ -73,7 +80,7 @@
             <Font size="50.0" />
          </font>
       </JFXTextField>
-      <JFXButton fx:id="verifyButton" focusTraversable="false" layoutX="505.0" layoutY="460.0" onMouseClicked="#submitVerify" style="-fx-background-color: #86847E; -fx-background-radius: 10;" text="Verify" visible="false">
+      <JFXButton fx:id="verifyButton" focusTraversable="false" layoutX="505.0" layoutY="490.0" onMouseClicked="#submitVerify" style="-fx-background-color: #86847E; -fx-background-radius: 10;" text="Verify" visible="false">
          <font>
             <Font name="System Bold Italic" size="27.0" />
          </font>
@@ -88,7 +95,7 @@
             <Font name="System Bold Italic" size="43.0" />
          </font>
       </Text>
-      <JFXButton fx:id="closeButton" focusTraversable="false" layoutX="505.0" layoutY="460.0" onMouseClicked="#close" style="-fx-background-color: #86847E; -fx-background-radius: 10;" text="Close" visible="false">
+      <JFXButton fx:id="closeButton" focusTraversable="false" layoutX="505.0" layoutY="490.0" onMouseClicked="#close" style="-fx-background-color: #86847E; -fx-background-radius: 10;" text="Close" visible="false">
          <font>
             <Font name="System Bold Italic" size="27.0" />
          </font>
