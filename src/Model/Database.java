@@ -15,7 +15,7 @@ import javax.persistence.Persistence;
  */
 public class Database {
     public EntityManager em;
-    String ip = "localhost";
+    String ip = "161.246.34.35";
     String passDb = "admin";
     String userDb =  "admin";
     public Database( String table){
