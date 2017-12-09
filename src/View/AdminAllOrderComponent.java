@@ -21,6 +21,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javax.persistence.Query;
@@ -42,9 +45,12 @@ public class AdminAllOrderComponent implements Initializable {
     @FXML
     private Text srcName, srcAddress, srcDistrict, srcArea, srcProvince, srcZipCode, srcOther, desName, desAddress, desDistrict, desArea, desProvince, desZipCode, desOther;
     @FXML
-    private JFXCheckBox invalidAddrCheck, deliveredCheck;
-    @FXML
     private JFXTextField priceField;
+    @FXML
+    private ChoiceBox<String> statusMenu;
+    @FXML
+    private Text priceValidate;
+    String selected;
     /**
      * Initializes the controller class.
      */
@@ -71,6 +77,10 @@ public class AdminAllOrderComponent implements Initializable {
             Query orderQuery = db.getEM().createQuery("SELECT o FROM Order o WHERE trackID='"+this.trackID+"'");
             Order order = (Order)orderQuery.getSingleResult();
             this.id = order.getId();
+            //Set current price to pricefield
+            Long priceInt = new Long(order.getPrice());
+            if(order.getPrice() != 0)
+                this.priceField.setText(priceInt.toString());
             //Show sender info
             srcName.setText(order.getSenderName());
             srcAddress.setText(order.getSourceAddress());
@@ -87,6 +97,9 @@ public class AdminAllOrderComponent implements Initializable {
             desProvince.setText(order.getDestinationprovince());
             desZipCode.setText(order.getDestinationzipCode());
             desOther.setText(order.getDestinationotherAddress());
+            //Set status option
+            statusMenu.getItems().addAll("Action 1", "Action 2", "Action 3", "Action 4", "Action 5", "Action 6");
+            statusMenu.setValue("Action 1");
             //Toggle pane
             allOrderPane.setVisible(false);
             editPane.setVisible(true);
@@ -98,23 +111,15 @@ public class AdminAllOrderComponent implements Initializable {
     public void doneButton() throws IOException{
         Database db = new Database("Order");
         Order order = db.getEM().find(Order.class, this.id);
+        
+        this.selected = this.statusMenu.getValue();
+        System.out.println(this.selected);
         try {
-            if(deliveredCheck.selectedProperty().get() && Integer.parseInt(priceField.getText()) > 0){
+            if( !this.selected.isEmpty() && Integer.parseInt(priceField.getText()) > 0){
+                this.priceValidate.setVisible(false);
                 //Change status and add price
                 db.getEM().getTransaction().begin();
-                order.setStatus("Package was delivered");
-                order.setPrice(Integer.parseInt(priceField.getText()));
-                db.getEM().getTransaction().commit();
-                priceField.clear();
-                //Toggle pane
-                allOrderPane.setVisible(true);
-                editPane.setVisible(false);
-                db.getEM().close();
-            }
-            else if(invalidAddrCheck.selectedProperty().get() && Integer.parseInt(priceField.getText()) > 0){
-                //Change status and add price
-                db.getEM().getTransaction().begin();
-                order.setStatus("Invalid address");
+                order.setStatus(this.selected);
                 order.setPrice(Integer.parseInt(priceField.getText()));
                 db.getEM().getTransaction().commit();
                 priceField.clear();
@@ -124,7 +129,7 @@ public class AdminAllOrderComponent implements Initializable {
                 db.getEM().close();
             }
         } catch (Exception e) {
-            
+            this.priceValidate.setVisible(true);
         }
     }
     @FXML

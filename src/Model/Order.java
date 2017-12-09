@@ -20,7 +20,7 @@ public class Order implements Serializable{
     private long id;
     private long userID;
     private long postmanID;
-    private long price = 0;
+    private int price = 0;
     private String size;
     private String trackID;
     private String sourceAddress;
@@ -40,7 +40,7 @@ public class Order implements Serializable{
     private String status;
     private String orderDate;
 
-    public Order(long userID, long postmanID, long price, String size, String trackID, String sourceAddress, 
+    public Order(long userID, long postmanID, int price, String size, String trackID, String sourceAddress, 
                 String sourcedistric,
                 String sourcearea,
                 String sourceprovince,
@@ -183,11 +183,11 @@ public class Order implements Serializable{
     
     
 
-    public long getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(long price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
