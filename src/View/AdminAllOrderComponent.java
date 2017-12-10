@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controller.AdminAllOrderController;
 import Controller.UserDataService;
 import Model.Database;
 import Model.Order;
@@ -36,8 +37,8 @@ import javax.persistence.TypedQuery;
  */
 public class AdminAllOrderComponent implements Initializable {
     Order currentOrder;
-    String trackID;
-    long id;
+    private String trackID;
+    private AdminAllOrderController adminAllOrderController;
     @FXML
     private JFXListView listOrder;
     @FXML
@@ -56,50 +57,42 @@ public class AdminAllOrderComponent implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Database db = new Database("Order");
-        ArrayList<String> orderString = new ArrayList<String>();
-        TypedQuery<Order> orderQuery = db.getEM().createQuery("SELECT o FROM Order o",Order.class);
-        List<Order> objectList = orderQuery.getResultList();
-        db.getEM().close();
-        for(Order o: objectList){
-            orderString.add(o.toString());
-        }
-        ObservableList<String> obOrderString = FXCollections.observableArrayList(orderString);
-        listOrder.setItems(obOrderString);
+        this.adminAllOrderController = new AdminAllOrderController();
+        listOrder.setItems(this.adminAllOrderController.getObOrderString());
     }    
     @FXML
     public void editButton() throws IOException{
         
-        Database db = new Database("Order");
         try {
             //Get a user ID from selected row 
             this.trackID = listOrder.getSelectionModel().getSelectedItem().toString().substring(0, listOrder.getSelectionModel().getSelectedItem().toString().indexOf('|'));
-            Query orderQuery = db.getEM().createQuery("SELECT o FROM Order o WHERE trackID='"+this.trackID+"'");
-            Order order = (Order)orderQuery.getSingleResult();
-            this.id = order.getId();
-            //Set current price to pricefield
-            Long priceInt = new Long(order.getPrice());
-            if(order.getPrice() != 0)
+            this.adminAllOrderController.findOrder(this.trackID);
+            //Set current price to pricefield and set current status
+            Long priceInt = new Long(this.adminAllOrderController.getOrder().getPrice());
+            if(this.adminAllOrderController.getOrder().getPrice() != 0)
                 this.priceField.setText(priceInt.toString());
+            if(this.adminAllOrderController.getOrder().getStatus() != null)
+                statusMenu.setValue(this.adminAllOrderController.getOrder().getStatus());
+            else
+                statusMenu.setValue("Action 1");
             //Show sender info
-            srcName.setText(order.getSenderName());
-            srcAddress.setText(order.getSourceAddress());
-            srcDistrict.setText(order.getSourcedistric());
-            srcArea.setText(order.getSourcearea());
-            srcProvince.setText(order.getSourceprovince());
-            srcZipCode.setText(order.getSourcezipCode());
-            srcOther.setText(order.getSourceotherAddress());
+            srcName.setText(this.adminAllOrderController.getOrder().getSenderName());
+            srcAddress.setText(this.adminAllOrderController.getOrder().getSourceAddress());
+            srcDistrict.setText(this.adminAllOrderController.getOrder().getSourcedistric());
+            srcArea.setText(this.adminAllOrderController.getOrder().getSourcearea());
+            srcProvince.setText(this.adminAllOrderController.getOrder().getSourceprovince());
+            srcZipCode.setText(this.adminAllOrderController.getOrder().getSourcezipCode());
+            srcOther.setText(this.adminAllOrderController.getOrder().getSourceotherAddress());
             //Show receiver info
-            desName.setText(order.getReceiverName());
-            desAddress.setText(order.getDestinationAddress());
-            desDistrict.setText(order.getDestinationdistric());
-            desArea.setText(order.getDestinationarea());
-            desProvince.setText(order.getDestinationprovince());
-            desZipCode.setText(order.getDestinationzipCode());
-            desOther.setText(order.getDestinationotherAddress());
+            desName.setText(this.adminAllOrderController.getOrder().getReceiverName());
+            desAddress.setText(this.adminAllOrderController.getOrder().getDestinationAddress());
+            desDistrict.setText(this.adminAllOrderController.getOrder().getDestinationdistric());
+            desArea.setText(this.adminAllOrderController.getOrder().getDestinationarea());
+            desProvince.setText(this.adminAllOrderController.getOrder().getDestinationprovince());
+            desZipCode.setText(this.adminAllOrderController.getOrder().getDestinationzipCode());
+            desOther.setText(this.adminAllOrderController.getOrder().getDestinationotherAddress());
             //Set status option
             statusMenu.getItems().addAll("Action 1", "Action 2", "Action 3", "Action 4", "Action 5", "Action 6");
-            statusMenu.setValue("Action 1");
             //Toggle pane
             allOrderPane.setVisible(false);
             editPane.setVisible(true);
@@ -109,42 +102,22 @@ public class AdminAllOrderComponent implements Initializable {
     }
     @FXML
     public void doneButton() throws IOException{
-        Database db = new Database("Order");
-        Order order = db.getEM().find(Order.class, this.id);
-        
-        this.selected = this.statusMenu.getValue();
+        this.selected = this.statusMenu.getValue();//Get value from ChoiceBox
         System.out.println(this.selected);
         try {
             if( !this.selected.isEmpty() && Integer.parseInt(priceField.getText()) > 0){
                 this.priceValidate.setVisible(false);
                 //Change status and add price
-                db.getEM().getTransaction().begin();
-                order.setStatus(this.selected);
-                order.setPrice(Integer.parseInt(priceField.getText()));
-                db.getEM().getTransaction().commit();
+                this.adminAllOrderController.updateOrder(this.selected, Integer.parseInt(priceField.getText()));
                 priceField.clear();
                 //Toggle pane
                 allOrderPane.setVisible(true);
                 editPane.setVisible(false);
-                db.getEM().close();
+                this.adminAllOrderController = new AdminAllOrderController();
+                listOrder.setItems(this.adminAllOrderController.getObOrderString());
             }
         } catch (Exception e) {
             this.priceValidate.setVisible(true);
         }
-    }
-    @FXML
-    public void refreshButton() throws IOException{
-        //Same as initialize
-        ArrayList<String> orderString = new ArrayList<String>();
-        listOrder.getItems().clear();
-        Database db = new Database("Order");
-        TypedQuery<Order> orderQuery = db.getEM().createQuery("SELECT o FROM Order o",Order.class);
-        List<Order> objectList = orderQuery.getResultList();
-        db.getEM().close();
-        for(Order o: objectList){
-            orderString.add(o.toString());
-        }
-        ObservableList<String> obOrderString = FXCollections.observableArrayList(orderString);
-        listOrder.setItems(obOrderString);
     }
 }

@@ -3,23 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/HistoryComponent.fxml</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/AdminAllOrderComponent.fxml</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/Controller/HistoryController.java</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/AdminDashboardComponent.fxml</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/DashboardComponent.java</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/RegisterComponent.fxml</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/AdminAllUserComponent.java</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/OwlExpress.java</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/AdminAllUserComponent.fxml</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/HistoryComponent.java</file>
+            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/Controller/AdminAllOrderController.java</file>
+            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/Model/Database.java</file>
             <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/LoginComponent.java</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/Controller/SendEmail.java</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/CheckOrderComponent.fxml</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/MakeOrderComponent.fxml</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/AdminDashboardComponent.java</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/RegisterComponent.java</file>
-            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/AdminProfileComponent.fxml</file>
+            <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/Model/Order.java</file>
             <file>file:/D:/Utt/Work/Software%20Engineering/owl-express-java/src/View/AdminAllOrderComponent.java</file>
         </group>
     </open-files>

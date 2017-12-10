@@ -13,12 +13,7 @@
       <AnchorPane id="AnchorPane" fx:id="allOrderPane" prefHeight="626.0" prefWidth="853.0">
          <children>
             <JFXListView fx:id="listOrder" focusTraversable="false" layoutY="29.0" prefHeight="482.0" prefWidth="853.0" style="-fx-background-color: #FCF4D9#50E3C2;" />
-            <JFXButton fx:id="editButton" layoutX="558.0" layoutY="549.0" onMouseClicked="#editButton" prefHeight="46.0" prefWidth="86.0" style="-fx-background-color: #50E3C2; -fx-background-radius: 10;" text="Edit" textFill="#fffbfb">
-               <font>
-                  <Font name="The Bold Font" size="21.0" />
-               </font>
-            </JFXButton>
-            <JFXButton layoutX="668.0" layoutY="549.0" onMouseClicked="#refreshButton" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: #50E3C2; -fx-background-radius: 10;" text="Refresh" textFill="#fffbfb">
+            <JFXButton fx:id="editButton" layoutX="558.0" layoutY="549.0" onMouseClicked="#editButton" prefHeight="40.0" prefWidth="255.0" style="-fx-background-color: #50E3C2; -fx-background-radius: 10;" text="Edit" textFill="#fffbfb">
                <font>
                   <Font name="The Bold Font" size="21.0" />
                </font>
@@ -177,7 +172,7 @@
                   <Font name="System Bold" size="27.0" />
                </font>
             </Text>
-            <ChoiceBox fx:id="statusMenu" layoutX="124.0" layoutY="468.0" prefHeight="46.0" prefWidth="225.0" style="-fx-background-color: WHITE; -fx-border-color: #86847E; -fx-border-radius: 10;" />
+            <ChoiceBox fx:id="statusMenu" layoutX="124.0" layoutY="468.0" prefHeight="46.0" prefWidth="225.0" style="-fx-background-color: WHITE; -fx-background-radius: 10; -fx-border-color: #86847E; -fx-border-radius: 10;" />
             <Text fx:id="priceValidate" fill="RED" layoutX="460.0" layoutY="532.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please assign price" visible="false" wrappingWidth="199.6708984375">
                <font>
                   <Font size="17.0" />

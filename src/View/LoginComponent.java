@@ -100,7 +100,7 @@ public class LoginComponent extends UserDataService implements Initializable {
             Parent root;
             stage = (Stage) this.username_field.getScene().getWindow();
             //load up OTHER FXML document
-            root = FXMLLoader.load(getClass().getResource("AdminDashboardComponent.fxml"));
+            root = FXMLLoader.load(getClass().getResource("DashboardComponent.fxml"));
             root = MoveWindow.moveWindow(root, stage);
             //create a new scene with root and set the stage
             Scene scene = new Scene(root);

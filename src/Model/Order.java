@@ -20,7 +20,7 @@ public class Order implements Serializable{
     private long id;
     private long userID;
     private long postmanID;
-    private int price = 0;
+    private long price = 0;
     private String size;
     private String trackID;
     private String sourceAddress;
@@ -40,7 +40,7 @@ public class Order implements Serializable{
     private String status;
     private String orderDate;
 
-    public Order(long userID, long postmanID, int price, String size, String trackID, String sourceAddress, 
+    public Order(long userID, long postmanID, long price, String size, String trackID, String sourceAddress, 
                 String sourcedistric,
                 String sourcearea,
                 String sourceprovince,
@@ -179,15 +179,11 @@ public class Order implements Serializable{
         this.destinationotherAddress = destinationotherAddress;
     }
 
-    
-    
-    
-
-    public int getPrice() {
+    public long getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(long price) {
         this.price = price;
     }
 
@@ -206,10 +202,6 @@ public class Order implements Serializable{
     public void setTrackID(String trackID) {
         this.trackID = trackID;
     }
-    
-
-   
-
     public long getUserID() {
         return userID;
     }
@@ -217,13 +209,9 @@ public class Order implements Serializable{
     public long getPostmanID() {
         return postmanID;
     }
-
-    
-
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
@@ -252,7 +240,7 @@ public class Order implements Serializable{
         this.status = status;
     }
     public String toString(){
-        return this.getTrackID()+"|      "+this.getUserID()+"      "+this.getSenderName()+"      "+this.getOrderDate()+"      "+this.getStatus()+"      "+this.getPrice();
+        return this.getTrackID()+"|\t\t"+this.getUserID()+"\t\t"+this.getSenderName()+"\t\t"+this.getOrderDate()+"\t\t"+this.getStatus()+"\t\t"+this.getPrice();
     }
 
     
