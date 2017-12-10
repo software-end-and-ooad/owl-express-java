@@ -25,7 +25,7 @@ public class ForgotPassController extends SendEmailController{
             user = (User)userQuery.getSingleResult();
             return true;
         } catch (Exception e) {
-            System.out.println("We don't this email in database.");
+            System.out.println("We don't have this email in database.");
             return false;
         }
     }

@@ -32,8 +32,6 @@ public class AdminAllUserComponent implements Initializable {
     private AnchorPane allOrderPane;
     @FXML
     private JFXListView listUser;
-    @FXML
-    private JFXButton editButton;
 
     /**
      * Initializes the controller class.
@@ -53,9 +51,6 @@ public class AdminAllUserComponent implements Initializable {
         listUser.setItems(obUserString);
     }    
 
-    @FXML
-    private void editButton(MouseEvent event) {
-    }
 
     @FXML
     private void refreshButton(MouseEvent event) {

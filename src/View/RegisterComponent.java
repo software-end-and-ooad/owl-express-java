@@ -194,7 +194,7 @@ public class RegisterComponent implements Initializable {
         } 
     }
     @FXML
-    public void submitVerify() throws IOException{
+    public void submitVerify() throws IOException{ // Submit random word from email
         if (this.verifyField.getText().compareTo(this.sendEmail.getVerify()) == 0) {
             Database db = new Database("User");
             try {

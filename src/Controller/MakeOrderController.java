@@ -154,6 +154,7 @@ public class MakeOrderController extends Validation{
     }
     return r;
     }
+    
     public ArrayList<ArrayList<String>> validateOrder(){
         Validation checkValidate = new Validation();
         ArrayList<String> validate = new ArrayList<String>();
@@ -223,6 +224,7 @@ public class MakeOrderController extends Validation{
                     db.getEM().getTransaction().commit();
                     db.getEM().close();
                     return true;
+                    
                 } catch(Throwable error) {
                     System.out.println("CANNOT CREATE Order, PLEASE CHECK SERVER ");
                     db.getEM().close();
