@@ -163,6 +163,7 @@ public class MakeOrderComponent implements Initializable {
            receiverText.setVisible(false);
            
            sizeError.setVisible(false);
+           senderError.setVisible(false);
            sourceError.setVisible(false);
            sourceAreaError.setVisible(false);
            sourceDistrictError.setVisible(false);

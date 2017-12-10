@@ -15,5 +15,6 @@
          <font>
             <Font size="15.0" />
          </font></JFXTextArea>
+      <AnchorPane prefHeight="626.0" prefWidth="853.0" />
    </children>
 </AnchorPane>

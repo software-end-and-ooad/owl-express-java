@@ -65,7 +65,7 @@ public class AdminAllOrderComponent implements Initializable {
         
         try {
             //Get a user ID from selected row 
-            this.trackID = listOrder.getSelectionModel().getSelectedItem().toString().substring(0, listOrder.getSelectionModel().getSelectedItem().toString().indexOf('|'));
+            this.trackID = listOrder.getSelectionModel().getSelectedItem().toString().substring(0, listOrder.getSelectionModel().getSelectedItem().toString().indexOf(' '));
             this.adminAllOrderController.findOrder(this.trackID);
             //Set current price to pricefield and set current status
             Long priceInt = new Long(this.adminAllOrderController.getOrder().getPrice());
@@ -74,7 +74,7 @@ public class AdminAllOrderComponent implements Initializable {
             if(this.adminAllOrderController.getOrder().getStatus() != null)
                 statusMenu.setValue(this.adminAllOrderController.getOrder().getStatus());
             else
-                statusMenu.setValue("Action 1");
+                statusMenu.setValue("Waiting for collection");
             //Show sender info
             srcName.setText(this.adminAllOrderController.getOrder().getSenderName());
             srcAddress.setText(this.adminAllOrderController.getOrder().getSourceAddress());
@@ -92,7 +92,7 @@ public class AdminAllOrderComponent implements Initializable {
             desZipCode.setText(this.adminAllOrderController.getOrder().getDestinationzipCode());
             desOther.setText(this.adminAllOrderController.getOrder().getDestinationotherAddress());
             //Set status option
-            statusMenu.getItems().addAll("Action 1", "Action 2", "Action 3", "Action 4", "Action 5", "Action 6");
+            statusMenu.getItems().addAll("Waiting for collection", "Collected", "Arrived at sorting center", "Despatched from sorting center", "Arrived at local office", "Out for delivery", "Delivered", "Invalid address");
             //Toggle pane
             allOrderPane.setVisible(false);
             editPane.setVisible(true);
@@ -113,6 +113,8 @@ public class AdminAllOrderComponent implements Initializable {
                 //Toggle pane
                 allOrderPane.setVisible(true);
                 editPane.setVisible(false);
+                
+                this.statusMenu.getItems().clear();
                 this.adminAllOrderController = new AdminAllOrderController();
                 listOrder.setItems(this.adminAllOrderController.getObOrderString());
             }

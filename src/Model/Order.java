@@ -240,7 +240,13 @@ public class Order implements Serializable{
         this.status = status;
     }
     public String toString(){
-        return this.getTrackID()+"|\t\t"+this.getUserID()+"\t\t"+this.getSenderName()+"\t\t"+this.getOrderDate()+"\t\t"+this.getStatus()+"\t\t"+this.getPrice();
+        String datetime = this.getOrderDate().substring(0, this.getOrderDate().indexOf('T'))+ '('+this.getOrderDate().substring(this.getOrderDate().indexOf('T')+1 , this.getOrderDate().length())+')';
+        String string = String.format("TrackID  :  %s\n\tUserID  :  %s\n\tName  :  %s\n\tData  :  %s\n\tStatus  :  %s\n\tPrice  :  %s",this.getTrackID(), this.getUserID(), this.getSenderName(), datetime, this.getStatus(), this.getPrice());
+        return string;
+//        text = text + "TrackID : " + l.getTrackID() + "\t\t Size : " + l.getSize() + "\t\t Price : " + l.getPrice() + "\nSender's Name  :\t" + l.getSenderName() + "\nReceiver's name :\t" + l.getReceiverName() + "\n"
+//                + "________________________________________________________________________________________________________________________________" + "\n\n";
+
+//                this.getTrackID()+"|\t\t"+this.getUserID()+"\t\t"+this.getSenderName()+"\t\t"+this.getOrderDate()+"\t\t"+this.getStatus()+"\t\t"+this.getPrice();
     }
 
     
