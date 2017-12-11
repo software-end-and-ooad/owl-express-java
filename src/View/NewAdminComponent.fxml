@@ -58,9 +58,9 @@
       <JFXTextField fx:id="tel" layoutX="210.0" layoutY="321.0" prefHeight="35.0" prefWidth="190.0" promptText="Tel." />
       <JFXPasswordField fx:id="password" layoutX="210.0" layoutY="372.0" prefHeight="35.0" prefWidth="433.0" promptText="Password" />
       <JFXPasswordField fx:id="confirmPass" layoutX="210.0" layoutY="436.0" prefHeight="35.0" prefWidth="433.0" promptText="Confirm Password" />
-      <Text fx:id="adminText" fill="#432160" layoutX="238.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Admin Account" wrappingWidth="390.6064453125">
+      <Text fx:id="adminText" fill="#432160" layoutX="227.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Admin Account" wrappingWidth="413.6064453125">
          <font>
-            <Font name="The Bold Font" size="38.0" />
+            <Font name="System Bold Italic" size="38.0" />
          </font>
       </Text>
       <Text fx:id="narionIDValidate" fill="#fc0505" layoutX="210.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">

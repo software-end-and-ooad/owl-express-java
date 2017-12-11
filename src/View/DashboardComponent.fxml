@@ -23,80 +23,75 @@
             <Image url="@images/PageDocument.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="selOrder" layoutX="51.0" layoutY="228.0" opacity="0.47" prefHeight="99.0" prefWidth="107.0" style="-fx-background-radius: 10; -fx-background-color: GREEN;" visible="false" />
-      <AnchorPane fx:id="selCheckPack" layoutX="52.0" layoutY="327.0" opacity="0.47" prefHeight="99.0" prefWidth="107.0" style="-fx-background-radius: 10; -fx-background-color: GREEN;" visible="false" />
-      <AnchorPane fx:id="selHistory" layoutX="52.0" layoutY="426.0" opacity="0.47" prefHeight="99.0" prefWidth="107.0" style="-fx-background-radius: 10; -fx-background-color: GREEN;" visible="false" />
-      <AnchorPane fx:id="selProfile" layoutX="52.0" layoutY="527.0" opacity="0.47" prefHeight="99.0" prefWidth="107.0" style="-fx-background-radius: 10; -fx-background-color: GREEN;" visible="false" />
+      <AnchorPane fx:id="selOrder" layoutX="51.0" layoutY="228.0" opacity="0.47" prefHeight="99.0" prefWidth="107.0" style="-fx-background-radius: 10; -fx-background-color: #FCF4D9;" visible="false" />
+      <AnchorPane fx:id="selCheckPack" layoutX="52.0" layoutY="334.0" opacity="0.47" prefHeight="99.0" prefWidth="107.0" style="-fx-background-radius: 10; -fx-background-color: #FCF4D9;" visible="false" />
+      <AnchorPane fx:id="selHistory" layoutX="52.0" layoutY="434.0" opacity="0.47" prefHeight="99.0" prefWidth="107.0" style="-fx-background-radius: 10; -fx-background-color: #FCF4D9;" visible="false" />
+      <AnchorPane fx:id="selProfile" layoutX="52.0" layoutY="527.0" opacity="0.47" prefHeight="99.0" prefWidth="107.0" style="-fx-background-radius: 10; -fx-background-color: #FCF4D9;" visible="false" />
       <ImageView fitHeight="56.0" fitWidth="66.0" layoutX="72.0" layoutY="238.0" onMouseClicked="#orderButton" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/order.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="32.0" fitWidth="67.0" layoutX="65.0" layoutY="349.0" onMouseClicked="#checkPackage" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="32.0" fitWidth="67.0" layoutX="65.0" layoutY="356.0" onMouseClicked="#checkPackage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/check.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="41.0" fitWidth="46.0" layoutX="85.0" layoutY="438.0" onMouseClicked="#historyButton" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="41.0" fitWidth="46.0" layoutX="83.0" layoutY="446.0" onMouseClicked="#historyButton" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/h.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="41.0" fitWidth="46.0" layoutX="83.0" layoutY="543.0" onMouseClicked="#profileButton" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="41.0" fitWidth="46.0" layoutX="81.0" layoutY="543.0" onMouseClicked="#profileButton" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/profile.png" />
          </image>
       </ImageView>
-      <JFXButton focusTraversable="false" layoutX="66.0" layoutY="294.0" onMouseClicked="#orderButton" text="Order" textFill="#432160">
-         <font>
-            <Font name="The Bold Font" size="18.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="checkPackageBTN" focusTraversable="false" layoutX="39.0" layoutY="381.0" onMouseClicked="#checkPackage" prefHeight="35.0" prefWidth="133.0" text="Check Package" textFill="#432160">
-         <font>
-            <Font name="The Bold Font" size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton focusTraversable="false" layoutX="63.0" layoutY="477.0" onMouseClicked="#historyButton" text="History" textFill="#432160">
-         <font>
-            <Font name="The Bold Font" size="18.0" />
-         </font>
-      </JFXButton>
-      <JFXButton focusTraversable="false" layoutX="68.0" layoutY="590.0" onMouseClicked="#profileButton" text="Profile" textFill="#432160">
-         <font>
-            <Font name="The Bold Font" size="18.0" />
-         </font>
-      </JFXButton>
-      <ImageView fitHeight="41.0" fitWidth="92.0" layoutX="84.0" layoutY="644.0" onMouseClicked="#exitApplication" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="41.0" fitWidth="92.0" layoutX="82.0" layoutY="644.0" onMouseClicked="#logoutButton" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/door.png" />
          </image>
       </ImageView>
       <AnchorPane fx:id="scene_area" layoutX="222.0" layoutY="125.0" prefHeight="626.0" prefWidth="853.0" />
-      <JFXButton focusTraversable="false" layoutX="58.0" layoutY="685.0" onMouseClicked="#logoutButton" text="Log out" textFill="#432160">
-         <font>
-            <Font name="The Bold Font" size="18.0" />
-         </font>
-      </JFXButton>
       <Text fill="#ff7a5a" layoutX="594.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome,">
          <font>
-            <Font name="The Bold Font" size="55.0" />
+            <Font name="System Bold Italic" size="55.0" />
          </font>
       </Text>
       <Text fx:id="usernameText" fill="#50e3c2" layoutX="864.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
          <font>
-            <Font name="The Bold Font" size="39.0" />
+            <Font name="System Bold Italic" size="38.0" />
          </font>
       </Text>
-      <ImageView fitHeight="4.0" fitWidth="23.0" layoutX="1040.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/shorthen.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="1080.0" layoutY="10.0" onMouseClicked="#exitApplication" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/ex.png" />
          </image>
       </ImageView>
+      <Text fill="#432160" layoutX="80.0" layoutY="322.0" onMouseClicked="#orderButton" strokeType="OUTSIDE" strokeWidth="0.0" text="Order">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Text>
+      <Text fill="#432160" layoutX="54.0" layoutY="412.0" onMouseClicked="#checkPackage" strokeType="OUTSIDE" strokeWidth="0.0" text="Check Package">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#432160" layoutX="71.0" layoutY="508.0" onMouseClicked="#historyButton" strokeType="OUTSIDE" strokeWidth="0.0" text="History">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Text>
+      <Text fill="#432160" layoutX="74.0" layoutY="605.0" onMouseClicked="#profileButton" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Text>
+      <Text fill="#432160" layoutX="70.0" layoutY="706.0" onMouseClicked="#logoutButton" strokeType="OUTSIDE" strokeWidth="0.0" text="Log out">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

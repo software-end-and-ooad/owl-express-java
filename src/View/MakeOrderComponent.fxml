@@ -12,9 +12,9 @@
 
 <AnchorPane id="AnchorPane" prefHeight="626.0" prefWidth="853.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MakeOrderComponent">
    <children>
-      <Text fx:id="headText" fill="#432160" layoutX="13.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAKE AN ORDER">
+      <Text fx:id="headText" fill="#432160" layoutX="14.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAKE AN ORDER">
          <font>
-            <Font name="System Bold" size="46.0" />
+            <Font name="System Bold Italic" size="46.0" />
          </font>
       </Text>
       <JFXTextField fx:id="sourceText" layoutX="430.0" layoutY="80.0" prefHeight="45.0" prefWidth="337.0" promptText="Source Address" />
@@ -30,11 +30,11 @@
       <JFXTextField fx:id="destinationZipcodeText" layoutX="21.0" layoutY="463.0" prefHeight="45.0" prefWidth="209.0" promptText="Destination Zipcode" />
       <JFXTextField fx:id="destinationOtherText" layoutX="291.0" layoutY="463.0" prefHeight="45.0" prefWidth="209.0" promptText="Destination Other" />
       <JFXComboBox fx:id="comboSize" layoutX="552.0" layoutY="463.0" prefHeight="45.0" prefWidth="196.0" promptText="Size" />
-      <JFXButton fx:id="enterAddressBTN" layoutX="408.0" layoutY="14.0" onMouseClicked="#submitAddress" prefHeight="52.0" prefWidth="219.0" style="-fx-background-color: #FF7A5A;" text="Use my address!" textFill="WHITE">
+      <JFXButton fx:id="enterAddressBTN" layoutX="430.0" layoutY="14.0" onMouseClicked="#submitAddress" prefHeight="52.0" prefWidth="219.0" style="-fx-background-color: #FF7A5A; -fx-background-radius: 10; -fx-border-radius: 10;" text="Use my address!" textFill="WHITE">
          <font>
             <Font name="The Bold Font" size="22.0" />
          </font></JFXButton>
-      <JFXButton fx:id="submitBTN" layoutX="258.0" layoutY="549.0" onMouseClicked="#submitOrder" prefHeight="52.0" prefWidth="337.0" style="-fx-background-color: #50E3C2;" text="Make an Order!!" textFill="WHITE">
+      <JFXButton fx:id="submitBTN" layoutX="258.0" layoutY="549.0" onMouseClicked="#submitOrder" prefHeight="52.0" prefWidth="337.0" style="-fx-background-color: #50E3C2; -fx-background-radius: 10; -fx-border-radius: 10;" text="Make an Order!!" textFill="WHITE">
          <font>
             <Font name="The Bold Font" size="22.0" />
          </font></JFXButton>

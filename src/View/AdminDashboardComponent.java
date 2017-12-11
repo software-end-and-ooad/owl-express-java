@@ -35,7 +35,7 @@ public class AdminDashboardComponent implements Initializable {
     @FXML
     private AnchorPane scene_area;
     @FXML
-    private AnchorPane selAllOrder, selAllUserDetail, selAddAdmin;
+    private AnchorPane selAllOrder, selAllUserDetail, selAddAdmin, selProfile;
     /**
      * Initializes the controller class.
      */
@@ -46,6 +46,7 @@ public class AdminDashboardComponent implements Initializable {
         this.selAllOrder.setVisible(false);
         this.selAddAdmin.setVisible(false);
         this.selAllUserDetail.setVisible(false);
+        this.selProfile.setVisible(false);
     }    
 
     @FXML
@@ -56,6 +57,7 @@ public class AdminDashboardComponent implements Initializable {
         this.selAllOrder.setVisible(true);
         this.selAddAdmin.setVisible(false);
         this.selAllUserDetail.setVisible(false);
+        this.selProfile.setVisible(false);
     }
     @FXML
     private void userDetail(MouseEvent event) throws IOException {
@@ -65,15 +67,17 @@ public class AdminDashboardComponent implements Initializable {
         this.selAllOrder.setVisible(false);
         this.selAddAdmin.setVisible(false);
         this.selAllUserDetail.setVisible(true);
+        this.selProfile.setVisible(false);
     }
     @FXML
     private void adminManage(MouseEvent event) throws IOException {
         AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("AdminProfileComponent.fxml"));
         this.scene_area.getChildren().setAll(screen_page);
-//        //Highlight selected menu
-//        this.selAllOrder.setVisible(true);
-//        this.selAddAdmin.setVisible(false);
-//        this.selAllUserDetail.setVisible(false);
+        //Highlight selected menu
+        this.selAllOrder.setVisible(false);
+        this.selAddAdmin.setVisible(false);
+        this.selAllUserDetail.setVisible(false);
+        this.selProfile.setVisible(true);
     }
     @FXML
     private void addAdmin(MouseEvent event) throws IOException {
@@ -83,6 +87,7 @@ public class AdminDashboardComponent implements Initializable {
         this.selAllOrder.setVisible(false);
         this.selAddAdmin.setVisible(true);
         this.selAllUserDetail.setVisible(false);
+        this.selProfile.setVisible(false);
     }
     @FXML
     private void signOut(MouseEvent event) throws IOException {

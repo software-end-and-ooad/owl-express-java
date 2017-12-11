@@ -17,9 +17,9 @@
             <Image url="@images/PageSignup.png" />
          </image>
       </ImageView>
-      <Text fill="#432160" layoutX="634.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Account">
+      <Text fill="#432160" layoutX="643.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Account">
          <font>
-            <Font name="The Bold Font" size="38.0" />
+            <Font name="System Bold Italic" size="38.0" />
          </font>
       </Text>
       <JFXTextField fx:id="username" layoutX="653.0" layoutY="231.0" prefHeight="35.0" prefWidth="249.0" promptText="Username" />
