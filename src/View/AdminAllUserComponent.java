@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controller.AdminAllUserController;
 import Model.Database;
 import Model.User;
 import com.jfoenix.controls.JFXButton;
@@ -32,38 +33,23 @@ public class AdminAllUserComponent implements Initializable {
     private AnchorPane allOrderPane;
     @FXML
     private JFXListView listUser;
+    
+    private AdminAllUserController adminAllUserController;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        Database db = new Database("User");
-        ArrayList<String> userString = new ArrayList<String>();
-        TypedQuery<User> userQuery = db.getEM().createQuery("SELECT u FROM User u", User.class);
-        List<User> objectList = userQuery.getResultList();
-        db.getEM().close();
-        for(User u: objectList){
-            userString.add(u.toString());
-        }
-        ObservableList<String> obUserString = FXCollections.observableArrayList(userString);
-        listUser.setItems(obUserString);
+        this.adminAllUserController = new AdminAllUserController();
+        listUser.setItems(this.adminAllUserController.getObUserString());
+        
     }    
 
 
     @FXML
     private void refreshButton(MouseEvent event) {
-        Database db = new Database("User");
-        ArrayList<String> userString = new ArrayList<String>();
-        TypedQuery<User> userQuery = db.getEM().createQuery("SELECT u FROM User u",User.class);
-        List<User> objectList = userQuery.getResultList();
-        db.getEM().close();
-        for(User u: objectList){
-            userString.add(u.toString());
-        }
-        ObservableList<String> obUserString = FXCollections.observableArrayList(userString);
-        listUser.setItems(obUserString);
+        listUser.setItems(this.adminAllUserController.refresh());
     }
     
 }
