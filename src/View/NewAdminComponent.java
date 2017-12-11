@@ -16,6 +16,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import Controller.NewAdminController;
 import java.util.ArrayList;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -60,7 +61,7 @@ public class NewAdminComponent implements Initializable {
     private JFXButton register_button;
     @FXML
     private Text adminText;
-
+    
     /**
      * Initializes the controller class.
      */
@@ -95,15 +96,16 @@ public class NewAdminComponent implements Initializable {
         if( errList.size() <= 0) {
            
             if( newAdminController.checkRegister() == true ) { // if success all
-                 nationID.setVisible(false);
-                 name.setVisible(false);
-                 email.setVisible(false); 
-                 tel.setVisible(false); 
-                 username.setVisible(false); 
-                 password.setVisible(false); 
-                 confirmPass.setVisible(false);
-                 zipCode.setVisible(false);
-                adminText.setText("New admin added");
+                this.nationID.setVisible(false);
+                this.name.setVisible(false);
+                this.email.setVisible(false);
+                this.tel.setVisible(false);
+                this.username.setVisible(false);
+                this.password.setVisible(false);
+                this.confirmPass.setVisible(false);
+                this.zipCode.setVisible(false);
+                this.register_button.setVisible(false);
+                this.adminText.setText("New admin added");
                
             } else {  
                 // CANNOT CREATE MAY BE UNIQUE USERNAME OR EMAIL

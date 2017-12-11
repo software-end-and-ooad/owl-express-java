@@ -23,6 +23,9 @@
             <Font name="The Bold Font" size="39.0" />
          </font>
       </Text>
+      <AnchorPane fx:id="selAllOrder" layoutX="47.0" layoutY="233.0" opacity="0.47" prefHeight="116.0" prefWidth="123.0" style="-fx-background-radius: 10; -fx-background-color: GREEN;" visible="false" />
+      <AnchorPane fx:id="selAllUserDetail" layoutX="47.0" layoutY="361.0" opacity="0.47" prefHeight="116.0" prefWidth="123.0" style="-fx-background-radius: 10; -fx-background-color: GREEN;" visible="false" />
+      <AnchorPane fx:id="selAddAdmin" layoutX="46.0" layoutY="484.0" opacity="0.47" prefHeight="116.0" prefWidth="123.0" style="-fx-background-radius: 10; -fx-background-color: GREEN;" visible="false" />
       <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="1080.0" layoutY="10.0" onMouseClicked="#exitApplication" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/ex.png" />
@@ -52,17 +55,17 @@
             <Image url="@images/shorthen.png" />
          </image>
       </ImageView>
-      <Text fill="#432160" layoutX="74.0" layoutY="329.0" onMouseClicked="#orderClick" strokeType="OUTSIDE" strokeWidth="0.0" text="all order">
+      <Text fill="#432160" layoutX="74.0" layoutY="329.0" onMouseClicked="#orderClick" strokeType="OUTSIDE" strokeWidth="0.0" text="All order">
          <font>
             <Font name="The Bold Font" size="18.0" />
          </font>
       </Text>
-      <Text fill="#432160" layoutX="54.0" layoutY="455.0" onMouseClicked="#userDetail" strokeType="OUTSIDE" strokeWidth="0.0" text="all user detail">
+      <Text fill="#432160" layoutX="54.0" layoutY="455.0" onMouseClicked="#userDetail" strokeType="OUTSIDE" strokeWidth="0.0" text="All user detail">
          <font>
             <Font name="The Bold Font" size="18.0" />
          </font>
       </Text>
-      <Text fill="#432160" layoutX="62.0" layoutY="579.0" onMouseClicked="#addAdmin" strokeType="OUTSIDE" strokeWidth="0.0" text="add admin">
+      <Text fill="#432160" layoutX="62.0" layoutY="579.0" onMouseClicked="#addAdmin" strokeType="OUTSIDE" strokeWidth="0.0" text="Add admin">
          <font>
             <Font name="The Bold Font" size="18.0" />
          </font>

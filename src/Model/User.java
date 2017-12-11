@@ -126,8 +126,8 @@ public class User{
     @Override
     public String toString()
     {
-     
-        return "UserID: "+ this.id + " Username: " + this.username + " Fullname: " + this.name + " Email: " + this.email + " Zipcode: " + this.zipCode ;
+        String string = String.format("UserID  :  %s\n\tUsername  :  %s\n\tFullname  :  %s\n\tEmail  :  %s\n\tZipcode  :  %s", this.id, this.username, this.name, this.email, this.zipCode);
+        return string;
     }
     
 }

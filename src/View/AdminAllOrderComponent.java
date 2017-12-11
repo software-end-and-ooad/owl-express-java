@@ -110,13 +110,13 @@ public class AdminAllOrderComponent implements Initializable {
                 //Change status and add price
                 this.adminAllOrderController.updateOrder(this.selected, Integer.parseInt(priceField.getText()));
                 priceField.clear();
-                //Toggle pane
-                allOrderPane.setVisible(true);
-                editPane.setVisible(false);
-                
+                //Load data (Same as initialize)
                 this.statusMenu.getItems().clear();
                 this.adminAllOrderController = new AdminAllOrderController();
                 listOrder.setItems(this.adminAllOrderController.getObOrderString());
+                //Toggle pane
+                allOrderPane.setVisible(true);
+                editPane.setVisible(false);
             }
         } catch (Exception e) {
             this.priceValidate.setVisible(true);

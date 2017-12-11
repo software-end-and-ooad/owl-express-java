@@ -34,27 +34,56 @@ public class AdminDashboardComponent implements Initializable {
     private ImageView orderMenu;
     @FXML
     private AnchorPane scene_area;
-
+    @FXML
+    private AnchorPane selAllOrder, selAllUserDetail, selAddAdmin;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         this.username.setText(AdminDataService.getUsername());
+        //Highlight transparent
+        this.selAllOrder.setVisible(false);
+        this.selAddAdmin.setVisible(false);
+        this.selAllUserDetail.setVisible(false);
     }    
 
     @FXML
     private void orderClick(MouseEvent event) throws IOException {
         AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("AdminAllOrderComponent.fxml"));
         this.scene_area.getChildren().setAll(screen_page);
+        //Highlight selected menu
+        this.selAllOrder.setVisible(true);
+        this.selAddAdmin.setVisible(false);
+        this.selAllUserDetail.setVisible(false);
     }
-
     @FXML
     private void userDetail(MouseEvent event) throws IOException {
         AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("AdminAllUserComponent.fxml"));
         this.scene_area.getChildren().setAll(screen_page);
+        //Highlight selected menu
+        this.selAllOrder.setVisible(false);
+        this.selAddAdmin.setVisible(false);
+        this.selAllUserDetail.setVisible(true);
     }
-
+    @FXML
+    private void adminManage(MouseEvent event) throws IOException {
+        AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("AdminProfileComponent.fxml"));
+        this.scene_area.getChildren().setAll(screen_page);
+//        //Highlight selected menu
+//        this.selAllOrder.setVisible(true);
+//        this.selAddAdmin.setVisible(false);
+//        this.selAllUserDetail.setVisible(false);
+    }
+    @FXML
+    private void addAdmin(MouseEvent event) throws IOException {
+        AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("NewAdminComponent.fxml"));
+        this.scene_area.getChildren().setAll(screen_page);
+        //Highlight selected menu
+        this.selAllOrder.setVisible(false);
+        this.selAddAdmin.setVisible(true);
+        this.selAllUserDetail.setVisible(false);
+    }
     @FXML
     private void signOut(MouseEvent event) throws IOException {
         new LocalStorage().resetAuthen();
@@ -69,18 +98,6 @@ public class AdminDashboardComponent implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }
-
-    @FXML
-    private void adminManage(MouseEvent event) throws IOException {
-        AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("AdminProfileComponent.fxml"));
-        this.scene_area.getChildren().setAll(screen_page);
-    }
-    
-    @FXML
-    private void addAdmin(MouseEvent event) throws IOException {
-         AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("NewAdminComponent.fxml"));
-        this.scene_area.getChildren().setAll(screen_page);
     }
     @FXML
     private void exitApplication() {

@@ -36,25 +36,57 @@ public class DashboardComponent implements Initializable {
     private JFXButton checkPackageBTN;
     @FXML
     private Text usernameText;
+    @FXML
+    private AnchorPane selOrder, selCheckPack, selHistory, selProfile;
     
-    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        usernameText.setText(UserDataService.getUsername());
+        //Highlight transparent
+        this.selOrder.setVisible(false);
+        this.selCheckPack.setVisible(false);
+        this.selHistory.setVisible(false);
+        this.selProfile.setVisible(false);
+    }
     @FXML
     private void orderButton(MouseEvent event) throws IOException {
         AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("MakeOrderComponent.fxml"));
         this.scene_area.getChildren().setAll(screen_page);
+        //Highlight selected menu
+        this.selOrder.setVisible(true);
+        this.selCheckPack.setVisible(false);
+        this.selHistory.setVisible(false);
+        this.selProfile.setVisible(false);
     }
-    
+    @FXML
+    private void checkPackage(MouseEvent event)throws IOException {
+        AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("CheckOrderComponent.fxml"));
+        this.scene_area.getChildren().setAll(screen_page);
+        //Highlight selected menu
+        this.selOrder.setVisible(false);
+        this.selCheckPack.setVisible(true);
+        this.selHistory.setVisible(false);
+        this.selProfile.setVisible(false);
+    }
     @FXML
     private void historyButton(MouseEvent event) throws IOException {
         AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("HistoryComponent.fxml"));
         this.scene_area.getChildren().setAll(screen_page);
+        //Highlight selected menu
+        this.selOrder.setVisible(false);
+        this.selCheckPack.setVisible(false);
+        this.selHistory.setVisible(true);
+        this.selProfile.setVisible(false);
     }
-    
-    
     @FXML
     private void profileButton(MouseEvent event) throws IOException {
         AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("ProfileMenuComponent.fxml"));
         this.scene_area.getChildren().setAll(screen_page);
+        //Highlight selected menu
+        this.selOrder.setVisible(false);
+        this.selCheckPack.setVisible(false);
+        this.selHistory.setVisible(false);
+        this.selProfile.setVisible(true);
     }
     @FXML
     private void logoutButton(MouseEvent event) throws IOException {
@@ -76,16 +108,4 @@ public class DashboardComponent implements Initializable {
     private void exitApplication() {
             System.exit(0);
     }
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        usernameText.setText(UserDataService.getUsername());
-    }
-
-    @FXML
-    private void checkPackage(MouseEvent event)throws IOException {
-        AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("CheckOrderComponent.fxml"));
-        this.scene_area.getChildren().setAll(screen_page);
-    }
-
 }
