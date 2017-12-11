@@ -43,19 +43,19 @@ public class ProfileMenuController extends Validation{
         // ADD VALIDATION HERE
         if (!checkValidate.isRequired(this.fullname))
             validate.add("fullname|isRequired");
-        if (!checkValidate.maxLength(this.fullname, 20))
+        else if (!checkValidate.maxLength(this.fullname, 20))
             validate.add("fullname|maxLength");
-        if (!checkValidate.isEmail(this.email))
+        else if (!checkValidate.isEmail(this.email))
             validate.add("email|maxLength");
         if (!checkValidate.isRequired(this.email))
             validate.add("email|isRequired");
         if (!checkValidate.isRequired(this.tel))
             validate.add("tel|isRequired");
-        if (!checkValidate.maxLength(this.tel, 11))
+        else if (!checkValidate.maxLength(this.tel, 11))
             validate.add("tel|maxLength");
-        if (!checkValidate.minLength(this.tel, 9))
+        else if (!checkValidate.minLength(this.tel, 9))
             validate.add("tel|minLength");
-        if (!checkValidate.isNumeric(this.tel))
+        else if (!checkValidate.isNumeric(this.tel))
             validate.add("tel|isNumeric");
         if (!checkValidate.isRequired(this.address))
             validate.add("address|isRequired");
@@ -67,11 +67,11 @@ public class ProfileMenuController extends Validation{
             validate.add("province|isRequired");
         if (!checkValidate.isRequired(this.zipCode))
             validate.add("zipCode|isRequired");
-        if (!checkValidate.isNumeric(this.zipCode))
+        else if (!checkValidate.isNumeric(this.zipCode))
             validate.add("zipCode|isNumeric");
-        if (!checkValidate.maxLength(this.zipCode, 6))
+        else if (!checkValidate.maxLength(this.zipCode, 6))
             validate.add("zipCode|maxLength");
-        if (!checkValidate.minLength(this.zipCode, 5))
+        else if (!checkValidate.minLength(this.zipCode, 5))
             validate.add("zipCode|minLength");
 
         ArrayList<ArrayList<String>> errList = splitListofValidateError(validate);

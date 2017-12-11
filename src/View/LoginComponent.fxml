@@ -19,8 +19,8 @@
       </ImageView>
       <JFXTextField fx:id="username_field" layoutX="230.0" layoutY="299.0" prefHeight="35.0" prefWidth="274.0" promptText="Username" />
       <JFXPasswordField fx:id="password_field" layoutX="230.0" layoutY="356.0" prefHeight="35.0" prefWidth="274.0" promptText="Password" />
-      <JFXButton fx:id="forgotPass" layoutX="205.0" layoutY="487.0" onMouseClicked="#clickForgotPass" prefHeight="39.0" prefWidth="302.0" text="Forget username or password?" textFill="WHITE" />
-      <JFXButton fx:id="login_button" layoutX="379.0" layoutY="432.0" onMousePressed="#submitLogin" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #FCCF4D;" text="Sign in" textFill="WHITE">
+      <JFXButton fx:id="forgotPass" layoutX="254.0" layoutY="471.0" onMouseClicked="#clickForgotPass" prefHeight="39.0" prefWidth="226.0" text="Forget username or password?" textFill="WHITE" />
+      <JFXButton fx:id="login_button" layoutX="298.0" layoutY="424.0" onMousePressed="#submitLogin" prefHeight="35.0" prefWidth="125.0" style="-fx-background-color: #FCCF4D;" text="Sign in" textFill="WHITE">
          <font>
             <Font name="The Bold Font" size="21.0" />
          </font></JFXButton>
@@ -36,7 +36,7 @@
       </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcf4d9" height="200.0" layoutX="556.0" layoutY="300.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="14.0" />
       <Text fx:id="loginValidate" fill="RED" layoutX="233.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username or password is not correct!" wrappingWidth="274.0000094246784" />
-      <JFXCheckBox fx:id="adminCheckbox" layoutX="230.0" layoutY="444.0" text="Admin" />
+      <JFXCheckBox fx:id="adminCheckbox" layoutX="889.0" layoutY="658.0" text="Admin" />
       <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="1040.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/shorthen.png" />

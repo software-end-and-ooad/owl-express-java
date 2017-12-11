@@ -65,7 +65,8 @@ public class AdminAllOrderComponent implements Initializable {
         
         try {
             //Get a user ID from selected row 
-            this.trackID = listOrder.getSelectionModel().getSelectedItem().toString().substring(0, listOrder.getSelectionModel().getSelectedItem().toString().indexOf(' '));
+            this.trackID = listOrder.getSelectionModel().getSelectedItem().toString().substring(12, 16);
+            System.out.println(this.trackID);
             this.adminAllOrderController.findOrder(this.trackID);
             //Set current price to pricefield and set current status
             Long priceInt = new Long(this.adminAllOrderController.getOrder().getPrice());
