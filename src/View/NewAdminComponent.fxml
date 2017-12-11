@@ -63,7 +63,7 @@
             <Font name="System Bold Italic" size="38.0" />
          </font>
       </Text>
-      <Text fx:id="narionIDValidate" fill="#fc0505" layoutX="210.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <Text fx:id="nationIDValidate" fill="#fc0505" layoutX="210.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
          <font>
             <Font size="12.0" />
          </font>

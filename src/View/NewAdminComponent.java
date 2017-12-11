@@ -43,8 +43,7 @@ public class NewAdminComponent implements Initializable {
     private Text zipcodeValidate;
     @FXML
     private JFXTextField nationID;
-    @FXML
-    private Text narionIDValidate;
+
     @FXML
     private JFXPasswordField confirmPass;
     @FXML
@@ -61,6 +60,8 @@ public class NewAdminComponent implements Initializable {
     private JFXButton register_button;
     @FXML
     private Text adminText;
+    @FXML
+    private Text nationIDValidate;
     
     /**
      * Initializes the controller class.
@@ -73,7 +74,7 @@ public class NewAdminComponent implements Initializable {
         this.emailValidate.setVisible(false);
         this.telValidate.setVisible(false);
         this.passwordValidate.setVisible(false);
-        this.narionIDValidate.setVisible(false);
+        this.nationIDValidate.setVisible(false);
         this.zipcodeValidate.setVisible(false);
         this.confirmPassValidate.setVisible(false);
     }    
@@ -85,7 +86,7 @@ public class NewAdminComponent implements Initializable {
                 this.emailValidate.setVisible(false);
                 this.telValidate.setVisible(false);
                 this.passwordValidate.setVisible(false);
-                this.narionIDValidate.setVisible(false);
+                this.nationIDValidate.setVisible(false);
                 this.zipcodeValidate.setVisible(false);
                 this.confirmPassValidate.setVisible(false);
         NewAdminController newAdminController = 
@@ -164,25 +165,25 @@ public class NewAdminComponent implements Initializable {
                 
                  // ============== Nation ID ============
                 if (errList.get(i).get(0).equals("nationID")) {
-                    this.narionIDValidate.setVisible(true);
+                    this.nationIDValidate.setVisible(true);
                     if (errList.get(i).get(1).equals("isNumeric"))
-                        this.narionIDValidate.setText("nationID must be numberic");
-                    else if (errList.get(i).get(1).equals("maxLength"))
-                        this.narionIDValidate.setText("nationID must have 13 digits");
-                    else if (errList.get(i).get(1).equals("minLength"))
-                        this.narionIDValidate.setText("nationID must have 13 digits");
+                        this.nationIDValidate.setText("nationID must be numberic");
+                    else if (errList.get(i).get(1).equals("size"))
+                        this.nationIDValidate.setText("nationID must have 13 digits");
+                    else if (errList.get(i).get(1).equals("size"))
+                        this.nationIDValidate.setText("nationID must have 13 digits");
                     else if (errList.get(i).get(1).equals("isRequired"))
-                        this.narionIDValidate.setText("nationID is required");
+                        this.nationIDValidate.setText("nationID is required");
                 }
                 
                 // ============== Zipcode ============
-                if (errList.get(i).get(0).equals("zipcode")) {
+                if (errList.get(i).get(0).equals("zipCode")) {
                     this.zipcodeValidate.setVisible(true);
                     if (errList.get(i).get(1).equals("isNumeric"))
                         this.zipcodeValidate.setText("zipcode must be numberic");
-                    else if (errList.get(i).get(1).equals("maxLength"))
+                    else if (errList.get(i).get(1).equals("size"))
                         this.zipcodeValidate.setText("zipcode must have 5 digits");
-                    else if (errList.get(i).get(1).equals("minLength"))
+                    else if (errList.get(i).get(1).equals("size"))
                         this.zipcodeValidate.setText("zipcode must have 5 digits");
                     else if (errList.get(i).get(1).equals("isRequired"))
                         this.zipcodeValidate.setText("zipcode is required");
