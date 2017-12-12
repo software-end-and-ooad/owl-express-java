@@ -22,6 +22,7 @@ public abstract class DataService {
     private static String  password;
     private static String  zipCode;
     private static long accountID;
+    private static String role;
 
     public static String getFullname() {
         return fullname;
@@ -117,6 +118,14 @@ public abstract class DataService {
 
     public static void setZipCode(String zipCode) {
         DataService.zipCode = zipCode;
+    }
+    
+    public static String getRole() {
+        return role;
+    }
+    
+    public static void setRole(String role) {
+        DataService.role = role;
     }
 
     public abstract void clear();

@@ -60,7 +60,7 @@ public class LoginController extends Validation {
     public boolean adminCheckLogin() {
         Entitymanager db = new Entitymanager("Postman");
 
-        Query adminQuery = db.getEM().createQuery("SELECT a FROM Postman WHERE a.username='" + this.username + "' AND a.password='" + this.password + "'");
+        Query adminQuery = db.getEM().createQuery("SELECT a FROM Postman a WHERE a.username='" + this.username + "' AND a.password='" + this.password + "'");
         
         try { // try, if can find user
             Postman admin = (Postman)adminQuery.getSingleResult();
@@ -75,7 +75,8 @@ public class LoginController extends Validation {
                     admin.getTel(), 
                     admin.getZipCode(),  
                     admin.getUsername(), 
-                    admin.getPassword()
+                    admin.getPassword(),
+                    admin.getRole()
             );
             return true;
         } catch (Exception e) {

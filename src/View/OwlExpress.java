@@ -45,10 +45,31 @@ public class OwlExpress extends Application {
             System.out.println(loginfile.getUsername());
             System.out.println(loginfile.getPassword());
             System.out.println(loginfile.getRole());
-            Entitymanager db = new Entitymanager(loginfile.getRole());
-            if(loginfile.getRole().compareTo("User") == 0){
+            Entitymanager db;
+            if (loginfile.getRole().compareTo("Customer") != 0) {
+                Entitymanager admindb = new Entitymanager("Postman");
+
+                // Depart Admin between [admin, postman]
+                 Query adminFind = admindb.getEM().
+                            createQuery("SELECT a FROM Postman a WHERE a.username='" 
+                                    + loginfile.getUsername() + 
+                                    "' AND a.password='" + 
+                                    loginfile.getPassword() + "'");
+                    Postman adminResult = (Postman)adminFind.getSingleResult();
+                    
+                if (adminResult.getRole().compareTo("Postman") == 0) {
+                    db = new Entitymanager("Postman");
+                } else if (adminResult.getRole().compareTo("Customer") == 0) {
+                    db = new Entitymanager("Customer");
+                } else
+                    db = new Entitymanager("Postman");
+            }else{
+                db = new Entitymanager("Customer");
+            }
+            
+            if(loginfile.getRole().compareTo("Customer") == 0){
                 Query userQuery = db.getEM().
-                        createQuery("SELECT u FROM User u WHERE u.username='" 
+                        createQuery("SELECT u FROM Customer u WHERE u.username='" 
                                 + loginfile.getUsername() + 
                                 "' AND u.password='" + 
                                 loginfile.getPassword() + "'");
@@ -81,7 +102,7 @@ public class OwlExpress extends Application {
                 stage.show();
             }else if(loginfile.getRole().compareTo("Admin") == 0){
                 Query adminQuery = db.getEM().
-                        createQuery("SELECT a FROM Admin a WHERE a.username='"
+                        createQuery("SELECT a FROM Postman a WHERE a.username='"
                                 + loginfile.getUsername() + 
                                 "' AND a.password='" + 
                                 loginfile.getPassword() + "'");
@@ -95,12 +116,13 @@ public class OwlExpress extends Application {
                         admin.getTel(), 
                         admin.getZipCode(),  
                         admin.getUsername(), 
-                        admin.getPassword()
+                        admin.getPassword(),
+                        admin.getRole()
                 );
                 db.getEM().close();
                 //load up OTHER FXML document
                 root = FXMLLoader.load(getClass().
-                        getResource("AdminDashboardComponent.fxml"));
+                        getResource("PostmanDashboardComponent.fxml"));
                 stage.initStyle(StageStyle.TRANSPARENT);
                 root = MoveWindow.moveWindow(root, stage);
                 //create a new scene with root and set the stage

@@ -20,9 +20,9 @@ import javafx.stage.Stage;
  */
 public class PostmanDashboardComponent implements Initializable {
     @FXML
-    private Text username;
+    private Text username, textAllUser, textAddAdmin;
     @FXML
-    private ImageView orderMenu;
+    private ImageView orderMenu, imgAllUser, imgAddAdmin;
     @FXML
     private AnchorPane scene_area;
     @FXML
@@ -35,6 +35,11 @@ public class PostmanDashboardComponent implements Initializable {
         this.selAddAdmin.setVisible(false);
         this.selAllUserDetail.setVisible(false);
         this.selProfile.setVisible(false);
+        if (PostmanDataService.getRole().compareTo("Postman") == 0) {
+            this.imgAddAdmin.setVisible(false);
+            this.textAddAdmin.setVisible(false);
+        }
+       
     }    
     @FXML
     private void orderClick(MouseEvent event) throws IOException {

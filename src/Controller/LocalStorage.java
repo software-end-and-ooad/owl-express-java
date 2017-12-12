@@ -21,6 +21,11 @@ public class LocalStorage{
     private String password;
     private String role;
     public void setAuthen(String username, String password, String role) {
+        if (role.compareTo("Admin") == 0) {
+            if (PostmanDataService.getRole().compareTo("Customer") == 0) {
+                role = "Postman";
+            } 
+        }
         // Convert the string to a
         // byte array.
         byte usernameData[] = username.getBytes();

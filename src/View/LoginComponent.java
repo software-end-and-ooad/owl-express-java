@@ -91,14 +91,14 @@ public class LoginComponent extends UserDataService implements Initializable {
         if (loginController.userCheckLogin() == true) {
             this.loginValidate.setVisible(false);
             new LocalStorage().setAuthen(this.username_field.getText(), 
-                    this.password_field.getText(), "User");
+                    this.password_field.getText(), "Customer");
             // Navigate to dashboard
             Stage stage;
             Parent root;
             stage = (Stage) this.username_field.getScene().getWindow();
             //load up OTHER FXML document
             root = FXMLLoader.load(getClass().
-                    getResource("PostmanDashboardComponent.fxml"));
+                    getResource("DashboardComponent.fxml"));
             root = MoveWindow.moveWindow(root, stage);
             //create a new scene with root and set the stage
             Scene scene = new Scene(root);
@@ -121,7 +121,7 @@ public class LoginComponent extends UserDataService implements Initializable {
             stage = (Stage) this.username_field.getScene().getWindow();
             //load up OTHER FXML document
             root = FXMLLoader.load(getClass().
-                    getResource("AdminDashboardComponent.fxml"));
+                    getResource("PostmanDashboardComponent.fxml"));
             root = MoveWindow.moveWindow(root, stage);
             //create a new scene with root and set the stage
             Scene scene = new Scene(root);

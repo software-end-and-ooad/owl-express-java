@@ -20,7 +20,7 @@ public class PostmanDataService extends DataService{
         PostmanDataService.nationID = nationID;
     }
     
-    public static void setAdminDataService(long id, String nationID, String fullname, String email, String tel, String zipCode, String username, String password){
+    public static void setAdminDataService(long id, String nationID, String fullname, String email, String tel, String zipCode, String username, String password, String role){
         PostmanDataService.setAccountID(id);
         PostmanDataService.setNationID(nationID);
         PostmanDataService.setFullname(fullname);
@@ -29,6 +29,7 @@ public class PostmanDataService extends DataService{
         PostmanDataService.setZipCode(zipCode);
         PostmanDataService.setUsername(username);
         PostmanDataService.setPassword(password);
+        PostmanDataService.setRole(role);
     }
     @Override
     public void clear() {
@@ -40,6 +41,7 @@ public class PostmanDataService extends DataService{
         super.setProvince(null);
         super.setArea(null);
         super.setTel(null);
+        super.setRole(null);
     }
     
 }
