@@ -98,7 +98,7 @@ public class LoginComponent extends UserDataService implements Initializable {
             stage = (Stage) this.username_field.getScene().getWindow();
             //load up OTHER FXML document
             root = FXMLLoader.load(getClass().
-                    getResource("DashboardComponent.fxml"));
+                    getResource("PostmanDashboardComponent.fxml"));
             root = MoveWindow.moveWindow(root, stage);
             //create a new scene with root and set the stage
             Scene scene = new Scene(root);

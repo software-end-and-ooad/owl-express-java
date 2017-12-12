@@ -21,6 +21,7 @@ public class NewPostmanController extends Validation{
     private final String email;
     private final String tel;
     private final String username;
+    private final String role;
     private final String password;
     private final String zipCode;
     private final String confirmPass;
@@ -28,7 +29,7 @@ public class NewPostmanController extends Validation{
     private boolean uniqueUsername;
     
     
-    public NewPostmanController(String nationID, String name, String email, String tel, String username, String password, String confirmPass,String zipCode) {
+    public NewPostmanController(String nationID, String name, String email, String tel, String username, String password, String confirmPass,String zipCode, String role) {
         this.nationID = nationID;
         this.name = name;
         this.email = email;
@@ -37,6 +38,7 @@ public class NewPostmanController extends Validation{
         this.password = password;
         this.zipCode = zipCode;
         this.confirmPass = confirmPass;
+        this.role = role;
     }
     
      public ArrayList<ArrayList<String>> validateResgister(){
@@ -109,7 +111,7 @@ public class NewPostmanController extends Validation{
                 try {
                     // Create user
                     db.getEM().getTransaction().begin();
-                    Postman postman  = new Postman(this.nationID, this.name, this.email, this.tel, this.username, this.password, this.zipCode);
+                    Postman postman  = new Postman(this.nationID, this.name, this.email, this.tel, this.username, this.password, this.zipCode, this.role);
                     db.getEM().persist(postman);
                     db.getEM().getTransaction().commit();
                     db.getEM().close();

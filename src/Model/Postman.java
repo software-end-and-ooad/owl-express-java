@@ -10,6 +10,7 @@ public class Postman{
     
     @Id @GeneratedValue
     private long id;
+    private String role;
     private String nationID;
     private String fullname;
     private String email;
@@ -19,7 +20,7 @@ public class Postman{
     private String zipCode;//รหัสไปรษณี
 
     public Postman(String nationID, String fullname, String email, String tel, 
-            String username, String password, String zipCode) {
+            String username, String password, String zipCode, String role ) {
         this.nationID = nationID;
         this.fullname = fullname;
         this.email = email;
@@ -27,9 +28,16 @@ public class Postman{
         this.username = username;
         this.password = password;
         this.zipCode = zipCode;
+        this.role = role;
     }
-    
-    
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
     
     public long getId() {
         return id;

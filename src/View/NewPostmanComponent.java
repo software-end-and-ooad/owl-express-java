@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import Controller.NewPostmanController;
+import com.jfoenix.controls.JFXCheckBox;
 import java.util.ArrayList;
 import javafx.scene.layout.AnchorPane;
 
@@ -26,6 +27,8 @@ public class NewPostmanComponent implements Initializable {
     private Text nameValidate;
     @FXML
     private Text emailValidate;
+    @FXML
+    private JFXCheckBox role;
     @FXML
     private Text telValidate;
     @FXML
@@ -84,11 +87,13 @@ public class NewPostmanComponent implements Initializable {
                 this.nationIDValidate.setVisible(false);
                 this.zipcodeValidate.setVisible(false);
                 this.confirmPassValidate.setVisible(false);
+                this.role.setVisible(false);
+                
         NewPostmanController newPostmanController = 
                 new NewPostmanController(
                          nationID.getText(), name.getText(), email.getText(), 
                         tel.getText(), username.getText(), password.getText(),
-                        confirmPass.getText(),zipCode.getText()
+                        confirmPass.getText(),zipCode.getText(), this.role.getText()
                 );
         ArrayList<ArrayList<String>> errList = 
                 newPostmanController.validateResgister(); // Validate error list
@@ -104,6 +109,7 @@ public class NewPostmanComponent implements Initializable {
                 this.confirmPass.setVisible(false);
                 this.zipCode.setVisible(false);
                 this.register_button.setVisible(false);
+                this.role.setVisible(false);
                 this.adminText.setText("New postman added");
                
             } else {  
