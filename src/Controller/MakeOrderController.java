@@ -78,7 +78,7 @@ public class MakeOrderController extends Validation{
         this.destinationprovince = destinationprovince;
         this.destinationzipCode = destinationzipCode;
         this.destinationotherAddress = destinationotherAddress;
-        this.status = "Not yet picked";
+        this.status = "Waiting for verification";
         this.senderName = senderName;
         this.receiverName = receiverName;
         this.trackID = getRandomWord();

@@ -55,7 +55,7 @@ public class PostmanDashboardComponent implements Initializable {
     @FXML
     private void userDetail(MouseEvent event) throws IOException {
         AnchorPane screen_page = FXMLLoader.load(this.getClass().
-                getResource("PostmanAllUserComponent.fxml"));
+                getResource("PostmanAllCustomerComponent.fxml"));
         this.scene_area.getChildren().setAll(screen_page);
         //Highlight selected menu
         this.selAllOrder.setVisible(false);

@@ -25,9 +25,9 @@ public class PostmanAllCustomerController {
     private ObservableList<String> obUserString;//List of all user
     private Entitymanager db;
     public PostmanAllCustomerController(){
-        this.db = new Entitymanager("User");
+        this.db = new Entitymanager("Customer");
         ArrayList<String> userString = new ArrayList<String>();
-        TypedQuery<Customer> userQuery = this.db.getEM().createQuery("SELECT u FROM User u",Customer.class);
+        TypedQuery<Customer> userQuery = this.db.getEM().createQuery("SELECT u FROM Customer u",Customer.class);
         List<Customer> objectList = userQuery.getResultList();
 
         for(Customer u: objectList){
@@ -42,9 +42,9 @@ public class PostmanAllCustomerController {
     
     public ObservableList refresh()
     {
-        this.db = new Entitymanager("User");
+        this.db = new Entitymanager("Customer");
         ArrayList<String> userString = new ArrayList<String>();
-        TypedQuery<Customer> userQuery = this.db.getEM().createQuery("SELECT u FROM User u",Customer.class);
+        TypedQuery<Customer> userQuery = this.db.getEM().createQuery("SELECT u FROM Customer u",Customer.class);
         List<Customer> objectList = userQuery.getResultList();
 
         for(Customer u: objectList){
