@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package View;
 
-import Controller.AdminAllUserController;
-import Model.Database;
-import Model.User;
+import Controller.PostmanAllCustomerController;
+import Model.Entitymanager;
+import Model.Customer;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import java.net.URL;
@@ -27,21 +22,21 @@ import javax.persistence.TypedQuery;
  *
  * @author kaogi
  */
-public class AdminAllUserComponent implements Initializable {
+public class PostmanAllCustomerComponent implements Initializable {
 
     @FXML
     private AnchorPane allOrderPane;
     @FXML
     private JFXListView listUser;
     
-    private AdminAllUserController adminAllUserController;
+    private PostmanAllCustomerController adminAllUserController;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        this.adminAllUserController = new AdminAllUserController();
+        this.adminAllUserController = new PostmanAllCustomerController();
         listUser.setItems(this.adminAllUserController.getObUserString());
         
     }    

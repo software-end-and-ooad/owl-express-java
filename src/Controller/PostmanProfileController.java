@@ -5,22 +5,22 @@
  */
 package Controller;
 
-import Model.Admin;
-import Model.Database;
-import Model.User;
+import Model.Postman;
+import Model.Entitymanager;
+import Model.Customer;
 import java.util.ArrayList;
 
 /**
  *
  * @author 58011424
  */
-public class AdminProfileController extends Validation{
+public class PostmanProfileController extends Validation{
     private String fullname;
     private String email;
     private String tel;
     private String nationID;
     private String zipCode;
-    public AdminProfileController(String fullname, String email, String tel, String zipCode, String nationID) {
+    public PostmanProfileController(String fullname, String email, String tel, String zipCode, String nationID) {
         this.fullname = fullname;
         this.email = email;
         this.tel = tel;
@@ -71,14 +71,14 @@ public class AdminProfileController extends Validation{
     }
     public void editProfile(){
         //UPDATE dataservice
-        AdminDataService.setFullname(this.fullname);
-        AdminDataService.setEmail(this.email);
-        AdminDataService.setTel(this.tel);
-        AdminDataService.setNationID(this.nationID);
-        AdminDataService.setZipCode(this.zipCode);
+        PostmanDataService.setFullname(this.fullname);
+        PostmanDataService.setEmail(this.email);
+        PostmanDataService.setTel(this.tel);
+        PostmanDataService.setNationID(this.nationID);
+        PostmanDataService.setZipCode(this.zipCode);
         //UPDATE database
-        Database db = new Database("Admin");
-        Admin admin = db.getEM().find(Admin.class, AdminDataService.getAccountID());
+        Entitymanager db = new Entitymanager("Admin");
+        Postman admin = db.getEM().find(Postman.class, PostmanDataService.getAccountID());
         db.getEM().getTransaction().begin();
         admin.setFullname(this.fullname);
         admin.setEmail(this.email);

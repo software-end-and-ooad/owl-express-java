@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package View;
 
 import Controller.ForgotPassController;
 import Controller.LocalStorage;
 import Controller.LoginController;
 import Controller.UserDataService;
-import Model.Database;
+import Model.Entitymanager;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXTextField;
@@ -83,7 +78,8 @@ public class LoginComponent extends UserDataService implements Initializable {
 
     @FXML
     public void submitLogin() throws IOException {
-        LoginController loginController = new LoginController(this.username_field.getText(), this.password_field.getText());
+        LoginController loginController = new LoginController(this.
+                username_field.getText(), this.password_field.getText());
         if (!adminCheckbox.selectedProperty().get()) {
             userLogin(loginController);
         } else {
@@ -94,13 +90,15 @@ public class LoginComponent extends UserDataService implements Initializable {
     private void userLogin(LoginController loginController) throws IOException {
         if (loginController.userCheckLogin() == true) {
             this.loginValidate.setVisible(false);
-            new LocalStorage().setAuthen(this.username_field.getText(), this.password_field.getText(), "User");
+            new LocalStorage().setAuthen(this.username_field.getText(), 
+                    this.password_field.getText(), "User");
             // Navigate to dashboard
             Stage stage;
             Parent root;
             stage = (Stage) this.username_field.getScene().getWindow();
             //load up OTHER FXML document
-            root = FXMLLoader.load(getClass().getResource("DashboardComponent.fxml"));
+            root = FXMLLoader.load(getClass().
+                    getResource("DashboardComponent.fxml"));
             root = MoveWindow.moveWindow(root, stage);
             //create a new scene with root and set the stage
             Scene scene = new Scene(root);
@@ -111,16 +109,19 @@ public class LoginComponent extends UserDataService implements Initializable {
         }
     }
 
-    private void adminLogin(LoginController loginController) throws IOException {
+    private void adminLogin(LoginController loginController) throws IOException 
+    {
         if (loginController.adminCheckLogin() == true) {
             this.loginValidate.setVisible(false);
-            new LocalStorage().setAuthen(this.username_field.getText(), this.password_field.getText(), "Admin");
+            new LocalStorage().setAuthen(this.username_field.getText(), 
+                    this.password_field.getText(), "Admin");
             // Navigate to dashboard
             Stage stage;
             Parent root;
             stage = (Stage) this.username_field.getScene().getWindow();
             //load up OTHER FXML document
-            root = FXMLLoader.load(getClass().getResource("AdminDashboardComponent.fxml"));
+            root = FXMLLoader.load(getClass().
+                    getResource("AdminDashboardComponent.fxml"));
             root = MoveWindow.moveWindow(root, stage);
             //create a new scene with root and set the stage
             Scene scene = new Scene(root);
@@ -137,7 +138,8 @@ public class LoginComponent extends UserDataService implements Initializable {
         Parent root;
         stage = (Stage) this.signup_button.getScene().getWindow();
         //load up OTHER FXML document
-        root = FXMLLoader.load(getClass().getResource("RegisterComponent.fxml"));
+        root = FXMLLoader.load(getClass().
+                getResource("RegisterComponent.fxml"));
         root = MoveWindow.moveWindow(root, stage);
         //create a new scene with root and set the stage
         Scene scene = new Scene(root);
@@ -155,13 +157,17 @@ public class LoginComponent extends UserDataService implements Initializable {
 
     @FXML
     private void submitEmail() {
-        forgotPassController = new ForgotPassController(this.emailField.getText());
+        forgotPassController = new ForgotPassController(this.emailField.
+                getText());
         //If we have this email in database
         if (forgotPassController.hasUser()) {
             //Send verification code to email
             String verifyCode = forgotPassController.getRandomWord();
             String subject = "Recover your account";
-            String message = "Dear Customer,\n" + "\n" + "We received a request from you about your lost account. Please enter this code to your application to recover your account\n <br /> <h1>" + verifyCode + "</h1>";
+            String message = "Dear Customer,\n" + "\n" + "We received a "
+                    + "request from you about your lost account. Please enter "
+                    + "this code to your application to recover your"
+                    + " account\n <br /> <h1>" + verifyCode + "</h1>";
             forgotPassController.sendEmail(subject, message, verifyCode);
             //Show verify pop up
             this.verifyText.setVisible(true);
@@ -180,10 +186,13 @@ public class LoginComponent extends UserDataService implements Initializable {
     @FXML
     private void submitVerify() {
         //If verification code was corrected
-        if (this.verifyField.getText().compareTo(this.forgotPassController.getVerify()) == 0) {
+        if (this.verifyField.getText().compareTo(this.forgotPassController.
+                getVerify()) == 0) {
             //Show user Username and Password and close button
-            this.usernameText.setText(this.forgotPassController.getUser().getUsername());
-            this.passwordText.setText(this.forgotPassController.getUser().getPassword());
+            this.usernameText.setText(this.forgotPassController.getUser().
+                    getUsername());
+            this.passwordText.setText(this.forgotPassController.getUser().
+                    getPassword());
             this.usernameText.setVisible(true);
             this.passwordText.setVisible(true);
             this.closeButton.setVisible(true);

@@ -1,8 +1,8 @@
 package Controller;
 
-import Model.Admin;
-import Model.User;
-import Model.Database;
+import Model.Postman;
+import Model.Customer;
+import Model.Entitymanager;
 import java.util.ArrayList;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -25,12 +25,12 @@ public class LoginController extends Validation {
     }
 
     public boolean userCheckLogin() {
-        Database db = new Database("User");
+        Entitymanager db = new Entitymanager("Customer");
 
-        Query userQuery = db.getEM().createQuery("SELECT u FROM User u WHERE u.username='" + this.username + "' AND u.password='" + this.password + "'");
+        Query userQuery = db.getEM().createQuery("SELECT u FROM Customer u WHERE u.username='" + this.username + "' AND u.password='" + this.password + "'");
         
         try { // try, if can find user
-            User user = (User)userQuery.getSingleResult();
+            Customer user = (Customer)userQuery.getSingleResult();
             System.out.println(user.getUsername());
             db.getEM().close();
             //LOAD data to UserDataService
@@ -51,22 +51,23 @@ public class LoginController extends Validation {
             return true;
         } catch (Exception e) {
             System.out.println("false");
+            System.out.print(e);
             db.getEM().close();
             return false;
         }
         
     }
     public boolean adminCheckLogin() {
-        Database db = new Database("Admin");
+        Entitymanager db = new Entitymanager("Postman");
 
-        Query adminQuery = db.getEM().createQuery("SELECT a FROM Admin a WHERE a.username='" + this.username + "' AND a.password='" + this.password + "'");
+        Query adminQuery = db.getEM().createQuery("SELECT a FROM Postman WHERE a.username='" + this.username + "' AND a.password='" + this.password + "'");
         
         try { // try, if can find user
-            Admin admin = (Admin)adminQuery.getSingleResult();
+            Postman admin = (Postman)adminQuery.getSingleResult();
             System.out.println(admin.getUsername());
             db.getEM().close();
-            //ADD data to AdminDataService
-            AdminDataService.setAdminDataService(
+            //ADD data to PostmanDataService
+            PostmanDataService.setAdminDataService(
                     admin.getId(),
                     admin.getNationID(),
                     admin.getFullname(), 

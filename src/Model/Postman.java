@@ -1,14 +1,12 @@
 package Model;
-
 import java.io.Serializable;
 import javax.persistence.*;
-
 /**
  *
  * @author babyjazz
  */
 @Entity
-public class Admin{
+public class Postman{
     
     @Id @GeneratedValue
     private long id;
@@ -20,7 +18,8 @@ public class Admin{
     private String password;
     private String zipCode;//รหัสไปรษณี
 
-    public Admin(String nationID, String fullname, String email, String tel, String username, String password, String zipCode) {
+    public Postman(String nationID, String fullname, String email, String tel, 
+            String username, String password, String zipCode) {
         this.nationID = nationID;
         this.fullname = fullname;
         this.email = email;

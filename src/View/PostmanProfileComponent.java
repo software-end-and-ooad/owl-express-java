@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package View;
 
-import Controller.AdminDataService;
-import Controller.AdminProfileController;
+import Controller.PostmanDataService;
+import Controller.PostmanProfileController;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ArrayList;
@@ -21,41 +16,43 @@ import javafx.scene.text.Text;
  *
  * @author 58011424
  */
-public class AdminProfileComponent implements Initializable {
+public class PostmanProfileComponent implements Initializable {
     @FXML
     private AnchorPane profilePane, editPane;
     @FXML
     private Text name, tel, email, zipCode;
     @FXML
-    private Text fullnameValidate, telValidate, emailValidate, zipCodeValidate, nationIDValidate;
+    private Text fullnameValidate, telValidate, emailValidate,
+                 zipCodeValidate, nationIDValidate;
     @FXML
-    private JFXTextField fullnameField, emailField, telField, zipCodeField, nationIDField;
+    private JFXTextField fullnameField, emailField, telField, 
+                         zipCodeField, nationIDField;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        this.name.setText(AdminDataService.getFullname());
-        this.email.setText(AdminDataService.getEmail());
-        this.tel.setText(AdminDataService.getTel());
-        this.zipCode.setText(AdminDataService.getZipCode());
+        this.name.setText(PostmanDataService.getFullname());
+        this.email.setText(PostmanDataService.getEmail());
+        this.tel.setText(PostmanDataService.getTel());
+        this.zipCode.setText(PostmanDataService.getZipCode());
     } 
     @FXML
     public void clickEdit(){
         //Init old data to field
-        this.fullnameField.setText(AdminDataService.getFullname());
-        this.emailField.setText(AdminDataService.getEmail());
-        this.telField.setText(AdminDataService.getTel());
-        this.nationIDField.setText(AdminDataService.getNationID());
-        this.zipCodeField.setText(AdminDataService.getZipCode());
+        this.fullnameField.setText(PostmanDataService.getFullname());
+        this.emailField.setText(PostmanDataService.getEmail());
+        this.telField.setText(PostmanDataService.getTel());
+        this.nationIDField.setText(PostmanDataService.getNationID());
+        this.zipCodeField.setText(PostmanDataService.getZipCode());
                 
         this.profilePane.setVisible(false);
         this.editPane.setVisible(true);
     }
     @FXML
     public void clickComfirm(){
-        AdminProfileController adminProfileController = 
-                new AdminProfileController(
+        PostmanProfileController adminProfileController = 
+                new PostmanProfileController(
                     this.fullnameField.getText(),
                     this.emailField.getText(),
                     this.telField.getText(),
@@ -69,7 +66,8 @@ public class AdminProfileComponent implements Initializable {
         this.zipCodeValidate.setVisible(false);
         this.nationIDValidate.setVisible(false);
         
-        ArrayList<ArrayList<String>> errList = adminProfileController.validateProfile(); // Validate error list
+        ArrayList<ArrayList<String>> errList = adminProfileController.
+                validateProfile(); // Validate error list
         //If no error
         if(errList.size() <= 0){
             adminProfileController.editProfile();
@@ -77,11 +75,11 @@ public class AdminProfileComponent implements Initializable {
             this.profilePane.setVisible(true);
             this.editPane.setVisible(false);
             //Display on profile menu
-            this.fullnameField.setText(AdminDataService.getFullname());
-            this.emailField.setText(AdminDataService.getEmail());
-            this.telField.setText(AdminDataService.getTel());
-            this.nationIDField.setText(AdminDataService.getNationID());
-            this.zipCodeField.setText(AdminDataService.getZipCode());
+            this.fullnameField.setText(PostmanDataService.getFullname());
+            this.emailField.setText(PostmanDataService.getEmail());
+            this.telField.setText(PostmanDataService.getTel());
+            this.nationIDField.setText(PostmanDataService.getNationID());
+            this.zipCodeField.setText(PostmanDataService.getZipCode());
         }
         else{
             // IF THERE IS SOME ERROR VALIDATE IN LIST
@@ -90,7 +88,8 @@ public class AdminProfileComponent implements Initializable {
                 if (errList.get(i).get(0).equals("fullname")) {
                     this.fullnameValidate.setVisible(true);
                     if (errList.get(i).get(1).equals("maxLength"))
-                        this.fullnameValidate.setText("fullname must no more than 20 characters");
+                        this.fullnameValidate.setText("fullname must no more "
+                                + "than 20 characters");
                     else if (errList.get(i).get(1).equals("isRequired"))
                         this.fullnameValidate.setText("fullname is required");
                 }
@@ -130,11 +129,14 @@ public class AdminProfileComponent implements Initializable {
                 if (errList.get(i).get(0).equals("nationID")) {
                     this.nationIDValidate.setVisible(true);
                     if (errList.get(i).get(1).equals("isNumeric"))
-                        this.nationIDValidate.setText("Nation No. must be numberic");
+                        this.nationIDValidate.setText("Nation No. must be "
+                                + "numberic");
                     else if (errList.get(i).get(1).equals("maxLength"))
-                        this.nationIDValidate.setText("Nation No. must have 13 digits");
+                        this.nationIDValidate.setText("Nation No. must have"
+                                + " 13 digits");
                     else if (errList.get(i).get(1).equals("minLength"))
-                        this.nationIDValidate.setText("Nation No. must have 13 digits");
+                        this.nationIDValidate.setText("Nation No. must have"
+                                + " 13 digits");
                     else if (errList.get(i).get(1).equals("isRequired"))
                         this.nationIDValidate.setText("Nation No. is required");
                 }

@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import Model.Database;
+import Model.Entitymanager;
 import Model.Order;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,12 +18,12 @@ import javax.persistence.TypedQuery;
  *
  * @author 58011424
  */
-public class AdminAllOrderController {
+public class PostmanAllOrderController {
     Order order;
     ObservableList<String> obOrderString;//List of all order
-    Database db;
-    public AdminAllOrderController(){
-        this.db = new Database("Order");
+    Entitymanager db;
+    public PostmanAllOrderController(){
+        this.db = new Entitymanager("Order");
         ArrayList<String> orderString = new ArrayList<String>();
         TypedQuery<Order> orderQuery = this.db.getEM().createQuery("SELECT o FROM Order o",Order.class);
         List<Order> objectList = orderQuery.getResultList();

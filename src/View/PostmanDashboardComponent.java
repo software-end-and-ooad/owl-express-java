@@ -1,11 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package View;
-
-import Controller.AdminDataService;
+import Controller.PostmanDataService;
 import Controller.LocalStorage;
 import java.io.IOException;
 import java.net.URL;
@@ -20,14 +14,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
 /**
  * FXML Controller class
- *
  * @author kaogi
  */
-public class AdminDashboardComponent implements Initializable {
-
+public class PostmanDashboardComponent implements Initializable {
     @FXML
     private Text username;
     @FXML
@@ -36,22 +27,19 @@ public class AdminDashboardComponent implements Initializable {
     private AnchorPane scene_area;
     @FXML
     private AnchorPane selAllOrder, selAllUserDetail, selAddAdmin, selProfile;
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        this.username.setText(AdminDataService.getUsername());
+        this.username.setText(PostmanDataService.getUsername());
         //Highlight transparent
         this.selAllOrder.setVisible(false);
         this.selAddAdmin.setVisible(false);
         this.selAllUserDetail.setVisible(false);
         this.selProfile.setVisible(false);
     }    
-
     @FXML
     private void orderClick(MouseEvent event) throws IOException {
-        AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("AdminAllOrderComponent.fxml"));
+        AnchorPane screen_page = FXMLLoader.load(this.getClass().
+                getResource("PostmanAllOrderComponent.fxml"));
         this.scene_area.getChildren().setAll(screen_page);
         //Highlight selected menu
         this.selAllOrder.setVisible(true);
@@ -61,7 +49,8 @@ public class AdminDashboardComponent implements Initializable {
     }
     @FXML
     private void userDetail(MouseEvent event) throws IOException {
-        AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("AdminAllUserComponent.fxml"));
+        AnchorPane screen_page = FXMLLoader.load(this.getClass().
+                getResource("PostmanAllUserComponent.fxml"));
         this.scene_area.getChildren().setAll(screen_page);
         //Highlight selected menu
         this.selAllOrder.setVisible(false);
@@ -71,7 +60,8 @@ public class AdminDashboardComponent implements Initializable {
     }
     @FXML
     private void adminManage(MouseEvent event) throws IOException {
-        AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("AdminProfileComponent.fxml"));
+        AnchorPane screen_page = FXMLLoader.load(this.getClass().
+                getResource("PostmanProfileComponent.fxml"));
         this.scene_area.getChildren().setAll(screen_page);
         //Highlight selected menu
         this.selAllOrder.setVisible(false);
@@ -81,7 +71,8 @@ public class AdminDashboardComponent implements Initializable {
     }
     @FXML
     private void addAdmin(MouseEvent event) throws IOException {
-        AnchorPane screen_page = FXMLLoader.load(this.getClass().getResource("NewAdminComponent.fxml"));
+        AnchorPane screen_page = FXMLLoader.load(this.getClass().
+                getResource("NewPostmanComponent.fxml"));
         this.scene_area.getChildren().setAll(screen_page);
         //Highlight selected menu
         this.selAllOrder.setVisible(false);

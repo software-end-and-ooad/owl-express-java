@@ -10,8 +10,8 @@ package Controller;
  * @author Korkao
  */
 
-import Model.Database;
-import Model.User;
+import Model.Entitymanager;
+import Model.Customer;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.collections.FXCollections;
@@ -19,18 +19,18 @@ import javafx.collections.ObservableList;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
-public class AdminAllUserController {
+public class PostmanAllCustomerController {
     
-    User user;
+    Customer user;
     private ObservableList<String> obUserString;//List of all user
-    private Database db;
-    public AdminAllUserController(){
-        this.db = new Database("User");
+    private Entitymanager db;
+    public PostmanAllCustomerController(){
+        this.db = new Entitymanager("User");
         ArrayList<String> userString = new ArrayList<String>();
-        TypedQuery<User> userQuery = this.db.getEM().createQuery("SELECT u FROM User u",User.class);
-        List<User> objectList = userQuery.getResultList();
+        TypedQuery<Customer> userQuery = this.db.getEM().createQuery("SELECT u FROM User u",Customer.class);
+        List<Customer> objectList = userQuery.getResultList();
 
-        for(User u: objectList){
+        for(Customer u: objectList){
             userString.add(u.toString());
         }
         this.obUserString = FXCollections.observableArrayList(userString);
@@ -42,12 +42,12 @@ public class AdminAllUserController {
     
     public ObservableList refresh()
     {
-        this.db = new Database("User");
+        this.db = new Entitymanager("User");
         ArrayList<String> userString = new ArrayList<String>();
-        TypedQuery<User> userQuery = this.db.getEM().createQuery("SELECT u FROM User u",User.class);
-        List<User> objectList = userQuery.getResultList();
+        TypedQuery<Customer> userQuery = this.db.getEM().createQuery("SELECT u FROM User u",Customer.class);
+        List<Customer> objectList = userQuery.getResultList();
 
-        for(User u: objectList){
+        for(Customer u: objectList){
             userString.add(u.toString());
         }
         this.obUserString = FXCollections.observableArrayList(userString);

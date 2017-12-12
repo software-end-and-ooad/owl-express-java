@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import Model.Database;
+import Model.Entitymanager;
 import Model.Order;
 import java.text.DateFormat;
 import java.time.LocalDateTime;
@@ -207,7 +207,7 @@ public class MakeOrderController extends Validation{
         this.uniqueTrackID = false;
         
         
-        Database db = new Database("Order");
+        Entitymanager db = new Entitymanager("Order");
         
         // FIND OR CREATE     // UNIQUE TrackID
         Query uniqueTrack = db.getEM().createQuery("SELECT trackID FROM Order WHERE trackID='" + this.trackID + "'", Order.class);

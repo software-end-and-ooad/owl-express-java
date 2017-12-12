@@ -5,8 +5,8 @@
  */
 package Controller;
 
-import Model.Admin;
-import Model.Database;
+import Model.Postman;
+import Model.Entitymanager;
 import java.util.ArrayList;
 import javax.persistence.Query;
 
@@ -14,7 +14,7 @@ import javax.persistence.Query;
  *
  * @author kaogi
  */
-public class NewAdminController  extends Validation{
+public class NewPostmanController extends Validation{
 
     private final String nationID;
     private final String name;
@@ -28,7 +28,7 @@ public class NewAdminController  extends Validation{
     private boolean uniqueUsername;
     
     
-    public NewAdminController(String nationID, String name, String email, String tel, String username, String password, String confirmPass,String zipCode) {
+    public NewPostmanController(String nationID, String name, String email, String tel, String username, String password, String confirmPass,String zipCode) {
         this.nationID = nationID;
         this.name = name;
         this.email = email;
@@ -97,11 +97,11 @@ public class NewAdminController  extends Validation{
         this.uniqueUsername = false;
         
         
-        Database db = new Database("Admin");
+        Entitymanager db = new Entitymanager("Postman");
         
         // FIND OR CREATE     // UNIQUE USERNAME AND UNIQUE EMAIL
-        Query uniqueUsername = db.getEM().createQuery("SELECT username FROM Admin WHERE username='" + this.username + "'", Admin.class);
-        Query uniqueEmail = db.getEM().createQuery("SELECT email FROM Admin WHERE email='" + this.email + "'", Admin.class);
+        Query uniqueUsername = db.getEM().createQuery("SELECT username FROM Postman WHERE username='" + this.username + "'", Postman.class);
+        Query uniqueEmail = db.getEM().createQuery("SELECT email FROM Postman WHERE email='" + this.email + "'", Postman.class);
         
         // Check unique username and email first
         if (uniqueUsername.getResultList().size() <= 0) {
@@ -109,13 +109,13 @@ public class NewAdminController  extends Validation{
                 try {
                     // Create user
                     db.getEM().getTransaction().begin();
-                    Admin admin = new Admin(this.nationID, this.name, this.email, this.tel, this.username, this.password, this.zipCode);
-                    db.getEM().persist(admin);
+                    Postman postman  = new Postman(this.nationID, this.name, this.email, this.tel, this.username, this.password, this.zipCode);
+                    db.getEM().persist(postman);
                     db.getEM().getTransaction().commit();
                     db.getEM().close();
                     return true;
                 } catch(Throwable error) {
-                    System.out.println("CANNOT CREATE Admin, PLEASE CHECK SERVER ");
+                    System.out.println("CANNOT CREATE Postman, PLEASE CHECK SERVER ");
                     db.getEM().close();
                     return false;
                 }

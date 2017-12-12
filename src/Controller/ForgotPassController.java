@@ -5,8 +5,8 @@
  */
 package Controller;
 
-import Model.Database;
-import Model.User;
+import Model.Entitymanager;
+import Model.Customer;
 import javax.persistence.Query;
 
 /**
@@ -14,22 +14,22 @@ import javax.persistence.Query;
  * @author 58011424
  */
 public class ForgotPassController extends SendEmailController{
-    private User user;
+    private Customer user;
     public ForgotPassController(String to) {
         super(to);
     }
     public boolean hasUser(){
-        Database db = new Database("User");
+        Entitymanager db = new Entitymanager("Customer");
         try {
-            Query userQuery = db.getEM().createQuery("SELECT u FROM User u WHERE email='"+ super.to +"'");
-            user = (User)userQuery.getSingleResult();
+            Query userQuery = db.getEM().createQuery("SELECT u FROM Customer u WHERE email='"+ super.to +"'");
+            user = (Customer)userQuery.getSingleResult();
             return true;
         } catch (Exception e) {
             System.out.println("We don't have this email in database.");
             return false;
         }
     }
-    public User getUser(){
+    public Customer getUser(){
         return this.user;
     }
 }

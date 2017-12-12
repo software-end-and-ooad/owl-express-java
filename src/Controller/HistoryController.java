@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import Model.Database;
+import Model.Entitymanager;
 import Model.Order;
 import java.util.List;
 import javax.persistence.Query;
@@ -50,7 +50,7 @@ public class HistoryController {
     public List HistoryFinder() {
         
       
-        Database db = new Database("Order");
+        Entitymanager db = new Entitymanager("Order");
        
         Query orderQuery = db.getEM().createQuery("SELECT o FROM Order o  WHERE o.userID=" + this.userID , Order.class);
         List<Order> results = orderQuery.getResultList();

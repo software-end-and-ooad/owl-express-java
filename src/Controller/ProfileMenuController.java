@@ -5,8 +5,8 @@
  */
 package Controller;
 
-import Model.Database;
-import Model.User;
+import Model.Entitymanager;
+import Model.Customer;
 import java.util.ArrayList;
 
 /**
@@ -89,8 +89,8 @@ public class ProfileMenuController extends Validation{
         UserDataService.setZipCode(this.zipCode);
         UserDataService.setOtherAddress(otherAddress);
         //UPDATE database
-        Database db = new Database("User");
-        User user = db.getEM().find(User.class, UserDataService.getAccountID());
+        Entitymanager db = new Entitymanager("Customer");
+        Customer user = db.getEM().find(Customer.class, UserDataService.getAccountID());
         db.getEM().getTransaction().begin();
         user.setName(this.fullname);
         user.setEmail(this.email);

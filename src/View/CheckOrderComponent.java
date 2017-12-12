@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package View;
 
 import Controller.CheckOrderController;
@@ -51,8 +46,10 @@ public class CheckOrderComponent implements Initializable {
     private void submitSearch(MouseEvent event) {
         Validation validator = new Validation();
         if(validator.isRequired(searchBox.getText())){
-            if(validator.minLength(searchBox.getText(), 4)&&validator.maxLength(searchBox.getText(), 4)){
-                CheckOrderController checking = new CheckOrderController(searchBox.getText());
+            if(validator.minLength(searchBox.getText(), 4)&&validator.
+                    maxLength(searchBox.getText(), 4)){
+                CheckOrderController checking = 
+                        new CheckOrderController(searchBox.getText());
                 if(checking.checkOrderFinder())
                 {
                     headText.setText("Order from " + checking.getSenderName());
@@ -85,8 +82,5 @@ public class CheckOrderComponent implements Initializable {
             errorText.setVisible(true);
         }
         
-    }
-
-  
-    
+    }  
 }

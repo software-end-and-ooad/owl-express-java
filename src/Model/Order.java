@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
 /**
@@ -40,7 +35,9 @@ public class Order implements Serializable{
     private String status;
     private String orderDate;
 
-    public Order(long userID, long postmanID, long price, String size, String trackID, String sourceAddress, 
+    public Order(long userID, long postmanID, long price, String size, 
+                String trackID, 
+                String sourceAddress, 
                 String sourcedistric,
                 String sourcearea,
                 String sourceprovince,
@@ -240,8 +237,19 @@ public class Order implements Serializable{
         this.status = status;
     }
     public String toString(){
-        String datetime = this.getOrderDate().substring(0, this.getOrderDate().indexOf('T'))+ ' '+'('+this.getOrderDate().substring(this.getOrderDate().indexOf('T')+1 , this.getOrderDate().length())+')';
-        String string = String.format("TrackID  :  %s\n\tUserID  :  %s\n\tSender's name  :  %s\n\tData  :  %s\n\tStatus  :  %s\n\tPrice  :  %s",this.getTrackID(), this.getUserID(), this.getSenderName(), datetime, this.getStatus(), this.getPrice());
+        String datetime = this.getOrderDate().substring(0, 
+                this.getOrderDate().indexOf('T'))+ ' '+'('
+                +this.getOrderDate().substring(this.getOrderDate().indexOf('T')
+                        +1 , this.getOrderDate().length())+')';
+        String string = String.format("TrackID  :  %s\n\tUserID  : "
+                + " %s\n\tSender's name  :  %s\n\tData  :  %s\n\tStatus  : "
+                + " %s\n\tPrice  :  %s",
+                this.getTrackID(), 
+                this.getUserID(), 
+                this.getSenderName(), 
+                datetime, 
+                this.getStatus(), 
+                this.getPrice());
         return string;
     }
 }

@@ -8,7 +8,7 @@ import javax.persistence.*;
  * @author babyjazz
  */
 @Entity
-public class User{
+public class Customer{
     @Id @GeneratedValue
     private long id;
     private String name;
@@ -23,16 +23,13 @@ public class User{
     private String username;
     private String password;
     
-    public User(String username, String password, String email, String name, String tel) {
+    public Customer(String username, String password, String email, String name, 
+            String tel) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.name = name;
         this.tel = tel;
-    }
-
-    public User() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public long getId() {
@@ -126,7 +123,14 @@ public class User{
     @Override
     public String toString()
     {
-        String string = String.format("UserID  :  %s\n\tUsername  :  %s\n\tFullname  :  %s\n\tEmail  :  %s\n\tZipcode  :  %s", this.id, this.username, this.name, this.email, this.zipCode);
+        String string = String.format("UserID  :  %s\n\tUsername  : "
+                + " %s\n\tFullname  :  %s\n\tEmail  :  %s\n\tZipcode  :  "
+                + "%s ", 
+                this.id, 
+                this.username, 
+                this.name, 
+                this.email, 
+                this.zipCode);
         return string;
     }
     

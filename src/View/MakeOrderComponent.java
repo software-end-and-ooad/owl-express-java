@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package View;
 
 import Controller.MakeOrderController;
@@ -133,8 +128,20 @@ public class MakeOrderComponent implements Initializable {
         sourceError.setVisible(false);
         destinationError.setVisible(false);
         sizeError.setVisible(false);
-        MakeOrderController makeOrderController = new MakeOrderController(UserDataService.getAccountID(), comboSize.getValue(), sourceText.getText(), sourceDistrictText.getText(), sourceAreaText.getText(), sourceProvinceText.getText(), sourceZipcodeText.getText(), sourceOtherText.getText(), destinationText.getText(), destinationDistrictText.getText(), destinationAreaText.getText(), destinationProvinceText.getText(), destinationZipcodeText.getText(), destinationOtherText.getText(), senderText.getText(), receiverText.getText());
-         ArrayList<ArrayList<String>> errList = makeOrderController.validateOrder();
+        MakeOrderController makeOrderController = new 
+        MakeOrderController(UserDataService.getAccountID(), 
+                comboSize.getValue(), sourceText.getText(), 
+                sourceDistrictText.getText(), sourceAreaText.getText(), 
+                sourceProvinceText.getText(), sourceZipcodeText.getText(), 
+                sourceOtherText.getText(), destinationText.getText(), 
+                destinationDistrictText.getText(), 
+                destinationAreaText.getText(), 
+                destinationProvinceText.getText(), 
+                destinationZipcodeText.getText(), 
+                destinationOtherText.getText(), 
+                senderText.getText(), receiverText.getText());
+         ArrayList<ArrayList<String>> errList = makeOrderController.
+                 validateOrder();
          if( errList.size() <= 0) {
            boolean submitstatus = makeOrderController.checkMakeOrder();
            while(submitstatus == false)
@@ -183,7 +190,8 @@ public class MakeOrderComponent implements Initializable {
            
             
            
-           headText.setText("Your trackID is " +makeOrderController.getTrackID());
+           headText.setText("Your trackID is " +
+                   makeOrderController.getTrackID());
             
          }
          else
@@ -193,18 +201,25 @@ public class MakeOrderComponent implements Initializable {
                 if (errList.get(i).get(0).equals("destinationAddress")) {
                     this.destinationError.setVisible(true);
                     if (errList.get(i).get(1).equals("maxLength"))
-                        this.destinationError.setText("Destination address must no more than 30 characters");
+                        this.destinationError.
+                                setText("Destination address must no more "
+                                        + "than 30 characters");
                     else if (errList.get(i).get(1).equals("minLength"))
-                        this.destinationError.setText("Destination address must have at least 10 characters");
+                        this.destinationError.
+                                setText("Destination address must have at "
+                                        + "least 10 characters");
                     else if (errList.get(i).get(1).equals("isRequired"))
-                        this.destinationError.setText("Destination address is required");
+                        this.destinationError.
+                                setText("Destination address is required");
                 }
                 if (errList.get(i).get(0).equals("sourceAddress")) {
                     this.sourceError.setVisible(true);
                     if (errList.get(i).get(1).equals("maxLength"))
-                        this.sourceError.setText("Source address must no more than 30 characters");
+                        this.sourceError.setText("Source address must no "
+                                + "more than 30 characters");
                     else if (errList.get(i).get(1).equals("minLength"))
-                        this.sourceError.setText("Source address must have at least 10 characters");
+                        this.sourceError.setText("Source address must "
+                                + "have at least 10 characters");
                     else if (errList.get(i).get(1).equals("isRequired"))
                         this.sourceError.setText("Source address is required");
                 }
@@ -216,56 +231,64 @@ public class MakeOrderComponent implements Initializable {
                 if (errList.get(i).get(0).equals("sourcedistric")) {
                     this.sourceDistrictError.setVisible(true);
                     if (errList.get(i).get(1).equals("isRequired"))
-                        this.sourceDistrictError.setText("Source district is required");
+                        this.sourceDistrictError.setText("Source district "
+                                + "is required");
                 }
                 if (errList.get(i).get(0).equals("sourceprovince")) {
                     this.sourceProvinceError.setVisible(true);
                     if (errList.get(i).get(1).equals("isRequired"))
-                        this.sourceProvinceError.setText("Source province is required");
+                        this.sourceProvinceError.setText("Source province "
+                                + "is required");
                 }
                 if (errList.get(i).get(0).equals("sourcezipCode")) {
                     this.sourceZipcodeError.setVisible(true);
                     if (errList.get(i).get(1).equals("isRequired"))
-                        this.sourceZipcodeError.setText("Source zipcode is required");
+                        this.sourceZipcodeError.setText("Source zipcode"
+                                + " is required");
                 }
                 
                 if (errList.get(i).get(0).equals("destinationarea")) {
                     this.destinationAreaError.setVisible(true);
                     if (errList.get(i).get(1).equals("isRequired"))
-                        this.destinationAreaError.setText("Destination area is required");
+                        this.destinationAreaError.
+                                setText("Destination area is required");
                 }
                 if (errList.get(i).get(0).equals("destinationdistric")) {
                     this.destinationDistrictError.setVisible(true);
                     if (errList.get(i).get(1).equals("isRequired"))
-                        this.destinationDistrictError.setText("Destination district is required");
+                        this.destinationDistrictError.
+                                setText("Destination district is required");
                 }
                 if (errList.get(i).get(0).equals("destinationprovince")) {
                     this.destinationProvinceError.setVisible(true);
                     if (errList.get(i).get(1).equals("isRequired"))
-                        this.destinationProvinceError.setText("Destination province is required");
+                        this.destinationProvinceError.
+                                setText("Destination province is required");
                 }
                 if (errList.get(i).get(0).equals("destinationzipCode")) {
                     this.destinationZipcodeError.setVisible(true);
                     if (errList.get(i).get(1).equals("isRequired"))
-                        this.destinationZipcodeError.setText("Destination zipcode is required");
+                        this.destinationZipcodeError.
+                                setText("Destination zipcode is required");
                 }
                 if (errList.get(i).get(0).equals("size")) {
                     this.sizeError.setVisible(true);
                     if (errList.get(i).get(1).equals("isRequired"))
-                        this.sizeError.setText("Source address is required");
+                        this.sizeError.
+                                setText("Source address is required");
                 }
                 if (errList.get(i).get(0).equals("senderName")) {
                     this.senderError.setVisible(true);
                     if (errList.get(i).get(1).equals("isRequired"))
-                        this.senderError.setText("Sender's name is required");
+                        this.senderError.
+                                setText("Sender's name is required");
                 }
                 if (errList.get(i).get(0).equals("receiverName")) {
                     this.receiverError.setVisible(true);
                     if (errList.get(i).get(1).equals("isRequired"))
-                        this.receiverError.setText("Receiver's name is required");
+                        this.receiverError.
+                                setText("Receiver's name is required");
                 }
-                
-  
             }
         }
     }

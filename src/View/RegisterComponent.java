@@ -7,8 +7,8 @@ package View;
 
 import Controller.RegisterController;
 import Controller.SendEmailController;
-import Model.Database;
-import Model.User;
+import Model.Entitymanager;
+import Model.Customer;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -196,11 +196,11 @@ public class RegisterComponent implements Initializable {
     @FXML
     public void submitVerify() throws IOException{ // Submit random word from email
         if (this.verifyField.getText().compareTo(this.sendEmail.getVerify()) == 0) {
-            Database db = new Database("User");
+            Entitymanager db = new Entitymanager("Customer");
             try {
                 // Create user
                 db.getEM().getTransaction().begin();
-                User user = new User(this.username.getText(), this.password.getText(), this.email.getText(), this.name.getText(), this.tel.getText());
+                Customer user = new Customer(this.username.getText(), this.password.getText(), this.email.getText(), this.name.getText(), this.tel.getText());
                 db.getEM().persist(user);
                 db.getEM().getTransaction().commit();
                 db.getEM().close();

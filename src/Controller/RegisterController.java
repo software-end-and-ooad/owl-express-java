@@ -5,8 +5,8 @@
  */
 package Controller;
 
-import Model.Database;
-import Model.User;
+import Model.Entitymanager;
+import Model.Customer;
 import java.util.ArrayList;
 import javax.persistence.Query;
 
@@ -25,7 +25,8 @@ public class RegisterController extends Validation{
     private boolean uniqueEmail;
 //    private Validation validator = new Validation();
     
-    public RegisterController(String username, String password, String confirmPass, String email, String name, String tel) {
+    public RegisterController(String username, String password, 
+            String confirmPass, String email, String name, String tel) {
         this.username = username;
         this.password = password;
         this.confirmPass = confirmPass;
@@ -33,6 +34,7 @@ public class RegisterController extends Validation{
         this.name = name;
         this.tel = tel;
     }
+    
     public ArrayList<ArrayList<String>> validateResgister(){
         Validation checkValidate = new Validation();
         ArrayList<String> validate = new ArrayList<String>();
@@ -77,11 +79,11 @@ public class RegisterController extends Validation{
         this.uniqueUsername = false;
         
         
-        Database db = new Database("User");
+        Entitymanager db = new Entitymanager("Customer");
         
         // FIND OR CREATE     // UNIQUE USERNAME AND UNIQUE EMAIL
-        Query uniqueUsername = db.getEM().createQuery("SELECT username FROM User WHERE username='" + this.username + "'", User.class);
-        Query uniqueEmail = db.getEM().createQuery("SELECT email FROM User WHERE email='" + this.email + "'", User.class);
+        Query uniqueUsername = db.getEM().createQuery("SELECT username FROM Customer WHERE username='" + this.username + "'", Customer.class);
+        Query uniqueEmail = db.getEM().createQuery("SELECT email FROM Customer WHERE email='" + this.email + "'", Customer.class);
         
         // Check unique username and email first
         if (uniqueUsername.getResultList().size() <= 0) {

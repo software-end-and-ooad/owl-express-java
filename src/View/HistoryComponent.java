@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package View;
 
 import Controller.DataService;
@@ -33,7 +28,8 @@ public class HistoryComponent implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         String text="\n";
-        HistoryController checking = new HistoryController(DataService.getAccountID());
+        HistoryController checking = new HistoryController(DataService.
+                getAccountID());
         List<Order> queriedList = checking.HistoryFinder();
         
         orderList.setBorder(null);
@@ -41,12 +37,15 @@ public class HistoryComponent implements Initializable {
         if(queriedList!=null){
             for(Order l:queriedList)
             {
-                text = text + "TrackID : " + l.getTrackID()  + "\t\t Size : " + l.getSize() + "\t\t Price : " + l.getPrice() + "\nSender's Name  :\t" + l.getSenderName() + "\nReceiver's name :\t" + l.getReceiverName()+"\n"+
-                       "________________________________________________________________________________________________________________________________"+"\n\n";
+                text = text + "TrackID : " + l.getTrackID()  + "\t\t Size : " + 
+                        l.getSize() + "\t\t Price : " + l.getPrice() + 
+                        "\nSender's Name  :\t" + l.getSenderName() + 
+                        "\nReceiver's name :\t" + l.getReceiverName()+"\n"+
+                       "___________________________________________________"
+                        + "________________________________________________"
+                        + "_____________________________"+"\n\n";
             }
             orderList.setText(text);
-        }
-              
-    }    
-    
+        }           
+    }       
 }
