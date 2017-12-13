@@ -36,7 +36,6 @@
       </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcf4d9" height="200.0" layoutX="556.0" layoutY="300.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="14.0" />
       <Text fx:id="loginValidate" fill="RED" layoutX="233.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username or password is not correct!" wrappingWidth="274.0000094246784" />
-      <JFXCheckBox fx:id="adminCheckbox" layoutX="1045.0" layoutY="758.0" text="Admin" textFill="WHITE" unCheckedColor="WHITE" />
       <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="1080.0" layoutY="10.0" onMouseClicked="#exitApplication" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/ex.png" />
@@ -95,5 +94,6 @@
             <Font name="System Bold Italic" size="27.0" />
          </font>
       </JFXButton>
+      <JFXCheckBox fx:id="adminCheckbox" layoutX="1009.0" layoutY="745.0" text="Admin" textFill="WHITE" />
    </children>
 </AnchorPane>

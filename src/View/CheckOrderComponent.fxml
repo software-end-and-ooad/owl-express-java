@@ -10,26 +10,26 @@
 
 <AnchorPane id="AnchorPane" prefHeight="626.0" prefWidth="853.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.CheckOrderComponent">
    <children>
-      <JFXTextField fx:id="searchBox" layoutX="183.0" layoutY="214.0" prefHeight="35.0" prefWidth="470.0">
+      <JFXTextField fx:id="searchBox" layoutX="183.0" layoutY="332.0" prefHeight="35.0" prefWidth="470.0">
          <font>
             <Font size="45.0" />
          </font></JFXTextField>
-      <JFXButton fx:id="searchBTN" layoutX="233.0" layoutY="324.0" onMouseClicked="#submitSearch" prefHeight="111.0" prefWidth="393.0" style="-fx-background-color: #FF7A5A;" text="Find Your Order" textFill="WHITE">
+      <JFXButton fx:id="searchBTN" layoutX="222.0" layoutY="456.0" onMouseClicked="#submitSearch" prefHeight="111.0" prefWidth="393.0" style="-fx-background-color: #FF7A5A;" text="Find Your Order" textFill="WHITE">
          <font>
             <Font name="The Bold Font" size="39.0" />
          </font></JFXButton>
-      <Text fx:id="errorText" fill="#f81616" layoutX="183.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="469.90185546875" />
+      <Text fx:id="errorText" fill="#f81616" layoutX="183.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="469.90185546875" />
       <Text fx:id="headText" fill="#432160" layoutX="13.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your trackID" wrappingWidth="826.0079956054688">
          <font>
             <Font name="System Bold Italic" size="58.0" />
          </font>
       </Text>
-      <Text fx:id="resultText" fill="#50e3c2" layoutX="14.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your trackID" wrappingWidth="487.90185546875">
+      <Text fx:id="resultText" fill="#50e3c2" layoutX="14.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your trackID" wrappingWidth="487.90185546875">
          <font>
             <Font name="The Bold Font" size="48.0" />
          </font>
       </Text>
-      <Text fx:id="resultText2" fill="#ff094f" layoutX="143.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your trackID" wrappingWidth="572.90185546875">
+      <Text fx:id="resultText2" fill="#ff094f" layoutX="236.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your trackID" wrappingWidth="363.90185546875">
          <font>
             <Font name="The Bold Font" size="45.0" />
          </font>
